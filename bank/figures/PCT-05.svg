@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="680" viewBox="0 0 900 680">
+<rect width="100%" height="100%" fill="white"/>
+<g fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
+<line x1="238.5" y1="499.8" x2="842.7" y2="499.8" stroke="#9a9a9a" stroke-width="1.2"/>
+<line x1="238.5" y1="443.7" x2="842.7" y2="443.7" stroke="#9a9a9a" stroke-width="1.2"/>
+<line x1="238.5" y1="387.7" x2="842.7" y2="387.7" stroke="#9a9a9a" stroke-width="1.2"/>
+<line x1="238.5" y1="331.6" x2="842.7" y2="331.6" stroke="#9a9a9a" stroke-width="1.2"/>
+<line x1="238.5" y1="275.5" x2="842.7" y2="275.5" stroke="#9a9a9a" stroke-width="1.2"/>
+<line x1="238.5" y1="219.4" x2="842.7" y2="219.4" stroke="#9a9a9a" stroke-width="1.2"/>
+<line x1="238.5" y1="163.4" x2="842.7" y2="163.4" stroke="#9a9a9a" stroke-width="1.2"/>
+<line x1="238.5" y1="107.3" x2="842.7" y2="107.3" stroke="#9a9a9a" stroke-width="1.2"/>
+<polygon points="290.3,555.9 402.5,555.9 402.5,331.6 290.3,331.6" fill="#c8c8c8" stroke="none"/>
+<polygon points="290.3,555.9 402.5,555.9 402.5,331.6 290.3,331.6" fill="none"/>
+<text x="346.4" y="583.9" font-size="28" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">April</text>
+<polygon points="484.5,555.9 596.7,555.9 596.7,275.5 484.5,275.5" fill="#c8c8c8" stroke="none"/>
+<polygon points="484.5,555.9 596.7,555.9 596.7,275.5 484.5,275.5" fill="none"/>
+<text x="540.6" y="583.9" font-size="28" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">May</text>
+<polygon points="678.7,555.9 790.9,555.9 790.9,163.4 678.7,163.4" fill="#c8c8c8" stroke="none"/>
+<polygon points="678.7,555.9 790.9,555.9 790.9,163.4 678.7,163.4" fill="none"/>
+<text x="734.8" y="583.9" font-size="28" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">June</text>
+<line x1="228.2" y1="555.9" x2="238.5" y2="555.9" stroke-width="1.6"/>
+<text x="216.9" y="555.9" font-size="26" font-style="normal" font-weight="normal" text-anchor="end" dominant-baseline="central" fill="#111" stroke="none">0</text>
+<line x1="228.2" y1="499.8" x2="238.5" y2="499.8" stroke-width="1.6"/>
+<text x="216.9" y="499.8" font-size="26" font-style="normal" font-weight="normal" text-anchor="end" dominant-baseline="central" fill="#111" stroke="none">10</text>
+<line x1="228.2" y1="443.7" x2="238.5" y2="443.7" stroke-width="1.6"/>
+<text x="216.9" y="443.7" font-size="26" font-style="normal" font-weight="normal" text-anchor="end" dominant-baseline="central" fill="#111" stroke="none">20</text>
+<line x1="228.2" y1="387.7" x2="238.5" y2="387.7" stroke-width="1.6"/>
+<text x="216.9" y="387.7" font-size="26" font-style="normal" font-weight="normal" text-anchor="end" dominant-baseline="central" fill="#111" stroke="none">30</text>
+<line x1="228.2" y1="331.6" x2="238.5" y2="331.6" stroke-width="1.6"/>
+<text x="216.9" y="331.6" font-size="26" font-style="normal" font-weight="normal" text-anchor="end" dominant-baseline="central" fill="#111" stroke="none">40</text>
+<line x1="228.2" y1="275.5" x2="238.5" y2="275.5" stroke-width="1.6"/>
+<text x="216.9" y="275.5" font-size="26" font-style="normal" font-weight="normal" text-anchor="end" dominant-baseline="central" fill="#111" stroke="none">50</text>
+<line x1="228.2" y1="219.4" x2="238.5" y2="219.4" stroke-width="1.6"/>
+<text x="216.9" y="219.4" font-size="26" font-style="normal" font-weight="normal" text-anchor="end" dominant-baseline="central" fill="#111" stroke="none">60</text>
+<line x1="228.2" y1="163.4" x2="238.5" y2="163.4" stroke-width="1.6"/>
+<text x="216.9" y="163.4" font-size="26" font-style="normal" font-weight="normal" text-anchor="end" dominant-baseline="central" fill="#111" stroke="none">70</text>
+<line x1="228.2" y1="107.3" x2="238.5" y2="107.3" stroke-width="1.6"/>
+<text x="216.9" y="107.3" font-size="26" font-style="normal" font-weight="normal" text-anchor="end" dominant-baseline="central" fill="#111" stroke="none">80</text>
+<line x1="238.5" y1="555.9" x2="842.7" y2="555.9"/>
+<line x1="238.5" y1="555.9" x2="238.5" y2="107.3"/>
+<text x="540.6" y="620.4" font-size="30" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">Month</text>
+<text x="540.6" y="65.2" font-size="32" font-style="normal" font-weight="bold" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">Bicycles sold</text>
+<text x="130.6" y="331.6" font-size="30" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 130.6 331.6)" fill="#111" stroke="none">Number of bicycles</text>
+</g></svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="800" viewBox="0 0 820 800">
+<rect width="100%" height="100%" fill="white"/>
+<g fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
+<line x1="71.7" y1="411.7" x2="736.7" y2="411.7" stroke-width="2"/>
+<line x1="398.3" y1="726.7" x2="398.3" y2="85.0" stroke-width="2"/>
+<polyline points="724.7,417.7 736.7,411.7 724.7,405.7" fill="none" stroke-width="2"/>
+<polyline points="83.7,405.7 71.7,411.7 83.7,417.7" fill="none" stroke-width="2"/>
+<polyline points="404.3,97.0 398.3,85.0 392.3,97.0" fill="none" stroke-width="2"/>
+<polyline points="392.3,714.7 398.3,726.7 404.3,714.7" fill="none" stroke-width="2"/>
+<text x="732.7" y="387.7" font-size="30.6" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">x</text>
+<text x="420.3" y="93.0" font-size="30.6" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">y</text>
+<circle cx="398.3" cy="411.7" r="233.3" fill="none"/>
+<line x1="398.3" y1="411.7" x2="196.3" y2="295.0"/>
+<circle cx="398.3" cy="411.7" r="5.5" fill="#111"/>
+<circle cx="196.3" cy="295.0" r="6.5" fill="#111"/>
+<path d="M442.3,411.7 A44,44 0 0 0 360.2,389.7" stroke-width="2.2399999999999998"/>
+<text x="464.3" y="349.7" font-size="30" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">150°</text>
+<text x="179.9" y="267.7" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">P</text>
+<text x="418.3" y="435.7" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">O</text>
+<text x="649.7" y="433.7" font-size="28" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">1</text>
+<text x="378.3" y="156.3" font-size="28" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">1</text>
+<text x="137.0" y="433.7" font-size="28" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">−1</text>
+<text x="370.3" y="667.0" font-size="28" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">−1</text>
+
+</g></svg>

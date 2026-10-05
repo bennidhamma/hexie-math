@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="700" viewBox="0 0 760 700">
+<rect width="100%" height="100%" fill="white"/>
+<g fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
+<circle cx="380.0" cy="350.0" r="183.8" fill="#d9d9d9" stroke="none"/>
+<circle cx="380.0" cy="350.0" r="183.8" fill="none"/>
+<polygon points="120.0,90.0 640.0,90.0 640.0,610.0 120.0,610.0" fill="none"/>
+<polyline points="136.0,610.0 136.0,594.0 120.0,594.0" stroke-width="2.2399999999999998"/>
+<line x1="120.0" y1="90.0" x2="640.0" y2="610.0" stroke-dasharray="10 8"/>
+<line x1="436.5" y1="423.5" x2="453.5" y2="406.5" stroke-width="2.2399999999999998"/>
+<line x1="566.5" y1="553.5" x2="583.5" y2="536.5" stroke-width="2.2399999999999998"/>
+<circle cx="380.0" cy="350.0" r="5.5" fill="#111"/>
+<circle cx="510.0" cy="480.0" r="5.5" fill="#111"/>
+<text x="405.1" y="324.9" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">O</text>
+<text x="474.8" y="485.3" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">P</text>
+<text x="94.9" y="64.9" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">A</text>
+<text x="665.1" y="64.9" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">B</text>
+<text x="665.1" y="635.1" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">C</text>
+<text x="94.9" y="635.1" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">D</text>
+<text x="380.0" y="647.6" font-size="34" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">8 cm</text>
+</g></svg>

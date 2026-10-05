@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="760" viewBox="0 0 900 760">
+<rect width="100%" height="100%" fill="white"/>
+<g fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
+<line x1="70.0" y1="603.4" x2="830.0" y2="603.4"/>
+<line x1="169.5" y1="603.4" x2="169.5" y2="540.0" stroke-width="3.6"/>
+<line x1="151.4" y1="603.4" x2="169.5" y2="580.8"/>
+<line x1="187.6" y1="603.4" x2="169.5" y2="580.8"/>
+<circle cx="169.5" cy="540.0" r="6" fill="#111"/>
+<polygon points="712.4,603.4 766.7,603.4 766.7,115.9 712.4,115.9" fill="none"/>
+<line x1="169.5" y1="540.0" x2="712.4" y2="115.9"/>
+<line x1="169.5" y1="540.0" x2="712.4" y2="540.0" stroke-dasharray="10 8"/>
+<polyline points="694.4,540.0 694.4,522.0 712.4,522.0" stroke-width="2.2399999999999998"/>
+<path d="M239.5,540.0 A70,70 0 0 0 224.7,496.9" stroke-width="2.2399999999999998"/>
+<text x="272.6" y="504.6" font-size="30.6" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">38°</text>
+<line x1="169.5" y1="644.1" x2="398.3" y2="644.1" stroke-width="1.68"/>
+<line x1="712.4" y1="644.1" x2="483.6" y2="644.1" stroke-width="1.68"/>
+<line x1="169.5" y1="653.1" x2="169.5" y2="635.1" stroke-width="1.68"/>
+<line x1="712.4" y1="653.1" x2="712.4" y2="635.1" stroke-width="1.68"/>
+<text x="441.0" y="644.1" font-size="34" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">120</text>
+<line x1="128.8" y1="603.4" x2="128.8" y2="592.6" stroke-width="1.68"/>
+<line x1="128.8" y1="540.0" x2="128.8" y2="550.8" stroke-width="1.68"/>
+<line x1="137.8" y1="603.4" x2="119.8" y2="603.4" stroke-width="1.68"/>
+<line x1="137.8" y1="540.0" x2="119.8" y2="540.0" stroke-width="1.68"/>
+<text x="128.8" y="571.7" font-size="34" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">5</text>
+</g></svg>

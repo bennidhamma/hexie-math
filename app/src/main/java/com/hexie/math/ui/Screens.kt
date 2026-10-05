@@ -31,6 +31,7 @@ import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -38,6 +39,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
@@ -60,6 +62,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.hexie.math.data.Progress
 import com.hexie.math.notify.Reminders
+import com.hexie.math.questions.Bank
 import com.hexie.math.questions.Diagram
 import com.hexie.math.questions.Question
 import com.hexie.math.questions.QuestionFactory
@@ -99,6 +102,8 @@ fun HexieApp(progress: Progress, startQuiz: Boolean, onStartQuizHandled: () -> U
     var refresh by remember { mutableIntStateOf(0) }
     var sessionSolved by remember { mutableIntStateOf(0) }
     var sessionRight by remember { mutableIntStateOf(0) }
+    val context = LocalContext.current
+    val bank = remember { loadBank(context) }
 
     if (startQuiz) {
         screen = Screen.QUIZ
@@ -122,7 +127,7 @@ fun HexieApp(progress: Progress, startQuiz: Boolean, onStartQuizHandled: () -> U
                 onSettings = { screen = Screen.SETTINGS },
             )
             Screen.QUIZ -> QuizScreen(
-                progress,
+                progress, bank,
                 onFinish = { solved, right ->
                     sessionSolved = solved; sessionRight = right
                     refresh++
@@ -292,7 +297,7 @@ private fun SpeechBubble(text: String, modifier: Modifier = Modifier) {
 // ---------------------------------------------------------------- Quiz
 
 @Composable
-private fun QuizScreen(progress: Progress, onFinish: (solved: Int, right: Int) -> Unit) {
+private fun QuizScreen(progress: Progress, bank: Bank, onFinish: (solved: Int, right: Int) -> Unit) {
     val context = LocalContext.current
     // The daily goal sets the session length. After the goal, each session is one bonus problem.
     val total = remember { (progress.problemsPerDay - progress.doneToday()).coerceAtLeast(1) }
@@ -300,7 +305,9 @@ private fun QuizScreen(progress: Progress, onFinish: (solved: Int, right: Int) -
     var index by remember { mutableIntStateOf(0) }
     var right by remember { mutableIntStateOf(0) }
     var lastTopic by remember { mutableStateOf<Topic?>(null) }
-    var question by remember { mutableStateOf(newQuestion(progress, null)) }
+    // With 3 or more problems a day, the first one is a quick generated warm-up.
+    var question by remember { mutableStateOf(newQuestion(progress, bank, null, warmUp = total >= 3 && !bonus)) }
+    var flagging by remember { mutableStateOf(false) }
     var picked by remember { mutableStateOf<Int?>(null) }
     var reaction by remember { mutableStateOf("") }
 
@@ -326,6 +333,10 @@ private fun QuizScreen(progress: Progress, onFinish: (solved: Int, right: Int) -
             )
             Spacer(Modifier.width(12.dp))
             Text(if (bonus) "Bonus" else "${index + 1}/$total", style = MaterialTheme.typography.labelLarge)
+            if (progress.showPaceTimer) {
+                Spacer(Modifier.width(10.dp))
+                PaceTimer(key = question, running = picked == null)
+            }
         }
 
         Spacer(Modifier.height(10.dp))
@@ -340,15 +351,71 @@ private fun QuizScreen(progress: Progress, onFinish: (solved: Int, right: Int) -
             SpeechBubble(if (picked == null) "Hmm, what do you think?" else reaction)
         }
 
+        QuestionBody(question, picked, onPick = { i ->
+            picked = i
+            val correct = i == question.correctIndex
+            if (correct) right++
+            reaction = if (correct) RIGHT.random() else WRONG.random()
+            val metNow = progress.record(question, correct)
+            if (metNow) {
+                Reminders.clear(context)
+                Reminders.schedule(context)
+            }
+        })
+
+        AnimatedVisibility(picked != null, enter = fadeIn() + slideInVertically { it / 4 }) {
+            Column {
+                Spacer(Modifier.height(6.dp))
+                ExplanationCard(question, picked == question.correctIndex)
+                TextButton(onClick = { flagging = true }) { Text("🚩 Flag this problem") }
+                if (flagging) FlagDialog(question, picked, progress, onDone = { flagging = false })
+                Spacer(Modifier.height(16.dp))
+                Button(
+                    onClick = {
+                        if (index + 1 >= total) {
+                            onFinish(index + 1, right)
+                        } else {
+                            index++
+                            lastTopic = question.topic
+                            question = newQuestion(progress, bank, lastTopic, warmUp = false)
+                            picked = null
+                        }
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(56.dp),
+                    shape = RoundedCornerShape(18.dp),
+                ) {
+                    Text(if (index + 1 >= total) "Finish" else "Next problem", fontSize = 18.sp)
+                }
+                Spacer(Modifier.height(24.dp))
+            }
+        }
+    }
+}
+
+/** The prompt, figure, diagram, and four choices. Shared by the quiz and the debug review screen. */
+@Composable
+internal fun QuestionBody(question: Question, picked: Int?, onPick: (Int) -> Unit) {
+    Column {
         Spacer(Modifier.height(12.dp))
+        val tag = when (question.difficulty) { null -> "  ·  WARM-UP"; "hard" -> "  ·  HARD"; else -> "  ·  MEDIUM" }
         Text(
-            question.topic.label.uppercase(),
+            question.topic.label.uppercase() + tag,
             style = MaterialTheme.typography.labelLarge,
             color = MaterialTheme.colorScheme.primary,
             letterSpacing = 1.sp,
         )
         Spacer(Modifier.height(6.dp))
         MathText(question.prompt, style = MaterialTheme.typography.bodyLarge)
+        question.table?.let { t ->
+            Spacer(Modifier.height(12.dp))
+            DataTableView(t)
+        }
+        question.image?.let { f ->
+            Spacer(Modifier.height(12.dp))
+            FigureImage(f)
+        }
         question.figure?.let { fig ->
             Spacer(Modifier.height(12.dp))
             Box(
@@ -378,70 +445,36 @@ private fun QuizScreen(progress: Progress, onFinish: (solved: Int, right: Int) -
                     i == picked -> ChoiceState.WRONG
                     else -> ChoiceState.DIM
                 },
-                onClick = {
-                    if (picked == null) {
-                        picked = i
-                        val correct = i == question.correctIndex
-                        if (correct) right++
-                        reaction = if (correct) RIGHT.random() else WRONG.random()
-                        val metNow = progress.record(question.topic, correct)
-                        if (metNow) {
-                            Reminders.clear(context)
-                            Reminders.schedule(context)
-                        }
-                    }
-                },
+                onClick = { if (picked == null) onPick(i) },
             )
             Spacer(Modifier.height(10.dp))
         }
+    }
+}
 
-        AnimatedVisibility(picked != null, enter = fadeIn() + slideInVertically { it / 4 }) {
-            Column {
-                Spacer(Modifier.height(6.dp))
-                Card(
-                    Modifier.fillMaxWidth(),
-                    shape = RoundedCornerShape(20.dp),
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
-                ) {
-                    Column(Modifier.padding(16.dp)) {
-                        val correct = picked == question.correctIndex
-                        MathText(
-                            if (correct) "✨ Correct! Here's why:" else "The answer is ${"ABCD"[question.correctIndex]}: ${question.choices[question.correctIndex]}",
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.onSecondaryContainer,
-                        )
-                        Spacer(Modifier.height(8.dp))
-                        MathText(
-                            question.explanation,
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSecondaryContainer,
-                        )
-                        question.explanationDiagram?.let { d ->
-                            Spacer(Modifier.height(12.dp))
-                            DiagramCard(d)
-                        }
-                    }
-                }
-                Spacer(Modifier.height(16.dp))
-                Button(
-                    onClick = {
-                        if (index + 1 >= total) {
-                            onFinish(index + 1, right)
-                        } else {
-                            index++
-                            lastTopic = question.topic
-                            question = newQuestion(progress, lastTopic)
-                            picked = null
-                        }
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(56.dp),
-                    shape = RoundedCornerShape(18.dp),
-                ) {
-                    Text(if (index + 1 >= total) "Finish" else "Next problem", fontSize = 18.sp)
-                }
-                Spacer(Modifier.height(24.dp))
+/** The "answer is" header, the steps, and the explanation diagram. */
+@Composable
+internal fun ExplanationCard(question: Question, correct: Boolean) {
+    Card(
+        Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(20.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
+    ) {
+        Column(Modifier.padding(16.dp)) {
+            MathText(
+                if (correct) "✨ Correct! Here's why:" else "The answer is ${"ABCD"[question.correctIndex]}: ${question.choices[question.correctIndex]}",
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.onSecondaryContainer,
+            )
+            Spacer(Modifier.height(8.dp))
+            MathText(
+                question.explanation,
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSecondaryContainer,
+            )
+            question.explanationDiagram?.let { d ->
+                Spacer(Modifier.height(12.dp))
+                DiagramCard(d)
             }
         }
     }
@@ -461,8 +494,17 @@ private fun DiagramCard(d: Diagram) {
     }
 }
 
-private fun newQuestion(progress: Progress, avoid: Topic?): Question =
-    QuestionFactory.make(progress.pickTopic(Random.Default, avoid))
+/**
+ * A warm-up comes from the generators. Everything else comes from the problem bank when it has
+ * that topic, and from the generators when it does not (or when the app has no bank).
+ */
+private fun newQuestion(progress: Progress, bank: Bank, avoid: Topic?, warmUp: Boolean): Question {
+    if (warmUp || bank.topics.isEmpty()) {
+        return QuestionFactory.make(progress.pickTopic(Random.Default, avoid, QuestionFactory.topics))
+    }
+    val topic = progress.pickTopic(Random.Default, avoid, bank.topics + QuestionFactory.topics)
+    return progress.pickBankQuestion(bank, topic, Random.Default) ?: QuestionFactory.make(topic)
+}
 
 private enum class ChoiceState { OPEN, RIGHT, WRONG, DIM }
 
@@ -549,6 +591,8 @@ private fun DoneScreen(progress: Progress, solved: Int, right: Int, onBonus: () 
         }
         Spacer(Modifier.height(8.dp))
         TextButton(onClick = onBonus) { Text("One more problem?") }
+        Spacer(Modifier.height(12.dp))
+        SessionFeedback(progress, solved, right)
     }
 }
 
@@ -623,10 +667,69 @@ private fun SettingsScreen(progress: Progress, onBack: () -> Unit) {
         TextButton(onClick = { Reminders.show(context, force = true) }) {
             Text("Send a test reminder now")
         }
+
+        HorizontalDivider(Modifier.padding(vertical = 20.dp))
+
+        var pace by remember { mutableStateOf(progress.showPaceTimer) }
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Column(Modifier.weight(1f)) {
+                Text("Pace timer", style = MaterialTheme.typography.titleMedium)
+                Text("The ACT gives about 1 minute per math problem.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+            Switch(checked = pace, onCheckedChange = { pace = it; progress.showPaceTimer = it })
+        }
+
+        HorizontalDivider(Modifier.padding(vertical = 20.dp))
+
+        Text("Feedback", style = MaterialTheme.typography.titleMedium)
+        var email by remember { mutableStateOf(progress.parentEmail) }
+        var unsent by remember { mutableIntStateOf(progress.unsentFeedback) }
+        OutlinedTextField(
+            email, { email = it; progress.parentEmail = it },
+            label = { Text("Parent's email") }, singleLine = true, modifier = Modifier.fillMaxWidth(),
+        )
+        Spacer(Modifier.height(8.dp))
+        Button(
+            enabled = unsent > 0,
+            onClick = { emailFeedback(context, progress); unsent = progress.unsentFeedback },
+        ) { Text(if (unsent > 0) "Email $unsent new feedback item${if (unsent == 1) "" else "s"}" else "No new feedback") }
+        Text(
+            "Opens your email app with the feedback and topic scores filled in. Tap send there.",
+            style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Spacer(Modifier.height(24.dp))
     }
 }
 
 private fun formatTime(h: Int, m: Int): String {
     val hh = if (h % 12 == 0) 12 else h % 12
     return "%d:%02d %s".format(hh, m, if (h < 12) "AM" else "PM")
+}
+
+private val FEELINGS = listOf("😫 Too hard", "🙂 Just right", "😴 Too easy")
+
+/** One-tap "how did that feel?" with an optional note. Saved for the parent's feedback email. */
+@Composable
+private fun SessionFeedback(progress: Progress, solved: Int, right: Int) {
+    var picked by remember { mutableStateOf<String?>(null) }
+    var note by remember { mutableStateOf("") }
+    var saved by remember { mutableStateOf(false) }
+    if (saved) {
+        Text("Thanks! Hexie wrote it in her spell book.", style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        return
+    }
+    Text("How did that feel?", style = MaterialTheme.typography.titleMedium)
+    Spacer(Modifier.height(6.dp))
+    Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+        FEELINGS.forEach { f ->
+            FilterChip(selected = picked == f, onClick = { picked = f }, label = { Text(f) })
+        }
+    }
+    if (picked != null) {
+        OutlinedTextField(note, { note = it }, label = { Text("Anything to tell your parent? (optional)") }, modifier = Modifier.fillMaxWidth())
+        TextButton(onClick = {
+            progress.addFeedback("session", "$right of $solved right", picked!!, note)
+            saved = true
+        }) { Text("Save") }
+    }
 }

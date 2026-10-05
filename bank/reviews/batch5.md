@@ -1,0 +1,22 @@
+AREA-01: OK
+AREA-02: OK
+AREA-03: FIXED - Distractor 600π did not match its trap line. Base circumference times height is 2π(5)(12)=120π. Replaced 600π with 120π, reordered the choices, set answer to index 2, and updated the trap line.
+AREA-04: OK
+AREA-05: OK
+AREA-06: OK
+AREA-07: OK
+AREA-08: OK
+AREA-09: OK
+AREA-10: OK
+AREA-11: OK
+AREA-12: OK
+ANG-01: OK
+ANG-02: OK
+ANG-03: OK
+ANG-04: OK
+ANG-05: OK
+ANG-06: OK
+ANG-07: OK
+ANG-08: OK
+ANG-09: OK
+ANG-10: OK

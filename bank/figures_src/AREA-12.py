@@ -1,0 +1,12 @@
+import sys; sys.path.insert(0, '.')
+from svgfig import *
+f = Fig()
+O = f.pt(0, 0)
+f.circle(O, 5)
+LL, LR, UR, UL = (-4, -3), (4, -3), (4, 3), (-4, 3)
+f.poly([LL, LR, UR, UL])
+f.seg(LL, UR, dashed=True)
+f.dot(O, 5); f.label_point(O, "O", (0.8, -1), gap=12)
+f.right_angle(LR, LL, UR)
+f.label_seg(LL, UL, "6", side=1, gap=11)
+f.save("figures/AREA-12.svg", png="figures/AREA-12.png")

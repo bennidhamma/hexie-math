@@ -1,0 +1,170 @@
+[
+ {
+  "id": "PROB-01",
+  "topic": "PROBABILITY",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "probability of two dependent events (drawing without replacement)"
+ },
+ {
+  "id": "PROB-02",
+  "topic": "PROBABILITY",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "probability of at least one success over several independent trials (complement)"
+ },
+ {
+  "id": "PROB-03",
+  "topic": "PROBABILITY",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "conditional probability from a two-way table (table field)"
+ },
+ {
+  "id": "PROB-04",
+  "topic": "PROBABILITY",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "conditional probability from a two-way table where the condition is a column total (table field)"
+ },
+ {
+  "id": "PROB-05",
+  "topic": "PROBABILITY",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "probability with a Venn diagram of two overlapping groups"
+ },
+ {
+  "id": "PROB-06",
+  "topic": "PROBABILITY",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "counting arrangements with a restriction (permutations)"
+ },
+ {
+  "id": "PROB-07",
+  "topic": "PROBABILITY",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "counting combinations (choose a committee)"
+ },
+ {
+  "id": "PROB-08",
+  "topic": "PROBABILITY",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "probability using combinations (choose 2 of n with a condition)"
+ },
+ {
+  "id": "PROB-09",
+  "topic": "PROBABILITY",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "expected value of a simple game"
+ },
+ {
+  "id": "PROB-10",
+  "topic": "PROBABILITY",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "geometric probability: chance a random point in a square lands in a shaded circle"
+ },
+ {
+  "id": "PROB-11",
+  "topic": "PROBABILITY",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "probability of A or B with overlap (inclusion-exclusion)"
+ },
+ {
+  "id": "PROB-12",
+  "topic": "PROBABILITY",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "probability that two dice sum to a value or meet a condition"
+ },
+ {
+  "id": "PROB-13",
+  "topic": "PROBABILITY",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "experimental vs. theoretical probability from frequency data (table field)"
+ },
+ {
+  "id": "PROB-14",
+  "topic": "PROBABILITY",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "probability that a randomly chosen integer in a range meets a divisibility condition"
+ },
+ {
+  "id": "PROB-15",
+  "topic": "PROBABILITY",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "spinner with unequal sector angles; probability from central angles"
+ },
+ {
+  "id": "PROB-16",
+  "topic": "PROBABILITY",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "find an unknown count so that a probability equals a given value"
+ },
+ {
+  "id": "PCT-01",
+  "topic": "PERCENT",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "successive percent increase and decrease"
+ },
+ {
+  "id": "PCT-02",
+  "topic": "PERCENT",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "find the original price after a discount and a tax"
+ },
+ {
+  "id": "PCT-03",
+  "topic": "PERCENT",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "percent change between two values"
+ },
+ {
+  "id": "PCT-04",
+  "topic": "PERCENT",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "percent of a percent: part of a group that is part of a larger group"
+ },
+ {
+  "id": "PCT-05",
+  "topic": "PERCENT",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "read a bar graph and compute a percent increase between two bars"
+ },
+ {
+  "id": "PCT-06",
+  "topic": "PERCENT",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "simple vs. compound interest over a few years"
+ },
+ {
+  "id": "PCT-07",
+  "topic": "PERCENT",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "percent of a total from a table of categories (table field)"
+ },
+ {
+  "id": "PCT-08",
+  "topic": "PERCENT",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "a quantity is p% more than one value and q% less than another; relate them"
+ }
+]

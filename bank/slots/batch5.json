@@ -1,0 +1,156 @@
+[
+ {
+  "id": "AREA-01",
+  "topic": "AREA_VOLUME",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "area of a composite figure: rectangle with a semicircle"
+ },
+ {
+  "id": "AREA-02",
+  "topic": "AREA_VOLUME",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "shaded region between a square and an inscribed circle"
+ },
+ {
+  "id": "AREA-03",
+  "topic": "AREA_VOLUME",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "volume of a cylinder from a figure"
+ },
+ {
+  "id": "AREA-04",
+  "topic": "AREA_VOLUME",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "scaling: radius and height change; new volume ratio"
+ },
+ {
+  "id": "AREA-05",
+  "topic": "AREA_VOLUME",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "area of a trapezoid with a missing height found by the Pythagorean theorem"
+ },
+ {
+  "id": "AREA-06",
+  "topic": "AREA_VOLUME",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "surface area of a rectangular box with labeled edges"
+ },
+ {
+  "id": "AREA-07",
+  "topic": "AREA_VOLUME",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "perimeter given area and a length-width relation"
+ },
+ {
+  "id": "AREA-08",
+  "topic": "AREA_VOLUME",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "arc length and sector area in a circle with a central angle"
+ },
+ {
+  "id": "AREA-09",
+  "topic": "AREA_VOLUME",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "area of a triangle on a coordinate grid"
+ },
+ {
+  "id": "AREA-10",
+  "topic": "AREA_VOLUME",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "volume of a cone vs. a cylinder with the same base"
+ },
+ {
+  "id": "AREA-11",
+  "topic": "AREA_VOLUME",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "circle: area from circumference"
+ },
+ {
+  "id": "AREA-12",
+  "topic": "AREA_VOLUME",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "rectangle inscribed in a circle; find the circle area"
+ },
+ {
+  "id": "ANG-01",
+  "topic": "ANGLES",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "parallel lines cut by a transversal; find an angle"
+ },
+ {
+  "id": "ANG-02",
+  "topic": "ANGLES",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "two transversals and parallel lines; angle chase to an unknown"
+ },
+ {
+  "id": "ANG-03",
+  "topic": "ANGLES",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "triangle angle sum with an exterior angle"
+ },
+ {
+  "id": "ANG-04",
+  "topic": "ANGLES",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "isosceles triangle with tick marks; find a base angle"
+ },
+ {
+  "id": "ANG-05",
+  "topic": "ANGLES",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "interior angle of a regular polygon"
+ },
+ {
+  "id": "ANG-06",
+  "topic": "ANGLES",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "similar triangles with a parallel segment inside a triangle; find a length"
+ },
+ {
+  "id": "ANG-07",
+  "topic": "ANGLES",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "Pythagorean theorem in a right triangle with one leg unknown"
+ },
+ {
+  "id": "ANG-08",
+  "topic": "ANGLES",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "special right triangle (30-60-90) inside a figure"
+ },
+ {
+  "id": "ANG-09",
+  "topic": "ANGLES",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "vertical and supplementary angles at two intersecting lines"
+ },
+ {
+  "id": "ANG-10",
+  "topic": "ANGLES",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "number of sides of a regular polygon from an exterior angle condition"
+ }
+]

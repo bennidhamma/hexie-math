@@ -1,0 +1,170 @@
+[
+ {
+  "id": "FUN-01",
+  "topic": "FUNCTIONS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "evaluate a composite function f(g(x))"
+ },
+ {
+  "id": "FUN-02",
+  "topic": "FUNCTIONS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "find the inverse of a linear or rational function"
+ },
+ {
+  "id": "FUN-03",
+  "topic": "FUNCTIONS",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "read values from the graph of a function"
+ },
+ {
+  "id": "FUN-04",
+  "topic": "FUNCTIONS",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "graph transformation: which equation matches a shifted graph"
+ },
+ {
+  "id": "FUN-05",
+  "topic": "FUNCTIONS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "function notation with an expression input f(x+2)"
+ },
+ {
+  "id": "FUN-06",
+  "topic": "FUNCTIONS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "piecewise function evaluation at a boundary"
+ },
+ {
+  "id": "FUN-07",
+  "topic": "FUNCTIONS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "domain of a function with a square root or denominator"
+ },
+ {
+  "id": "FUN-08",
+  "topic": "FUNCTIONS",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "read a function graph to count solutions of f(x) = k"
+ },
+ {
+  "id": "FUN-09",
+  "topic": "FUNCTIONS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "average rate of change over an interval"
+ },
+ {
+  "id": "FUN-10",
+  "topic": "FUNCTIONS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "find a constant so that f(a) equals a value"
+ },
+ {
+  "id": "QUAD-01",
+  "topic": "QUADRATICS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "solve a quadratic by factoring"
+ },
+ {
+  "id": "QUAD-02",
+  "topic": "QUADRATICS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "sum and product of roots from coefficients"
+ },
+ {
+  "id": "QUAD-03",
+  "topic": "QUADRATICS",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "vertex and axis of symmetry from a graphed parabola"
+ },
+ {
+  "id": "QUAD-04",
+  "topic": "QUADRATICS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "complete the square to find the vertex"
+ },
+ {
+  "id": "QUAD-05",
+  "topic": "QUADRATICS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "use the quadratic formula; simplify the radical"
+ },
+ {
+  "id": "QUAD-06",
+  "topic": "QUADRATICS",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "projectile height graph: time to reach maximum height"
+ },
+ {
+  "id": "QUAD-07",
+  "topic": "QUADRATICS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "multiply and simplify polynomials"
+ },
+ {
+  "id": "QUAD-08",
+  "topic": "QUADRATICS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "discriminant: values of k for two real solutions"
+ },
+ {
+  "id": "QUAD-09",
+  "topic": "QUADRATICS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "factor a difference of squares"
+ },
+ {
+  "id": "QUAD-10",
+  "topic": "QUADRATICS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "polynomial remainder or a factor test"
+ },
+ {
+  "id": "NUM-01",
+  "topic": "FRACTIONS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "arithmetic sequence: find the nth term"
+ },
+ {
+  "id": "NUM-02",
+  "topic": "FRACTIONS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "geometric sequence: find a term or a ratio"
+ },
+ {
+  "id": "NUM-03",
+  "topic": "FRACTIONS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "complex numbers: multiply and simplify i^2"
+ },
+ {
+  "id": "NUM-04",
+  "topic": "FRACTIONS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "complex fraction simplification with variables"
+ }
+]

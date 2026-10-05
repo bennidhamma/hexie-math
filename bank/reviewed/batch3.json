@@ -1,0 +1,458 @@
+[
+  {
+    "id": "EXP-01",
+    "topic": "EXPONENTS",
+    "difficulty": "medium",
+    "skill": "simplify a product and quotient of monomials with negative exponents",
+    "stem": "For nonzero \\(x\\) and \\(y\\), which expression is equivalent to \\(\\frac{(5x^{-3}y^{4})(5x^{4}y^{-3})}{5x^{-2}y^{3}}\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{5y^{4}}{x}\\)",
+      "\\(\\frac{5x^{3}}{y^{2}}\\)",
+      "\\(\\frac{25x^{3}}{y^{2}}\\)",
+      "\\(5x^{5}y^{4}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Add exponents when multiplying and subtract exponents when dividing.\n\\(5 \\cdot 5 \\div 5 = 5\\)\n\\(x^{-3+4-(-2)}y^{4-3-3}=x^{3}y^{-2}\\)\nThe result is \\(\\frac{5x^{3}}{y^{2}}\\).\nTraps: \\(\\frac{5y^{4}}{x}\\) adds the denominator's exponents; \\(5x^{5}y^{4}\\) treats negative exponents as positive; \\(\\frac{25x^{3}}{y^{2}}\\) omits division by \\(5\\).",
+    "check": "from fractions import Fraction as F; print(f\"{F(5*5,5)}*x**{-3+4-(-2)}*y**{4-3-3}\")",
+    "template": "EXP_01"
+  },
+  {
+    "id": "EXP-02",
+    "topic": "EXPONENTS",
+    "difficulty": "hard",
+    "skill": "solve an exponential equation by matching bases (powers of 2 or 3)",
+    "stem": "What real value of \\(x\\) satisfies \\(81^{x-1}=\\frac{9^{x}}{27}\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(-1\\)",
+      "\\(\\frac{1}{6}\\)",
+      "\\(\\frac{1}{2}\\)",
+      "\\(\\frac{7}{2}\\)"
+    ],
+    "answer": 2,
+    "explanation": "Rewrite both sides with the same base, then equate their exponents.\n\\(3^{4(x-1)}=3^{2x-3}\\)\n\\(4x-4=2x-3\\)\n\\((4-2)x=1\\), so \\(x=\\frac{1}{2}\\).\nTraps: \\(\\frac{7}{2}\\) adds the denominator's exponent; \\(-1\\) fails to distribute \\(4\\); \\(\\frac{1}{6}\\) adds the coefficients of \\(x\\) instead of subtracting.",
+    "check": "from fractions import Fraction as F; print(F(4*1-3,4-2))",
+    "template": "EXP_02"
+  },
+  {
+    "id": "EXP-03",
+    "topic": "EXPONENTS",
+    "difficulty": "medium",
+    "skill": "evaluate a fractional exponent",
+    "stem": "What is the value of \\(\\left(\\frac{64}{125}\\right)^{-\\frac{2}{3}}\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{16}{25}\\)",
+      "\\(\\frac{5}{4}\\)",
+      "\\(\\frac{25}{16}\\)",
+      "\\(\\frac{125}{64}\\)"
+    ],
+    "answer": 2,
+    "explanation": "The denominator of the exponent gives the root, and a negative exponent takes the reciprocal.\n\\(\\sqrt[3]{\\frac{64}{125}}=\\frac{4}{5}\\)\n\\(\\left(\\frac{4}{5}\\right)^{-2}=\\left(\\frac{5}{4}\\right)^{2}=\\frac{25}{16}\\)\nTraps: \\(\\frac{16}{25}\\) ignores the negative sign; \\(\\frac{5}{4}\\) omits squaring; \\(\\frac{125}{64}\\) takes only the reciprocal of the original fraction.",
+    "check": "print((64/125)**(-2/3))",
+    "template": "EXP_03"
+  },
+  {
+    "id": "EXP-04",
+    "topic": "EXPONENTS",
+    "difficulty": "hard",
+    "skill": "simplify a sum of radicals that need simplifying first",
+    "stem": "Which expression is equivalent to \\(\\sqrt{343}+\\frac{1}{2}\\sqrt{252}-\\sqrt{112}\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(6\\sqrt{7}\\)",
+      "\\(\\sqrt{357}\\)",
+      "\\(9\\sqrt{7}\\)",
+      "\\(14\\sqrt{7}\\)"
+    ],
+    "answer": 0,
+    "explanation": "Extract perfect-square factors before combining like radicals.\n\\(\\sqrt{343}=7\\sqrt{7}, \\sqrt{252}=6\\sqrt{7}, \\sqrt{112}=4\\sqrt{7}\\)\n\\((7+3-4)\\sqrt{7}=6\\sqrt{7}\\)\nTraps: \\(9\\sqrt{7}\\) drops the factor \\(\\frac{1}{2}\\); \\(14\\sqrt{7}\\) adds the last radical; \\(\\sqrt{357}\\) combines the radicands before taking a square root.",
+    "check": "import math; print(math.sqrt(343)+math.sqrt(252)/2-math.sqrt(112))",
+    "template": "EXP_04"
+  },
+  {
+    "id": "EXP-05",
+    "topic": "EXPONENTS",
+    "difficulty": "medium",
+    "skill": "rationalize a denominator",
+    "stem": "Which expression is equivalent to \\(\\frac{6}{\\sqrt{10}-2}\\) and has a rational denominator?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\((\\sqrt{10}-2)\\)",
+      "\\(\\frac{6(\\sqrt{10}+2)}{14}\\)",
+      "\\(\\frac{6(\\sqrt{10}+2)}{10}\\)",
+      "\\((\\sqrt{10}+2)\\)"
+    ],
+    "answer": 3,
+    "explanation": "Multiply numerator and denominator by the conjugate of the denominator.\n\\(\\frac{6}{\\sqrt{10}-2}\\cdot \\frac{(\\sqrt{10}+2)}{(\\sqrt{10}+2)}=\\frac{6(\\sqrt{10}+2)}{10-4}\\)\n\\(\\frac{6(\\sqrt{10}+2)}{6}=(\\sqrt{10}+2)\\)\nTraps: \\((\\sqrt{10}-2)\\) keeps the minus sign in the numerator; \\(\\frac{6(\\sqrt{10}+2)}{14}\\) adds the squares in the denominator; \\(\\frac{6(\\sqrt{10}+2)}{10}\\) omits the subtracted square.",
+    "check": "import math; print(6/(math.sqrt(10)-2))",
+    "template": "EXP_05"
+  },
+  {
+    "id": "EXP-06",
+    "topic": "EXPONENTS",
+    "difficulty": "hard",
+    "skill": "exponential growth: doubling time",
+    "stem": "A bacterial population doubles at a constant time interval. At hour \\(4\\), it contains \\(50\\) bacteria; at hour \\(14\\), it contains \\(200\\). At what hour will it first contain \\(3200\\) bacteria?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(30\\)",
+      "\\(34\\)",
+      "\\(64\\)",
+      "\\(214\\)"
+    ],
+    "answer": 1,
+    "explanation": "Use the observed growth to find the doubling time, then count the required doublings.\n\\(\\frac{200}{50}=4=2^{2}\\), so one doubling takes \\(\\frac{10}{2}=5\\) hours.\n\\(\\frac{3200}{50}=2^{6}\\), so \\(6\\) doublings are needed after hour \\(4\\).\n\\(4+6(5)=34\\) hours.\nTraps: \\(30\\) gives elapsed time only; \\(64\\) treats the observed interval as one doubling; \\(214\\) assumes linear growth.",
+    "check": "import math; print(4+(14-4)*math.log(3200/50,200/50))",
+    "template": "EXP_06"
+  },
+  {
+    "id": "EXP-07",
+    "topic": "EXPONENTS",
+    "difficulty": "medium",
+    "skill": "scientific notation product or quotient",
+    "stem": "What is the value of \\(\\frac{(6\\times 10^{6})(8\\times 10^{-2})}{2\\times 10^{-3}}\\), written in scientific notation?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(2.4 \\times 10^{2}\\)",
+      "\\(2.4 \\times 10^{7}\\)",
+      "\\(7 \\times 10^{7}\\)",
+      "\\(2.4 \\times 10^{8}\\)"
+    ],
+    "answer": 3,
+    "explanation": "Calculate the coefficient and power of ten separately, then normalize the coefficient.\n\\(\\frac{6\\cdot 8}{2}=24\\)\n\\(6+(-2)-(-3)=7\\)\n\\(24\\times 10^{7}=2.4 \\times 10^{8}\\)\nTraps: \\(2.4 \\times 10^{7}\\) moves the decimal without changing the exponent; \\(2.4 \\times 10^{2}\\) adds the denominator's exponent; \\(7 \\times 10^{7}\\) adds the coefficients in the numerator.",
+    "check": "print((6*10**6)*(8*10**(-2))/(2*10**(-3)))",
+    "template": "EXP_07"
+  },
+  {
+    "id": "EXP-08",
+    "topic": "EXPONENTS",
+    "difficulty": "hard",
+    "skill": "exponent rules with a variable exponent: 2^(x+3) - 2^x",
+    "stem": "If \\(2^{x+3}-2^{x}=448\\), what is the value of \\(2^{x-1}\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(28\\)",
+      "\\(32\\)",
+      "\\(64\\)",
+      "\\(112\\)"
+    ],
+    "answer": 1,
+    "explanation": "Factor out \\(2^{x}\\) before solving for the requested power.\n\\(2^{x}(2^{3}-1)=448\\)\n\\(2^{x}=\\frac{448}{7}=64\\)\n\\(2^{x-1}=\\frac{64}{2}=32\\)\nTraps: \\(64\\) stops at \\(2^{x}\\); \\(28\\) drops the subtracted term; \\(112\\) uses \\(3\\) instead of \\(2^{3}\\) as the multiplier.",
+    "check": "from fractions import Fraction as F; print(F(448,2**3-1)/2)",
+    "template": "EXP_08"
+  },
+  {
+    "id": "EXP-09",
+    "topic": "EXPONENTS",
+    "difficulty": "medium",
+    "skill": "power of a product with a coefficient",
+    "stem": "For nonzero \\(x\\) and \\(y\\), which expression is equivalent to \\((-5x^{4}y^{-1})^{3}\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(-125x^{7}y^{2}\\)",
+      "\\(-\\frac{125x^{12}}{y^{3}}\\)",
+      "\\(-\\frac{15x^{12}}{y^{3}}\\)",
+      "\\(-\\frac{5x^{12}}{y^{3}}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Raise every factor to the outer power, multiplying the exponents on powers.\n\\((-5)^{3}=-125, (x^{4})^{3}=x^{12}, (y^{-1})^{3}=y^{-3}\\)\nThe result is \\(-\\frac{125x^{12}}{y^{3}}\\).\nTraps: \\(-\\frac{15x^{12}}{y^{3}}\\) multiplies the coefficient by the outer exponent; \\(-\\frac{5x^{12}}{y^{3}}\\) leaves the coefficient unchanged; \\(-125x^{7}y^{2}\\) adds exponents instead of multiplying.",
+    "check": "print(f\"{(-5)**3}*x**{4*3}*y**{-1*3}\")",
+    "template": "EXP_09"
+  },
+  {
+    "id": "EXP-10",
+    "topic": "EXPONENTS",
+    "difficulty": "hard",
+    "skill": "exponential decay model; find the value after t periods",
+    "stem": "A chemical sample loses \\(25\\%\\) of its remaining mass every \\(5\\) hours. At \\(5\\) hours after an experiment begins, its mass is \\(128\\) grams. What is its mass, in grams, at \\(15\\) hours after the experiment begins?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(8\\)",
+      "\\(54\\)",
+      "\\(64\\)",
+      "\\(72\\)"
+    ],
+    "answer": 3,
+    "explanation": "Apply the retained fraction once for each interval after the given measurement.\n\\(\\frac{15-5}{5}=2\\) intervals.\n\\(1-\\frac{1}{4}=\\frac{3}{4}\\) of the mass remains each interval.\n\\(128\\left(\\frac{3}{4}\\right)^{2}=72\\) grams.\nTraps: \\(8\\) uses the lost fraction as the retained fraction; \\(64\\) subtracts the same mass each interval; \\(54\\) counts intervals from the start of the experiment.",
+    "check": "from fractions import Fraction as F; print(128*(1-F(25,100))**((15-5)//5))",
+    "template": "EXP_10"
+  },
+  {
+    "id": "REW-01",
+    "topic": "REWRITING",
+    "difficulty": "medium",
+    "skill": "solve a formula for one variable (several steps)",
+    "stem": "If \\(P=\\frac{5x+5y}{2}\\), which expression equals \\(y\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{P-5x}{5}\\)",
+      "\\(\\frac{2(P-5x)}{5}\\)",
+      "\\(\\frac{2P-5x}{5}\\)",
+      "\\(\\frac{2P+5x}{5}\\)"
+    ],
+    "answer": 2,
+    "explanation": "Clear the denominator, then isolate the term containing \\(y\\).\n\\(2P=5x+5y\\)\n\\(5y=2P-5x\\)\n\\(y=\\frac{2P-5x}{5}\\)\nTraps: \\(\\frac{P-5x}{5}\\) drops the original denominator; \\(\\frac{2(P-5x)}{5}\\) multiplies the subtracted term by \\(2\\) too; \\(\\frac{2P+5x}{5}\\) adds instead of subtracting \\(5x\\).",
+    "check": "from fractions import Fraction as F; print(f\"y = {F(2,5)}*P - {F(5,5)}*x\")",
+    "template": "REW_01"
+  },
+  {
+    "id": "REW-02",
+    "topic": "REWRITING",
+    "difficulty": "hard",
+    "skill": "solve a rational formula for a variable that appears twice",
+    "stem": "If \\(y=\\frac{5x+4}{2x-4}\\), with \\(2x\\ne 4\\) and \\(2y\\ne 5\\), which expression equals \\(x\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{4y-4}{2y-5}\\)",
+      "\\(\\frac{4y+4}{2y-5}\\)",
+      "\\(\\frac{4y+4}{2y+5}\\)",
+      "\\(\\frac{2y-5}{4y+4}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Collect the terms containing \\(x\\) and factor out \\(x\\).\n\\(2xy-4y=5x+4\\)\n\\(x(2y-5)=4y+4\\)\n\\(x=\\frac{4y+4}{2y-5}\\)\nTraps: \\(\\frac{4y-4}{2y-5}\\) changes the sign of the constant \\(4\\); \\(\\frac{4y+4}{2y+5}\\) adds \\(5\\) when collecting terms; \\(\\frac{2y-5}{4y+4}\\) reverses the final quotient.",
+    "check": "from fractions import Fraction as F; print(f\"x = ({F(4,2)}*y + {F(4,2)})/(y - {F(5,2)})\")",
+    "template": "REW_02"
+  },
+  {
+    "id": "REW-03",
+    "topic": "REWRITING",
+    "difficulty": "medium",
+    "skill": "solve a linear equation with fractions",
+    "stem": "What value of \\(x\\) satisfies \\(\\frac{x-6}{3}+\\frac{x+7}{4}=5\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{8}{7}\\)",
+      "\\(\\frac{15}{7}\\)",
+      "\\(9\\)",
+      "\\(17\\)"
+    ],
+    "answer": 2,
+    "explanation": "Multiply every term by a common denominator before combining like terms.\n\\(4(x-6)+3(x+7)=60\\)\n\\(7x=63\\)\n\\(x=9\\)\nTraps: \\(\\frac{15}{7}\\) changes the sign of \\(6\\) inside the first numerator; \\(\\frac{8}{7}\\) fails to multiply the right side; \\(17\\) adds the two denominators.",
+    "check": "from fractions import Fraction as F; print(F(3*4*5+4*6-3*7,3+4))",
+    "template": "REW_03"
+  },
+  {
+    "id": "REW-04",
+    "topic": "REWRITING",
+    "difficulty": "hard",
+    "skill": "solve an absolute value equation; sum of solutions",
+    "stem": "What is the sum of all real solutions of \\(3\\left|5x-20\\right|+1=76\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(8\\)",
+      "\\(9\\)",
+      "\\(10\\)",
+      "\\(40\\)"
+    ],
+    "answer": 0,
+    "explanation": "An absolute value equal to a positive number gives two linear equations.\n\\(\\left|5x-20\\right|=25\\)\n\\(5x-20=25\\) or \\(5x-20=-25\\)\n\\(x=9\\) or \\(x=-1\\)\n\\(9+(-1)=8\\)\nTraps: \\(9\\) uses only the positive branch; \\(10\\) adds the absolute values of the solutions; \\(40\\) omits division by \\(5\\).",
+    "check": "from fractions import Fraction as F; k=F(76-1,3); print(F(20+k,5)+F(20-k,5))",
+    "template": "REW_04"
+  },
+  {
+    "id": "REW-05",
+    "topic": "REWRITING",
+    "difficulty": "medium",
+    "skill": "solve a literal equation with a squared variable",
+    "stem": "Positive quantities \\(V\\), \\(r\\), and \\(h\\) satisfy \\(V=\\frac{4}{5}\\pi r^{2}h\\). Which expression gives \\(r\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{5V}{4\\pi h}\\)",
+      "\\(\\sqrt{\\frac{4V}{5\\pi h}}\\)",
+      "\\(\\sqrt{\\frac{5V}{4\\pi h}}\\)",
+      "\\(\\frac{\\sqrt{5V}}{4\\pi h}\\)"
+    ],
+    "answer": 2,
+    "explanation": "Isolate the squared variable, then take the positive square root.\n\\(5V=4\\pi r^{2}h\\)\n\\(r^{2}=\\frac{5V}{4\\pi h}\\)\n\\(r=\\sqrt{\\frac{5V}{4\\pi h}}\\)\nTraps: \\(\\frac{5V}{4\\pi h}\\) stops at \\(r^{2}\\); \\(\\sqrt{\\frac{4V}{5\\pi h}}\\) reverses the fraction incorrectly; \\(\\frac{\\sqrt{5V}}{4\\pi h}\\) takes the square root of only the numerator.",
+    "check": "from fractions import Fraction as F; print(f\"sqrt({1/F(4,5)}*V/(pi*h))\")",
+    "template": "REW_05"
+  },
+  {
+    "id": "REW-06",
+    "topic": "REWRITING",
+    "difficulty": "hard",
+    "skill": "equivalent expression by factoring out a common binomial",
+    "stem": "For \\(x\\ne \\frac{1}{3}\\), which expression is equivalent to \\(\\frac{9x(x-4)-3(x-4)}{3x-1}\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(x - 4\\)",
+      "\\(3x - 12\\)",
+      "\\(3x - 4\\)",
+      "\\(3x + 12\\)"
+    ],
+    "answer": 1,
+    "explanation": "Factor out the repeated binomial, then cancel the common factor.\n\\(9x(x-4)-3(x-4)=(x-4)(9x-3)\\)\n\\(9x-3=3(3x-1)\\)\n\\(\\frac{9x(x-4)-3(x-4)}{3x-1}=3(x-4)=3x - 12\\)\nTraps: \\(x - 4\\) drops the factor \\(3\\); \\(3x - 4\\) fails to distribute \\(3\\) to the constant; \\(3x + 12\\) changes the subtraction to addition.",
+    "check": "from fractions import Fraction as F; a,b,c,d,e=9,4,3,3,1; assert F(a,d)==F(c,e); print(f\"{F(a,d)}*x - {F(a,d)*b}\")",
+    "template": "REW_06"
+  },
+  {
+    "id": "REW-07",
+    "topic": "REWRITING",
+    "difficulty": "medium",
+    "skill": "solve a linear inequality with a negative coefficient",
+    "stem": "Which inequality describes all real solutions of \\(9-5(2x-3)\\le -26\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(x\\ge -\\frac{1}{5}\\)",
+      "\\(x\\ge 2\\)",
+      "\\(x\\le 5\\)",
+      "\\(x\\ge 5\\)"
+    ],
+    "answer": 3,
+    "explanation": "Reverse the inequality when dividing by a negative number.\n\\(24-10x\\le -26\\)\n\\(-10x\\le -50\\)\n\\(x\\ge 5\\)\nTraps: \\(x\\le 5\\) keeps the inequality direction; \\(x\\ge 2\\) distributes the negative sign incorrectly; \\(x\\ge -\\frac{1}{5}\\) uses the wrong sign for the right-side constant when rearranging.",
+    "check": "from fractions import Fraction as F; print(\"x >=\",F(-26-9-5*3,-5*2))",
+    "template": "REW_07"
+  },
+  {
+    "id": "REW-08",
+    "topic": "REWRITING",
+    "difficulty": "hard",
+    "skill": "solve a radical equation and reject the extraneous root",
+    "stem": "Which set contains all real solutions of \\(\\sqrt{5x + 4}=x-4\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\{1\\}\\)",
+      "\\(\\{12\\}\\)",
+      "\\(\\{13\\}\\)",
+      "\\(\\{1, 12\\}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Squaring can introduce an extra root, so check both candidates in the original equation.\n\\(5x + 4=(x-4)^{2}\\)\n\\((x- 12)(x- 1)=0\\), giving \\(x=1\\) or \\(x=12\\).\n\\(x=1\\) gives \\(3=-3\\), which is false.\n\\(x=12\\) gives \\(8=8\\), so the solution set is \\(\\{12\\}\\).\nTraps: \\(\\{1\\}\\) keeps only the rejected root; \\(\\{1, 12\\}\\) skips the check; \\(\\{13\\}\\) adds the candidates instead of checking them.",
+    "check": "import math; roots=[(13+s*math.sqrt(13**2-4*12))/2 for s in [-1,1]]; print([x for x in roots if x>=4 and math.isclose(math.sqrt(5*x+4),x-4)])",
+    "template": "REW_08"
+  },
+  {
+    "id": "LOG-01",
+    "topic": "LOGARITHMS",
+    "difficulty": "medium",
+    "skill": "rewrite a log equation in exponential form",
+    "stem": "What value of \\(x\\) satisfies \\(\\log_{4}(x+8)=3\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(4\\)",
+      "\\(56\\)",
+      "\\(72\\)",
+      "\\(73\\)"
+    ],
+    "answer": 1,
+    "explanation": "Rewrite a logarithmic equation as a power of its base.\n\\(x+8=4^{3}=64\\)\n\\(x=64-8=56\\)\nTraps: \\(4\\) multiplies the base by the exponent; \\(73\\) swaps the base and exponent; \\(72\\) adds the offset instead of subtracting it.",
+    "check": "print(4**3-8)",
+    "template": "LOG_01"
+  },
+  {
+    "id": "LOG-02",
+    "topic": "LOGARITHMS",
+    "difficulty": "hard",
+    "skill": "log rules: expand or combine to evaluate",
+    "stem": "For positive numbers \\(u\\) and \\(v\\), \\(\\log_{3}u=4\\) and \\(\\log_{3}v=2\\). What is the value of \\(\\log_{3}\\left(\\frac{u^{2}\\sqrt{v}}{27}\\right)\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(6\\)",
+      "\\(7\\)",
+      "\\(12\\)",
+      "\\(14\\)"
+    ],
+    "answer": 0,
+    "explanation": "Use the product, quotient, and power rules to separate the logarithm.\n\\(\\log_{3}\\left(\\frac{u^{2}\\sqrt{v}}{27}\\right)=2\\log_{3}u+\\frac{1}{2}\\log_{3}v-\\log_{3}27\\)\n\\(2(4)+\\frac{1}{2}(2)-3=6\\)\nTraps: \\(12\\) adds the denominator's logarithm; \\(7\\) ignores the square root; \\(14\\) squares the logarithm instead of multiplying it by two.",
+    "check": "import math; print(round(math.log((3**4)**2*math.sqrt(3**2)/27,3),10))",
+    "template": "LOG_02"
+  },
+  {
+    "id": "LOG-03",
+    "topic": "LOGARITHMS",
+    "difficulty": "medium",
+    "skill": "evaluate a log with a fractional or reciprocal argument",
+    "stem": "What is the value of \\(\\log_{27}\\left(\\frac{1}{3}\\right)\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(-3\\)",
+      "\\(-1\\)",
+      "\\(-\\frac{1}{3}\\)",
+      "\\(\\frac{1}{3}\\)"
+    ],
+    "answer": 2,
+    "explanation": "Express the base and reciprocal argument as powers of the same number.\nLet \\(y\\) be the logarithm: \\((3^{3})^{y}=3^{-1}\\).\n\\(3y=-1\\)\n\\(y=-\\frac{1}{3}\\)\nTraps: \\(-1\\) ignores the power in the base; \\(\\frac{1}{3}\\) ignores the reciprocal; \\(-3\\) reverses the ratio of exponents.",
+    "check": "import math; print(math.log(1/3)/math.log(27))",
+    "template": "LOG_03"
+  },
+  {
+    "id": "LOG-04",
+    "topic": "LOGARITHMS",
+    "difficulty": "hard",
+    "skill": "solve a log equation; check the domain",
+    "stem": "Which set contains all real solutions of \\(\\log_{5}x+\\log_{5}(x-20)=3\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\{-5\\}\\)",
+      "\\(\\{25\\}\\)",
+      "\\(\\{\\frac{145}{2}\\}\\)",
+      "\\(\\{-5, 25\\}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Combine the logarithms using a product, and require both original arguments to be positive.\n\\(x>20\\) is required.\n\\(x(x-20)=5^{3}=125\\)\n\\((x-25)(x+5)=0\\), giving \\(x=25\\) or \\(x=-5\\).\nOnly \\(25\\) is greater than \\(20\\), so the solution set is \\(\\{25\\}\\).\nTraps: \\(\\{-5\\}\\) keeps only the invalid root; \\(\\{-5, 25\\}\\) ignores the domain; \\(\\{\\frac{145}{2}\\}\\) adds the arguments instead of multiplying them.",
+    "check": "import math; roots=[(20+s*math.sqrt(20**2+4*5**3))/2 for s in [-1,1]]; print([x for x in roots if x>20 and math.isclose(math.log(x,5)+math.log(x-20,5),3)])",
+    "template": "LOG_04"
+  },
+  {
+    "id": "LOG-05",
+    "topic": "LOGARITHMS",
+    "difficulty": "medium",
+    "skill": "change of base or comparing log values",
+    "stem": "Use \\(\\ln 7\\approx 1.946\\) and \\(\\ln 3\\approx 1.099\\). What is \\(\\log_{9}21\\), to the nearest hundredth?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(0.72\\)",
+      "\\(0.97\\)",
+      "\\(1.39\\)",
+      "\\(2.77\\)"
+    ],
+    "answer": 2,
+    "explanation": "Apply change of base, then expand the logarithms of the product and the square.\n\\(\\log_{9}21=\\frac{\\ln 21}{\\ln 9}=\\frac{\\ln 7+\\ln 3}{2\\ln 3}\\)\n\\(\\frac{1.946+1.099}{2(1.099)}\\approx 1.39\\)\nTraps: \\(0.72\\) reverses the change-of-base quotient; \\(2.77\\) forgets that the base is a square; \\(0.97\\) multiplies the logarithms of the factors.",
+    "check": "print(round((1.946+1.099)/(2*1.099),2))",
+    "template": "LOG_05"
+  },
+  {
+    "id": "LOG-06",
+    "topic": "LOGARITHMS",
+    "difficulty": "hard",
+    "skill": "solve an exponential equation with logs",
+    "stem": "Which expression gives the real solution of \\(6\\cdot 3^{2x+2}=90\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{\\ln 15-2\\ln 3}{2\\ln 3}\\)",
+      "\\(\\frac{\\ln 15-2\\ln 3}{\\ln 3}\\)",
+      "\\(\\frac{\\ln 90-2\\ln 3}{2\\ln 3}\\)",
+      "\\(\\frac{\\ln 15+2\\ln 3}{2\\ln 3}\\)"
+    ],
+    "answer": 0,
+    "explanation": "Isolate the exponential factor, take logarithms, and solve the resulting linear equation.\n\\(3^{2x+2}=15\\)\n\\((2x+2)\\ln 3=\\ln 15\\)\n\\(x=\\frac{\\ln 15-2\\ln 3}{2\\ln 3}\\)\nTraps: \\(\\frac{\\ln 90-2\\ln 3}{2\\ln 3}\\) forgets to divide by \\(6\\); \\(\\frac{\\ln 15+2\\ln 3}{2\\ln 3}\\) adds the exponent's constant term when isolating \\(x\\); \\(\\frac{\\ln 15-2\\ln 3}{\\ln 3}\\) omits division by \\(2\\).",
+    "check": "import math; print((math.log(90/6)/math.log(3)-2)/2)",
+    "template": "LOG_06"
+  }
+]

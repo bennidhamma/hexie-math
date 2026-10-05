@@ -1,0 +1,648 @@
+[
+  {
+    "id": "COORD-01",
+    "topic": "SLOPE",
+    "difficulty": "medium",
+    "skill": "equation of a line through two points",
+    "stem": "Which equation represents the line through \\((3, 8)\\) and \\((9, 16)\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(y = -\\frac{4}{3}x + 12\\)",
+      "\\(y = \\frac{3}{4}x + \\frac{23}{4}\\)",
+      "\\(y = \\frac{4}{3}x + 4\\)",
+      "\\(y = \\frac{4}{3}x + 8\\)"
+    ],
+    "answer": 2,
+    "explanation": "Find the slope, then use either point to find the intercept.\n\\(m = \\frac{16 - 8}{9 - 3} = \\frac{4}{3}\\)\n\\(b = 8 - (\\frac{4}{3})(3) = 4\\)\n\\(y = \\frac{4}{3}x + 4\\)\nTrap: \\(y = \\frac{3}{4}x + \\frac{23}{4}\\) reverses rise and run; \\(y = -\\frac{4}{3}x + 12\\) reverses only one subtraction; \\(y = \\frac{4}{3}x + 8\\) uses the first point’s height as the intercept.",
+    "check": "from fractions import Fraction as F; m = F(16-8, 9-3); print(f'y = {m}x + {8 - m*3}')",
+    "template": "COORD_01"
+  },
+  {
+    "id": "COORD-02",
+    "topic": "SLOPE",
+    "difficulty": "hard",
+    "skill": "perpendicular line through a point shown on a graph",
+    "stem": "Line \\(k\\) and point \\(P\\) are shown in the standard \\((x,y)\\) coordinate plane. Which equation represents the line through \\(P\\) that is perpendicular to line \\(k\\)?",
+    "table": null,
+    "figure": {
+      "description": "Draw a square coordinate grid with equal unit spacing. The visible horizontal range is \\(-5\\) through \\(6\\), and the visible vertical range is \\(-5\\) through \\(6\\). Draw thin light-gray grid lines at every integer and darker axes with arrowheads at the positive ends. Label the horizontal axis \\(x\\) and the vertical axis \\(y\\). Label every integer tick and put a single \\(0\\) beside the origin. Draw one straight solid line through exactly \\((-2,-3)\\) and \\((4,1)\\), extended to the edges of the grid with arrowheads at both ends. Put small filled dots at \\((-2,-3)\\) and \\((4,1)\\), with no labels. Put the italic letter \\(k\\) just above the line near \\((5,2)\\). Plot a filled dot at \\((2,5)\\) and label it \\(P\\), just above-left of the dot. Do not print coordinate pairs, equations, or a second line. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "On a coordinate grid, line \\(k\\) passes through \\((-2,-3)\\) and \\((4,1)\\), and point \\(P\\) is at \\((2,5)\\).",
+      "notToScale": false
+    },
+    "choices": [
+      "\\(y=-\\frac{3}{2}x+8\\)",
+      "\\(y=-\\frac{2}{3}x+\\frac{19}{3}\\)",
+      "\\(y=\\frac{2}{3}x+\\frac{11}{3}\\)",
+      "\\(y=\\frac{3}{2}x+2\\)"
+    ],
+    "answer": 0,
+    "explanation": "Perpendicular lines have slopes that are negative reciprocals.\nLine \\(k\\) passes through \\((-2,-3)\\) and \\((4,1)\\).\nSlope of \\(k\\): \\(\\frac{1-(-3)}{4-(-2)}=\\frac{4}{6}=\\frac{2}{3}\\).\nPerpendicular slope: \\(-\\frac{3}{2}\\).\nPoint \\(P\\) is \\((2,5)\\), so \\(b=5-\\left(-\\frac{3}{2}\\right)(2)=8\\).\nThe equation is \\(y=-\\frac{3}{2}x+8\\).\nTrap: \\(y=-\\frac{2}{3}x+\\frac{19}{3}\\) changes the sign but does not flip the fraction; \\(y=\\frac{2}{3}x+\\frac{11}{3}\\) is parallel to \\(k\\); \\(y=\\frac{3}{2}x+2\\) flips the fraction but keeps the sign.",
+    "check": "from fractions import Fraction as F; s = -1/F(1-(-3), 4-(-2)); print(f'y = {s}x + {5 - s*2}')",
+    "template": null
+  },
+  {
+    "id": "COORD-03",
+    "topic": "SLOPE",
+    "difficulty": "medium",
+    "skill": "slope of a line in standard form",
+    "stem": "A line has equation \\(5x + 9y = 45\\). What is its slope?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(-\\frac{9}{5}\\)",
+      "\\(-\\frac{5}{9}\\)",
+      "\\(\\frac{5}{9}\\)",
+      "\\(5\\)"
+    ],
+    "answer": 1,
+    "explanation": "Isolate the vertical coordinate to read the slope.\n\\(9y = -5x + 45\\)\n\\(y = -\\frac{5}{9}x + 5\\)\nThe slope is \\(-\\frac{5}{9}\\).\nTrap: \\(-\\frac{9}{5}\\) reverses the ratio; \\(\\frac{5}{9}\\) loses the minus sign; \\(5\\) is the intercept.",
+    "check": "from fractions import Fraction as F; print(F(-5, 9))",
+    "template": "COORD_03"
+  },
+  {
+    "id": "COORD-04",
+    "topic": "SLOPE",
+    "difficulty": "hard",
+    "skill": "midpoint and distance between two points",
+    "stem": "The midpoint of \\(\\overline{AB}\\) is \\(M(1, 7)\\), and \\(A = (-2, 3)\\). What is the length of \\(\\overline{AB}\\) in coordinate units?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(5\\)",
+      "\\(10\\)",
+      "\\(14\\)",
+      "\\(100\\)"
+    ],
+    "answer": 1,
+    "explanation": "Recover the other endpoint using the midpoint, then apply the distance formula.\n\\(B = (2(1) - (-2), 2(7) - 3) = (4, 11)\\)\n\\(AB = \\sqrt{(4 - (-2))^{2} + (11 - 3)^{2}} = \\sqrt{100} = 10\\)\nTrap: \\(5\\) is only half the segment; \\(14\\) adds the horizontal and vertical changes; \\(100\\) omits the square root.",
+    "check": "import math; bx, by = 2*1-(-2), 2*7-3; print(math.hypot(bx-(-2), by-3))",
+    "template": "COORD_04"
+  },
+  {
+    "id": "COORD-05",
+    "topic": "SLOPE",
+    "difficulty": "medium",
+    "skill": "read slope and y-intercept from a graphed line",
+    "stem": "Which equation represents the line shown in the standard \\((x,y)\\) coordinate plane?",
+    "table": null,
+    "figure": {
+      "description": "Draw a square coordinate grid with equal unit spacing. The visible horizontal range is \\(-3\\) through \\(6\\), and the visible vertical range is \\(-3\\) through \\(5\\). Draw thin light-gray grid lines at every integer and darker axes with arrowheads at the positive ends. Label the horizontal axis \\(x\\) and the vertical axis \\(y\\). Label every integer tick and put a single \\(0\\) beside the origin. Draw one straight solid line falling from upper left to lower right through exactly \\((0,3)\\) and \\((4,0)\\), extended to the edges of the grid with arrowheads at both ends. Put small filled dots at \\((0,3)\\) and \\((4,0)\\), with no labels. Do not print coordinate pairs, an equation, or a line name. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "On a coordinate grid, a line falls from left to right through \\((0,3)\\) and \\((4,0)\\).",
+      "notToScale": false
+    },
+    "choices": [
+      "\\(y=-\\frac{4}{3}x+3\\)",
+      "\\(y=-\\frac{3}{4}x+3\\)",
+      "\\(y=-\\frac{3}{4}x+4\\)",
+      "\\(y=\\frac{3}{4}x+3\\)"
+    ],
+    "answer": 1,
+    "explanation": "Read the \\(y\\)-intercept where the line crosses the \\(y\\)-axis, then find the slope from two grid points.\nThe line crosses the \\(y\\)-axis at \\((0,3)\\), so \\(b=3\\).\nThe line also passes through \\((4,0)\\).\nSlope: \\(\\frac{0-3}{4-0}=-\\frac{3}{4}\\).\nThe equation is \\(y=-\\frac{3}{4}x+3\\).\nTrap: \\(y=-\\frac{4}{3}x+3\\) uses run over rise; \\(y=-\\frac{3}{4}x+4\\) uses the \\(x\\)-intercept as \\(b\\); \\(y=\\frac{3}{4}x+3\\) misses that the line falls from left to right.",
+    "check": "from fractions import Fraction as F; m = F(0-3, 4-0); print(f'y = {m}x + 3')",
+    "template": null
+  },
+  {
+    "id": "COORD-06",
+    "topic": "SLOPE",
+    "difficulty": "hard",
+    "skill": "equation of a circle from center and a point on it",
+    "stem": "A circle has center \\((2, 2)\\) and passes through \\((5, 6)\\). Which equation represents the circle?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(x^{2} + y^{2} - 4x - 4y - 53 = 0\\)",
+      "\\(x^{2} + y^{2} - 4x - 4y - 17 = 0\\)",
+      "\\(x^{2} + y^{2} - 4x - 4y + 3 = 0\\)",
+      "\\(x^{2} + y^{2} + 4x + 4y - 17 = 0\\)"
+    ],
+    "answer": 1,
+    "explanation": "The squared radius is the squared distance from the center to the given point.\n\\(r^{2} = (5 - 2)^{2} + (6 - 2)^{2} = 25\\)\n\\((x - 2)^{2} + (y - 2)^{2} = 25\\)\n\\(x^{2} + y^{2} - 4x - 4y - 17 = 0\\)\nTrap: the constant \\(3\\) uses the radius instead of its square; reversed linear signs put the center at \\((-2, -2)\\); the constant \\(-53\\) uses distance from the origin.",
+    "check": "h, k, px, py = 2, 2, 5, 6; r2 = (px-h)**2 + (py-k)**2; print(f'x^2 + y^2 + {-2*h}x + {-2*k}y + {h*h + k*k - r2} = 0')",
+    "template": "COORD_06"
+  },
+  {
+    "id": "COORD-07",
+    "topic": "SLOPE",
+    "difficulty": "medium",
+    "skill": "parallel line through a point",
+    "stem": "Which equation represents the line through \\((2, 1)\\) that is parallel to \\(3x + 2y = 18\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(y = -\\frac{3}{2}x + 1\\)",
+      "\\(y = -\\frac{3}{2}x + 4\\)",
+      "\\(y = -\\frac{3}{2}x + 9\\)",
+      "\\(y = \\frac{2}{3}x - \\frac{1}{3}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Parallel lines have the same slope but may have different intercepts.\n\\(y = -\\frac{3}{2}x + 9\\), so the slope is \\(-\\frac{3}{2}\\).\n\\(b = 1 - (-\\frac{3}{2})(2) = 4\\)\n\\(y = -\\frac{3}{2}x + 4\\)\nTrap: \\(y = \\frac{2}{3}x - \\frac{1}{3}\\) is perpendicular; \\(y = -\\frac{3}{2}x + 9\\) keeps the original intercept; \\(y = -\\frac{3}{2}x + 1\\) uses the point’s height as the intercept.",
+    "check": "from fractions import Fraction as F; m = F(-3, 2); print(f'y = {m}x + {1 - m*2}')",
+    "template": "COORD_07"
+  },
+  {
+    "id": "COORD-08",
+    "topic": "SLOPE",
+    "difficulty": "hard",
+    "skill": "find the intersection point of two graphed lines",
+    "stem": "Lines \\(m\\) and \\(n\\) are shown in the standard \\((x,y)\\) coordinate plane. What are the coordinates of the point where lines \\(m\\) and \\(n\\) intersect?",
+    "table": null,
+    "figure": {
+      "description": "Draw a square coordinate grid with equal unit spacing. The visible horizontal range is \\(-2\\) through \\(6\\), and the visible vertical range is \\(-3\\) through \\(6\\). Draw thin light-gray grid lines at every integer and darker axes with arrowheads at the positive ends. Label the horizontal axis \\(x\\) and the vertical axis \\(y\\). Label every integer tick and put a single \\(0\\) beside the origin. Draw line \\(m\\) through exactly \\((0,4)\\) and \\((4,0)\\), falling from upper left to lower right. Draw line \\(n\\) through exactly \\((0,-1)\\) and \\((2,3)\\), rising steeply from lower left to upper right. Extend both lines to the edges of the grid with arrowheads at both ends. Put small filled dots at \\((0,4)\\), \\((4,0)\\), \\((0,-1)\\), and \\((2,3)\\), with no labels. Put the italic letter \\(m\\) below-left of line \\(m\\) near \\((-1.5,5)\\), and the italic letter \\(n\\) to the right of line \\(n\\) near \\((3.5,5)\\). Do not mark or label the intersection point. Do not print coordinate pairs or equations. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "On a coordinate grid, line \\(m\\) passes through \\((0,4)\\) and \\((4,0)\\), and line \\(n\\) passes through \\((0,-1)\\) and \\((2,3)\\).",
+      "notToScale": false
+    },
+    "choices": [
+      "\\((1,3)\\)",
+      "\\(\\left(\\frac{5}{3},\\frac{7}{3}\\right)\\)",
+      "\\(\\left(\\frac{10}{3},\\frac{2}{3}\\right)\\)",
+      "\\((5,-1)\\)"
+    ],
+    "answer": 1,
+    "explanation": "Write an equation for each line, then solve the system.\nLine \\(m\\) passes through \\((0,4)\\) and \\((4,0)\\), so \\(y=-x+4\\).\nLine \\(n\\) passes through \\((0,-1)\\) and \\((2,3)\\), so \\(y=2x-1\\).\nSet them equal: \\(-x+4=2x-1\\), so \\(3x=5\\) and \\(x=\\frac{5}{3}\\).\nThen \\(y=-\\frac{5}{3}+4=\\frac{7}{3}\\).\nTrap: \\((1,3)\\) uses \\(+1\\) as the \\(y\\)-intercept of \\(n\\); \\(\\left(\\frac{10}{3},\\frac{2}{3}\\right)\\) uses \\(\\frac{1}{2}\\) as the slope of \\(n\\); \\((5,-1)\\) moves \\(-x\\) to the other side without changing its sign.",
+    "check": "from fractions import Fraction as F; x = F(4+1, 2+1); print((x, -x + 4))",
+    "template": null
+  },
+  {
+    "id": "COORD-09",
+    "topic": "SLOPE",
+    "difficulty": "medium",
+    "skill": "find k so that two lines are parallel",
+    "stem": "For what value of \\(k\\) are the lines \\(3x - 2y = 8\\) and \\((k + 1)x + 6y = 8\\) parallel?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(-10\\)",
+      "\\(-9\\)",
+      "\\(-2\\)",
+      "\\(8\\)"
+    ],
+    "answer": 0,
+    "explanation": "Set the slopes equal, keeping the signs from each standard-form equation.\n\\(-\\frac{k + 1}{6} = \\frac{3}{2}\\)\n\\(k + 1 = -9\\)\n\\(k = -10\\)\nTrap: \\(8\\) drops the slope’s minus sign; \\(-2\\) divides by the scale factor instead of multiplying; \\(-9\\) forgets to subtract \\(1\\).",
+    "check": "from fractions import Fraction as F; print(-F(3, 2)*6 - 1)",
+    "template": "COORD_09"
+  },
+  {
+    "id": "COORD-10",
+    "topic": "SLOPE",
+    "difficulty": "hard",
+    "skill": "center and radius of a circle from an equation (complete the square)",
+    "stem": "What are the center and radius of the circle \\(x^{2} + y^{2} + 6x + 4y - 23 = 0\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "Center \\((-3, -2)\\), radius \\(\\sqrt{23}\\)",
+      "Center \\((-3, -2)\\), radius \\(6\\)",
+      "Center \\((-3, -2)\\), radius \\(36\\)",
+      "Center \\((3, 2)\\), radius \\(6\\)"
+    ],
+    "answer": 1,
+    "explanation": "Complete both squares, then take the square root of the right side.\n\\((x^{2} + 6x + 9) + (y^{2} + 4y + 4) = 23 + 9 + 4\\)\n\\((x + 3)^{2} + (y + 2)^{2} = 36\\)\nThe center is \\((-3, -2)\\) and the radius is \\(6\\).\nTrap: \\((3, 2)\\) reverses the center’s signs; radius \\(\\sqrt{23}\\) omits the added squares; radius \\(36\\) omits the square root.",
+    "check": "import math; h, k = -6/2, -4/2; print((h, k), math.sqrt(23 + h*h + k*k))",
+    "template": "COORD_10"
+  },
+  {
+    "id": "TRIG-01",
+    "topic": "UNIT_CIRCLE",
+    "difficulty": "medium",
+    "skill": "exact value of sin or cos at a special angle in radians",
+    "stem": "What is the exact value of \\(\\sin(\\frac{4\\pi}{3})\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(-\\frac{\\sqrt{3}}{2}\\)",
+      "\\(-\\frac{1}{2}\\)",
+      "\\(\\frac{1}{2}\\)",
+      "\\(\\frac{\\sqrt{3}}{2}\\)"
+    ],
+    "answer": 0,
+    "explanation": "Use the reference angle for the magnitude and the quadrant for the sign.\n\\(\\frac{4\\pi}{3} - \\pi = \\frac{\\pi}{3}\\)\nIn quadrant III, sine is negative.\n\\(\\sin(\\frac{4\\pi}{3}) = -\\frac{\\sqrt{3}}{2}\\)\nTrap: \\(\\frac{\\sqrt{3}}{2}\\) has the wrong sign; \\(-\\frac{1}{2}\\) swaps sine and cosine magnitudes; \\(\\frac{1}{2}\\) makes both mistakes.",
+    "check": "import math; print(math.sin(4*math.pi/3), -math.sqrt(3)/2)",
+    "template": "TRIG_01"
+  },
+  {
+    "id": "TRIG-02",
+    "topic": "UNIT_CIRCLE",
+    "difficulty": "hard",
+    "skill": "given sin and the quadrant, find tan",
+    "stem": "If \\(\\sin\\theta = \\frac{24}{25}\\) and \\(\\theta\\) lies in quadrant II, what is \\(\\tan\\theta\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(-\\frac{24}{7}\\)",
+      "\\(-\\frac{7}{24}\\)",
+      "\\(\\frac{24}{25}\\)",
+      "\\(\\frac{24}{7}\\)"
+    ],
+    "answer": 0,
+    "explanation": "Use the Pythagorean identity to find cosine with the correct sign, then divide sine by cosine.\n\\(\\cos^{2}\\theta = 1 - (\\frac{24}{25})^{2} = \\frac{49}{625}\\)\n\\(\\cos\\theta = -\\frac{7}{25}\\) in quadrant II.\n\\(\\tan\\theta = \\frac{\\frac{24}{25}}{-\\frac{7}{25}} = -\\frac{24}{7}\\)\nTrap: \\(\\frac{24}{7}\\) uses the wrong quadrant sign; \\(-\\frac{7}{24}\\) divides cosine by sine; \\(\\frac{24}{25}\\) repeats the sine value.",
+    "check": "from fractions import Fraction as F; s = F(24, 25); c = -F(7, 25); print(s/c)",
+    "template": "TRIG_02"
+  },
+  {
+    "id": "TRIG-03",
+    "topic": "UNIT_CIRCLE",
+    "difficulty": "medium",
+    "skill": "right triangle trig: find a side using sin, cos, or tan",
+    "stem": "In right triangle \\(ABC\\) shown, \\(\\angle C\\) is a right angle. The length shown is in meters. What is the length of \\(\\overline{BC}\\), in meters?",
+    "table": null,
+    "figure": {
+      "description": "Draw a right triangle with \\(A\\) at the lower left, \\(C\\) at the lower right, and \\(B\\) directly above \\(C\\). The bottom side \\(AC\\) is horizontal and the right side \\(BC\\) is vertical. Mark a small right-angle square at \\(C\\). Draw a small angle arc at \\(A\\) between \\(AC\\) and \\(AB\\) and label it \\(32^{\\circ}\\) inside the triangle. Label the bottom side \\(15\\), centered below it. Put the point labels \\(A\\), \\(B\\), and \\(C\\) outside the triangle beside their vertices. Do not label \\(BC\\) or \\(AB\\). Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "Right triangle \\(ABC\\) has its right angle at \\(C\\), a \\(32^{\\circ}\\) angle at \\(A\\), and \\(AC=15\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(15\\sin 32^{\\circ}\\)",
+      "\\(15\\cos 32^{\\circ}\\)",
+      "\\(15\\tan 32^{\\circ}\\)",
+      "\\(\\frac{15}{\\tan 32^{\\circ}}\\)"
+    ],
+    "answer": 2,
+    "explanation": "Side \\(\\overline{BC}\\) is opposite the \\(32^{\\circ}\\) angle, and \\(\\overline{AC}\\) is adjacent to it, so use tangent.\n\\(\\tan 32^{\\circ}=\\frac{BC}{AC}=\\frac{BC}{15}\\).\n\\(BC=15\\tan 32^{\\circ}\\) meters.\nTrap: \\(15\\sin 32^{\\circ}\\) and \\(15\\cos 32^{\\circ}\\) treat \\(15\\) as the hypotenuse; \\(\\frac{15}{\\tan 32^{\\circ}}\\) sets up the tangent ratio upside down.",
+    "check": "import math; print(15*math.tan(math.radians(32)))",
+    "template": null
+  },
+  {
+    "id": "TRIG-04",
+    "topic": "UNIT_CIRCLE",
+    "difficulty": "hard",
+    "skill": "angle of elevation word problem with a diagram",
+    "stem": "A surveyor looks at the top of a tower through an instrument on a tripod, as shown. The ground is level, and all lengths shown are in feet. Which expression gives the height of the tower, in feet?",
+    "table": null,
+    "figure": {
+      "description": "Draw a long horizontal ground line. Near the left end, draw a small tripod: a short vertical post standing on two short slanted legs, with a filled dot at the top of the post for the instrument. Near the right end, draw a tall narrow rectangular tower standing on the ground. Draw a dashed horizontal line from the instrument dot to the left side of the tower, and mark a small right-angle square where it meets the tower. Draw a solid line of sight from the instrument dot to the top-left corner of the tower. At the instrument dot, draw an angle arc between the dashed line and the line of sight and label it \\(38^{\\circ}\\). Left of the tripod, draw a thin vertical dimension line from the ground to the height of the instrument dot and label it \\(5\\). Below the ground, draw a thin horizontal dimension line from the tripod post to the left side of the tower and label it \\(120\\). Do not label the tower height, the line of sight, or any points. The tripod is drawn taller than true scale. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "An instrument \\(5\\) feet above level ground is \\(120\\) feet from a tower, and the angle of elevation from the instrument to the top of the tower is \\(38^{\\circ}\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(120\\tan 38^{\\circ}\\)",
+      "\\(5+120\\sin 38^{\\circ}\\)",
+      "\\(5+120\\tan 38^{\\circ}\\)",
+      "\\(5+\\frac{120}{\\tan 38^{\\circ}}\\)"
+    ],
+    "answer": 2,
+    "explanation": "The angle of elevation starts at the instrument, so the right triangle sits on top of the \\(5\\)-foot tripod.\nIn that triangle, \\(120\\) is adjacent to the \\(38^{\\circ}\\) angle, and the rise is opposite it.\nRise: \\(120\\tan 38^{\\circ}\\) feet.\nTower height: \\(5+120\\tan 38^{\\circ}\\) feet.\nTrap: \\(120\\tan 38^{\\circ}\\) leaves out the instrument height; \\(5+120\\sin 38^{\\circ}\\) treats \\(120\\) as the line of sight; \\(5+\\frac{120}{\\tan 38^{\\circ}}\\) uses the tangent ratio upside down.",
+    "check": "import math; print(5 + 120*math.tan(math.radians(38)))",
+    "template": null
+  },
+  {
+    "id": "TRIG-05",
+    "topic": "UNIT_CIRCLE",
+    "difficulty": "medium",
+    "skill": "convert degrees to radians",
+    "stem": "A wheel turns through \\(150^{\\circ}\\), then continues in the same direction through another \\(75^{\\circ}\\). What is the total angle of rotation, in radians?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{5\\pi}{12}\\)",
+      "\\(\\frac{5\\pi}{8}\\)",
+      "\\(\\frac{5\\pi}{6}\\)",
+      "\\(\\frac{5\\pi}{4}\\)"
+    ],
+    "answer": 3,
+    "explanation": "Add rotations in the same direction, then convert the total to radians.\n\\(150 + 75 = 225\\) degrees.\n\\(225 \\cdot \\frac{\\pi}{180} = \\frac{5\\pi}{4}\\)\nTrap: \\(\\frac{5\\pi}{12}\\) subtracts the rotations; \\(\\frac{5\\pi}{8}\\) uses \\(\\frac{\\pi}{360}\\); \\(\\frac{5\\pi}{6}\\) omits the second rotation.",
+    "check": "from fractions import Fraction as F; print(F(150 + 75, 180), 'pi')",
+    "template": "TRIG_05"
+  },
+  {
+    "id": "TRIG-06",
+    "topic": "UNIT_CIRCLE",
+    "difficulty": "hard",
+    "skill": "trig identity: sin^2 + cos^2 = 1 to find a value",
+    "stem": "If \\(\\sin\\theta + \\cos\\theta = \\frac{7}{5}\\), what is the value of \\(\\sin\\theta \\cos\\theta\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{1}{5}\\)",
+      "\\(\\frac{12}{25}\\)",
+      "\\(\\frac{24}{25}\\)",
+      "\\(\\frac{49}{50}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Square the sum and replace the sum of the squared trig values with one.\n\\(\\sin^{2}\\theta + 2\\sin\\theta\\cos\\theta + \\cos^{2}\\theta = \\frac{49}{25}\\)\n\\(1 + 2\\sin\\theta\\cos\\theta = \\frac{49}{25}\\)\n\\(\\sin\\theta\\cos\\theta = (\\frac{49}{25} - 1) \\div 2 = \\frac{12}{25}\\)\nTrap: \\(\\frac{24}{25}\\) forgets to divide by \\(2\\); \\(\\frac{1}{5}\\) does not square the given sum; \\(\\frac{49}{50}\\) forgets to subtract \\(1\\).",
+    "check": "from fractions import Fraction as F; print((F(7, 5)**2 - 1)/2)",
+    "template": "TRIG_06"
+  },
+  {
+    "id": "TRIG-07",
+    "topic": "UNIT_CIRCLE",
+    "difficulty": "medium",
+    "skill": "unit circle point coordinates for an angle",
+    "stem": "In the figure, point \\(P\\) lies on the unit circle, which has its center at the origin \\(O\\) of the standard \\((x,y)\\) coordinate plane. What are the coordinates of \\(P\\)?",
+    "table": null,
+    "figure": {
+      "description": "Draw \\(x\\)- and \\(y\\)-axes crossing at the origin, with arrowheads at both ends of each axis, and label them \\(x\\) and \\(y\\) at the positive ends. Draw a circle centered at the origin. Label the four points where the circle crosses the axes \\(1\\), \\(-1\\), \\(1\\), and \\(-1\\) (right, left, top, bottom), just outside the circle. Put a filled dot at the origin and label it \\(O\\) just below-right. Put a filled dot \\(P\\) on the circle in the upper-left quadrant at exactly \\(150^{\\circ}\\) counterclockwise from the positive \\(x\\)-axis, and draw the solid radius \\(OP\\). Draw an angle arc at \\(O\\) from the positive \\(x\\)-axis counterclockwise to \\(OP\\), and label it \\(150^{\\circ}\\) to the right of the \\(y\\)-axis, above the arc. Label \\(P\\) just above-left of its dot. Do not draw dashed lines, a reference triangle, or coordinates for \\(P\\). Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A unit circle centered at the origin \\(O\\) has a radius to point \\(P\\) in the second quadrant, at an angle of \\(150^{\\circ}\\) from the positive \\(x\\)-axis.",
+      "notToScale": false
+    },
+    "choices": [
+      "\\(\\left(-\\frac{\\sqrt{3}}{2},\\frac{1}{2}\\right)\\)",
+      "\\(\\left(-\\frac{1}{2},\\frac{\\sqrt{3}}{2}\\right)\\)",
+      "\\(\\left(\\frac{1}{2},\\frac{\\sqrt{3}}{2}\\right)\\)",
+      "\\(\\left(\\frac{\\sqrt{3}}{2},\\frac{1}{2}\\right)\\)"
+    ],
+    "answer": 0,
+    "explanation": "A point on the unit circle at angle \\(\\theta\\) is \\((\\cos\\theta,\\sin\\theta)\\).\nThe reference angle is \\(180^{\\circ}-150^{\\circ}=30^{\\circ}\\).\n\\(\\cos 30^{\\circ}=\\frac{\\sqrt{3}}{2}\\) and \\(\\sin 30^{\\circ}=\\frac{1}{2}\\).\nIn quadrant II, \\(x\\) is negative and \\(y\\) is positive.\nSo \\(P=\\left(-\\frac{\\sqrt{3}}{2},\\frac{1}{2}\\right)\\).\nTrap: \\(\\left(-\\frac{1}{2},\\frac{\\sqrt{3}}{2}\\right)\\) swaps sine and cosine; \\(\\left(\\frac{\\sqrt{3}}{2},\\frac{1}{2}\\right)\\) leaves out the negative sign; \\(\\left(\\frac{1}{2},\\frac{\\sqrt{3}}{2}\\right)\\) makes both mistakes.",
+    "check": "import math; t = math.radians(150); print(round(math.cos(t), 4), round(math.sin(t), 4), round(-math.sqrt(3)/2, 4))",
+    "template": null
+  },
+  {
+    "id": "TRIG-08",
+    "topic": "UNIT_CIRCLE",
+    "difficulty": "hard",
+    "skill": "period and amplitude of a sinusoidal function",
+    "stem": "For the function \\(y = 9 - 5\\cos\\left(\\frac{1}{2}x\\right)\\), \\(x\\) is measured in radians. What are the amplitude and period?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "Amplitude \\(-5\\), period \\(4\\pi\\)",
+      "Amplitude \\(5\\), period \\(\\pi\\)",
+      "Amplitude \\(5\\), period \\(4\\pi\\)",
+      "Amplitude \\(9\\), period \\(4\\pi\\)"
+    ],
+    "answer": 2,
+    "explanation": "Amplitude is the magnitude of the outside coefficient; period is two pi divided by the coefficient of the input.\n\\(\\text{Amplitude} = \\left|-5\\right| = 5\\)\n\\(\\text{Period} = \\frac{2\\pi}{\\frac{1}{2}} = 4\\pi\\)\nTrap: amplitude \\(-5\\) keeps the reflection sign; period \\(\\pi\\) multiplies instead of dividing; amplitude \\(9\\) uses the vertical shift.",
+    "check": "import math; print('amplitude', abs(-5), 'period', 2*math.pi/(1/2)/math.pi, 'pi')",
+    "template": "TRIG_08"
+  },
+  {
+    "id": "LAW-01",
+    "topic": "LAW_SINES_COSINES",
+    "difficulty": "medium",
+    "skill": "law of cosines: find a side, given two sides and the included angle",
+    "stem": "In \\(\\triangle ABC\\) shown, all lengths are in centimeters. What is the length of \\(\\overline{BC}\\), in centimeters?",
+    "table": null,
+    "figure": {
+      "description": "Draw triangle \\(ABC\\) with \\(A\\) at the lower left, \\(B\\) at the lower right, and \\(C\\) above, closer to \\(A\\) than to \\(B\\). The bottom side \\(AB\\) is horizontal. Label the bottom side \\(AB\\) as \\(8\\), centered below it. Label the left side \\(AC\\) as \\(5\\), beside its midpoint outside the triangle. Draw a small angle arc at \\(A\\) and label it \\(60^{\\circ}\\) inside the triangle. Put the point labels outside the triangle beside their vertices. Do not label side \\(BC\\) or the angles at \\(B\\) and \\(C\\). Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "Triangle \\(ABC\\) has \\(AB=8\\), \\(AC=5\\), and a \\(60^{\\circ}\\) angle at \\(A\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(7\\)",
+      "\\(\\sqrt{69}\\)",
+      "\\(\\sqrt{89}\\)",
+      "\\(\\sqrt{129}\\)"
+    ],
+    "answer": 0,
+    "explanation": "Use the law of cosines, because you know two sides and the angle between them.\n\\(BC^{2}=AB^{2}+AC^{2}-2(AB)(AC)\\cos A\\).\n\\(BC^{2}=8^{2}+5^{2}-2(8)(5)\\cos 60^{\\circ}\\).\n\\(BC^{2}=64+25-80\\left(\\frac{1}{2}\\right)=49\\).\n\\(BC=7\\) centimeters.\nTrap: \\(\\sqrt{69}\\) leaves out the factor \\(2\\); \\(\\sqrt{89}\\) uses the Pythagorean theorem; \\(\\sqrt{129}\\) adds the last term instead of subtracting it.",
+    "check": "import math; print(math.sqrt(8**2 + 5**2 - 2*8*5*math.cos(math.radians(60))))",
+    "template": null
+  },
+  {
+    "id": "LAW-02",
+    "topic": "LAW_SINES_COSINES",
+    "difficulty": "hard",
+    "skill": "law of sines: choose the right expression for a side",
+    "stem": "In \\(\\triangle ABC\\) shown, the length is in inches. Which expression gives the length of \\(\\overline{BC}\\), in inches?",
+    "table": null,
+    "figure": {
+      "description": "Draw triangle \\(ABC\\) with \\(A\\) at the lower left, \\(B\\) at the lower right, and \\(C\\) above, closer to \\(B\\) than to \\(A\\). The bottom side \\(AB\\) is horizontal. Label the bottom side \\(12\\), centered below it. Draw a small angle arc at \\(A\\) labeled \\(40^{\\circ}\\) and a small angle arc at \\(B\\) labeled \\(75^{\\circ}\\), both inside the triangle. Put the point labels outside the triangle beside their vertices. Do not mark or label the angle at \\(C\\), and do not label sides \\(AC\\) or \\(BC\\). Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "Triangle \\(ABC\\) has \\(AB=12\\), a \\(40^{\\circ}\\) angle at \\(A\\), and a \\(75^{\\circ}\\) angle at \\(B\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(\\frac{12\\sin 40^{\\circ}}{\\sin 75^{\\circ}}\\)",
+      "\\(\\frac{12\\sin 40^{\\circ}}{\\sin 65^{\\circ}}\\)",
+      "\\(\\frac{12\\sin 65^{\\circ}}{\\sin 40^{\\circ}}\\)",
+      "\\(\\frac{12\\sin 75^{\\circ}}{\\sin 65^{\\circ}}\\)"
+    ],
+    "answer": 1,
+    "explanation": "In the law of sines, each side pairs with the sine of the angle opposite it.\n\\(\\angle C=180^{\\circ}-40^{\\circ}-75^{\\circ}=65^{\\circ}\\), and \\(\\overline{AB}\\) is opposite \\(\\angle C\\).\n\\(\\overline{BC}\\) is opposite \\(\\angle A\\).\n\\(\\frac{BC}{\\sin 40^{\\circ}}=\\frac{12}{\\sin 65^{\\circ}}\\), so \\(BC=\\frac{12\\sin 40^{\\circ}}{\\sin 65^{\\circ}}\\).\nTrap: \\(\\frac{12\\sin 40^{\\circ}}{\\sin 75^{\\circ}}\\) pairs \\(12\\) with \\(\\angle B\\), which is not opposite it; \\(\\frac{12\\sin 65^{\\circ}}{\\sin 40^{\\circ}}\\) turns the ratio upside down; \\(\\frac{12\\sin 75^{\\circ}}{\\sin 65^{\\circ}}\\) gives \\(AC\\), the side opposite \\(\\angle B\\).",
+    "check": "import math; s = lambda d: math.sin(math.radians(d)); print(12*s(40)/s(180-40-75))",
+    "template": null
+  },
+  {
+    "id": "LAW-03",
+    "topic": "LAW_SINES_COSINES",
+    "difficulty": "medium",
+    "skill": "law of cosines: find cos of an angle from three sides",
+    "stem": "In \\(\\triangle ABC\\), \\(AB = 7\\), \\(AC = 8\\), and \\(BC = 9\\), all in centimeters. What is \\(\\cos\\angle A\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(-\\frac{2}{7}\\)",
+      "\\(\\frac{16}{63}\\)",
+      "\\(\\frac{2}{7}\\)",
+      "\\(\\frac{4}{7}\\)"
+    ],
+    "answer": 2,
+    "explanation": "In the law of cosines, subtract the square of the side opposite the requested angle.\n\\(9^{2} = 7^{2} + 8^{2} - 2(7)(8)\\cos\\angle A\\)\n\\(\\cos\\angle A = \\frac{7^{2} + 8^{2} - 9^{2}}{2(7)(8)} = \\frac{2}{7}\\)\nTrap: \\(-\\frac{2}{7}\\) reverses the numerator’s sign; \\(\\frac{4}{7}\\) omits the factor \\(2\\); \\(\\frac{16}{63}\\) uses an opposite side in the denominator.",
+    "check": "from fractions import Fraction as F; print(F(7**2 + 8**2 - 9**2, 2*7*8))",
+    "template": "LAW_03"
+  },
+  {
+    "id": "LAW-04",
+    "topic": "LAW_SINES_COSINES",
+    "difficulty": "hard",
+    "skill": "law of sines word problem with two observers",
+    "stem": "Two observers stand at points \\(A\\) and \\(B\\) on a straight shoreline, \\(600\\) meters apart. Each observer measures the angle between the shoreline and the line of sight to a boat at point \\(C\\), as shown. To the nearest meter, what is the distance from \\(A\\) to the boat?",
+    "table": null,
+    "figure": {
+      "description": "Draw a long horizontal line for the shoreline. Put filled dots \\(A\\) and \\(B\\) on the line, with \\(A\\) on the left and \\(B\\) on the right, and label them just below the line. Put a filled dot \\(C\\) above the line, closer to \\(B\\) than to \\(A\\), labeled just above. Draw solid segments \\(AC\\) and \\(BC\\). Label the part of the shoreline between \\(A\\) and \\(B\\) as \\(600\\), centered below it. Draw an angle arc at \\(A\\) between \\(AB\\) and \\(AC\\) labeled \\(48^{\\circ}\\), and an angle arc at \\(B\\) between \\(BA\\) and \\(BC\\) labeled \\(64^{\\circ}\\), both inside the triangle. Do not mark the angle at \\(C\\) or label \\(AC\\) or \\(BC\\). Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "Points \\(A\\) and \\(B\\) on a shoreline are \\(600\\) apart, and the lines of sight to boat \\(C\\) make angles of \\(48^{\\circ}\\) at \\(A\\) and \\(64^{\\circ}\\) at \\(B\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(481\\)",
+      "\\(496\\)",
+      "\\(582\\)",
+      "\\(726\\)"
+    ],
+    "answer": 2,
+    "explanation": "Find the angle at the boat first, because it is opposite the known side \\(\\overline{AB}\\).\n\\(\\angle C=180^{\\circ}-48^{\\circ}-64^{\\circ}=68^{\\circ}\\).\nSide \\(\\overline{AC}\\) is opposite \\(\\angle B\\).\n\\(\\frac{AC}{\\sin 64^{\\circ}}=\\frac{600}{\\sin 68^{\\circ}}\\), so \\(AC=\\frac{600\\sin 64^{\\circ}}{\\sin 68^{\\circ}}\\approx 582\\) meters.\nTrap: \\(481\\) is \\(BC\\), the distance from \\(B\\); \\(496\\) pairs \\(600\\) with \\(\\angle B\\) and \\(AC\\) with \\(\\angle A\\); \\(726\\) pairs \\(600\\) with \\(\\angle A\\).",
+    "check": "import math; s = lambda d: math.sin(math.radians(d)); print(round(600*s(64)/s(180-48-64)))",
+    "template": null
+  },
+  {
+    "id": "STAT-01",
+    "topic": "STATISTICS",
+    "difficulty": "medium",
+    "skill": "mean after adding or removing a value",
+    "stem": "A set of \\(9\\) scores has a mean of \\(27\\) points. One score of \\(67\\) points is removed. What is the mean of the remaining scores, in points?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{149}{8}\\)",
+      "\\(\\frac{176}{9}\\)",
+      "\\(22\\)",
+      "\\(31\\)"
+    ],
+    "answer": 2,
+    "explanation": "Subtract the removed score from the original total, then reduce the number of scores by one.\n\\(\\text{Original total} = 9(27) = 243\\)\n\\(\\text{New mean} = \\frac{243 - 67}{8} = 22\\)\nTrap: \\(\\frac{176}{9}\\) keeps the old count; \\(31\\) adds the score instead of removing it; \\(\\frac{149}{8}\\) subtracts from the mean instead of the total.",
+    "check": "from fractions import Fraction as F; print(F(9*27 - 67, 8))",
+    "template": "STAT_01"
+  },
+  {
+    "id": "STAT-02",
+    "topic": "STATISTICS",
+    "difficulty": "hard",
+    "skill": "find a missing score to reach a target mean",
+    "stem": "Maya’s \\(6\\) quizzes have a mean of \\(80\\) points. For her course grade, each quiz counts once and the final exam counts twice. What final-exam score, in points, gives her a weighted mean of \\(83\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{101}{2}\\)",
+      "\\(86\\)",
+      "\\(92\\)",
+      "\\(101\\)"
+    ],
+    "answer": 2,
+    "explanation": "Count the exam twice in both the score total and the total weight.\n\\(\\frac{6(80) + 2x}{8} = 83\\)\n\\(2x = 83(8) - 480 = 184\\)\n\\(x = 92\\)\nTrap: \\(101\\) counts the exam only once; \\(\\frac{101}{2}\\) uses total weight \\(7\\); \\(86\\) gives the quiz mean and exam equal weight.",
+    "check": "from fractions import Fraction as F; print(F(83*8 - 6*80, 2))",
+    "template": "STAT_02"
+  },
+  {
+    "id": "STAT-03",
+    "topic": "STATISTICS",
+    "difficulty": "medium",
+    "skill": "median and range from a dot plot",
+    "stem": "The dot plot shows the number of books each student in a reading club read over the summer. Each dot represents \\(1\\) student. What are the median and the range of the data?",
+    "table": null,
+    "figure": {
+      "description": "Draw a horizontal number line with tick marks and labels at every whole number from \\(0\\) through \\(9\\). Below the number line, centered, write the axis label Number of books. Above the number line, stack identical filled dots in neat vertical columns: \\(2\\) dots above \\(1\\), \\(4\\) dots above \\(2\\), \\(2\\) dots above \\(3\\), \\(3\\) dots above \\(4\\), \\(1\\) dot above \\(5\\), \\(1\\) dot above \\(6\\), no dots above \\(0\\), \\(7\\), or \\(9\\), and \\(2\\) dots above \\(8\\). Use the same spacing between dots in every column. Do not print counts, a title, or a vertical axis. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A dot plot of books read shows \\(2\\) dots at \\(1\\), \\(4\\) at \\(2\\), \\(2\\) at \\(3\\), \\(3\\) at \\(4\\), \\(1\\) at \\(5\\), \\(1\\) at \\(6\\), and \\(2\\) at \\(8\\), on a number line from \\(0\\) to \\(9\\).",
+      "notToScale": false
+    },
+    "choices": [
+      "Median \\(2\\), range \\(7\\)",
+      "Median \\(3\\), range \\(7\\)",
+      "Median \\(3\\), range \\(9\\)",
+      "Median \\(4.5\\), range \\(7\\)"
+    ],
+    "answer": 1,
+    "explanation": "The median is the middle data value, and the range is the greatest data value minus the least data value.\nThere are \\(2+4+2+3+1+1+2=15\\) dots, so the median is the \\(8\\)th value.\nCount from the left: the dots at \\(1\\) and \\(2\\) fill positions \\(1\\) through \\(6\\).\nThe dots at \\(3\\) fill positions \\(7\\) and \\(8\\), so the median is \\(3\\).\nRange: \\(8-1=7\\).\nTrap: median \\(2\\) is the mode; median \\(4.5\\) is halfway between \\(1\\) and \\(8\\) and ignores the dots; range \\(9\\) uses the ends of the number line, \\(0\\) and \\(9\\).",
+    "check": "import statistics; d = [1]*2 + [2]*4 + [3]*2 + [4]*3 + [5] + [6] + [8]*2; print(statistics.median(d), max(d) - min(d))",
+    "template": null
+  },
+  {
+    "id": "STAT-04",
+    "topic": "STATISTICS",
+    "difficulty": "hard",
+    "skill": "read a scatterplot and its line of best fit; predict",
+    "stem": "The scatterplot shows the number of hours that each of \\(14\\) students studied for a test and the student's test score, with the line of best fit. One student studied \\(7\\) hours and scored \\(70\\) points. According to the line of best fit, how many points below the predicted score was this student's score?",
+    "table": null,
+    "figure": {
+      "description": "Draw a scatterplot. The horizontal axis is labeled Hours studied and shows \\(0\\) through \\(10\\), with grid lines and labeled ticks every \\(1\\) hour. The vertical axis is labeled Test score (points), written sideways, and starts at \\(50\\) where it meets the horizontal axis; it shows \\(50\\) through \\(100\\), with light grid lines and tick marks every \\(5\\) points but number labels only at \\(50\\), \\(60\\), \\(70\\), \\(80\\), \\(90\\), and \\(100\\). Plot \\(14\\) filled dots at exactly \\((1,62)\\), \\((2,60)\\), \\((2,66)\\), \\((3,70)\\), \\((4,68)\\), \\((4,74)\\), \\((5,78)\\), \\((6,76)\\), \\((6,82)\\), \\((7,70)\\), \\((8,90)\\), \\((9,88)\\), \\((9,94)\\), and \\((10,92)\\). Draw a straight solid line of best fit from exactly \\((0,55)\\) to exactly \\((10,95)\\). Do not label the line, print its equation, or label any point. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A scatterplot of test score against hours studied has \\(14\\) points and a line of best fit from \\((0,55)\\) to \\((10,95)\\).",
+      "notToScale": false
+    },
+    "choices": [
+      "\\(8\\)",
+      "\\(13\\)",
+      "\\(42\\)",
+      "\\(83\\)"
+    ],
+    "answer": 1,
+    "explanation": "Find the line's equation from two grid points, then compare the predicted score with the actual score.\nThe line passes through \\((0,55)\\) and \\((10,95)\\).\nSlope: \\(\\frac{95-55}{10-0}=4\\) points per hour.\nPredicted score for \\(7\\) hours: \\(55+4(7)=83\\) points.\nDifference: \\(83-70=13\\) points.\nTrap: \\(8\\) uses \\(50\\), the lowest label on the vertical axis, as the starting value; \\(42\\) leaves out the starting value \\(55\\); \\(83\\) is the predicted score, not the difference.",
+    "check": "print(55 + (95-55)/(10-0)*7 - 70)",
+    "template": null
+  },
+  {
+    "id": "STAT-05",
+    "topic": "STATISTICS",
+    "difficulty": "medium",
+    "skill": "weighted average of two groups",
+    "stem": "In one class, \\(20\\) students read for a mean of \\(10\\) minutes each. In another class, \\(60\\) students read for a mean of \\(26\\) minutes each. What is the mean reading time, in minutes, for all the students in these two classes?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(14\\)",
+      "\\(18\\)",
+      "\\(22\\)",
+      "\\(36\\)"
+    ],
+    "answer": 2,
+    "explanation": "Weight each class mean by its number of students.\n\\(\\text{Total minutes} = 20(10) + 60(26) = 1760\\)\n\\(\\text{Combined mean} = \\frac{1760}{80} = 22\\)\nTrap: \\(18\\) averages the means without weights; \\(14\\) swaps the class sizes; \\(36\\) adds the means.",
+    "check": "from fractions import Fraction as F; print(F(20*10 + 60*26, 80))",
+    "template": "STAT_05"
+  },
+  {
+    "id": "STAT-06",
+    "topic": "STATISTICS",
+    "difficulty": "hard",
+    "skill": "effect of adding a constant or multiplying on mean and standard deviation",
+    "stem": "A data set has mean \\(22\\) and standard deviation \\(5\\). Each value \\(x\\) is replaced by \\(62 - 2x\\). What are the mean and standard deviation of the resulting data set?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "Mean \\(18\\), standard deviation \\(-10\\)",
+      "Mean \\(18\\), standard deviation \\(10\\)",
+      "Mean \\(18\\), standard deviation \\(52\\)",
+      "Mean \\(40\\), standard deviation \\(10\\)"
+    ],
+    "answer": 1,
+    "explanation": "Apply the whole transformation to the mean, but only the absolute scale factor to the standard deviation.\n\\(\\text{New mean} = 62 - 2(22) = 18\\)\n\\(\\text{New standard deviation} = \\left|-2\\right|(5) = 10\\)\nTrap: standard deviation \\(-10\\) keeps a negative scale; standard deviation \\(52\\) also applies the shift; mean \\(40\\) omits the scale factor.",
+    "check": "print('mean', 62 - 2*22, 'sd', abs(-2)*5)",
+    "template": "STAT_06"
+  },
+  {
+    "id": "STAT-07",
+    "topic": "STATISTICS",
+    "difficulty": "medium",
+    "skill": "read a histogram to find a count or a percent",
+    "stem": "The histogram shows the commute times of the employees at a company. Each interval includes its left endpoint but not its right endpoint. What percent of the employees have a commute time of at least \\(30\\) minutes?",
+    "table": null,
+    "figure": {
+      "description": "Draw a histogram with five adjacent bars of equal width, outlined in black and filled light gray. The horizontal axis is labeled Commute time (minutes), with the bar edges labeled \\(0\\), \\(10\\), \\(20\\), \\(30\\), \\(40\\), and \\(50\\). The vertical axis is labeled Number of employees, written sideways, with labeled ticks every \\(2\\) from \\(0\\) through \\(14\\) and thin gray horizontal grid lines behind the bars. The bar heights, from left to right, are exactly \\(4\\), \\(9\\), \\(12\\), \\(10\\), and \\(5\\). Do not print values on the bars, a title, or a total. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A histogram of commute times shows \\(4\\) employees from \\(0\\) to \\(10\\) minutes, \\(9\\) from \\(10\\) to \\(20\\), \\(12\\) from \\(20\\) to \\(30\\), \\(10\\) from \\(30\\) to \\(40\\), and \\(5\\) from \\(40\\) to \\(50\\).",
+      "notToScale": false
+    },
+    "choices": [
+      "\\(15\\%\\)",
+      "\\(25\\%\\)",
+      "\\(37.5\\%\\)",
+      "\\(62.5\\%\\)"
+    ],
+    "answer": 2,
+    "explanation": "Divide the number of employees in the requested bars by the total number of employees.\nTotal: \\(4+9+12+10+5=40\\) employees.\nAt least \\(30\\) minutes: \\(10+5=15\\) employees.\nPercent: \\(\\frac{15}{40}\\times 100\\%=37.5\\%\\).\nTrap: \\(15\\%\\) treats the count as a percent; \\(25\\%\\) uses only the \\(30\\) to \\(40\\) bar; \\(62.5\\%\\) gives the percent under \\(30\\) minutes.",
+    "check": "print((10 + 5)/(4 + 9 + 12 + 10 + 5)*100)",
+    "template": null
+  },
+  {
+    "id": "STAT-08",
+    "topic": "STATISTICS",
+    "difficulty": "hard",
+    "skill": "median of a frequency table (table field)",
+    "stem": "The table gives the number of students earning each score on a quiz. What is the median score, in points?",
+    "table": {
+      "caption": "Quiz scores",
+      "headers": [
+        "Score (points)",
+        "Number of students"
+      ],
+      "rows": [
+        [
+          "\\(14\\)",
+          "\\(5\\)"
+        ],
+        [
+          "\\(16\\)",
+          "\\(4\\)"
+        ],
+        [
+          "\\(20\\)",
+          "\\(3\\)"
+        ],
+        [
+          "\\(22\\)",
+          "\\(5\\)"
+        ],
+        [
+          "\\(24\\)",
+          "\\(1\\)"
+        ]
+      ]
+    },
+    "figure": null,
+    "choices": [
+      "\\(16\\)",
+      "\\(18\\)",
+      "\\(\\frac{164}{9}\\)",
+      "\\(20\\)"
+    ],
+    "answer": 1,
+    "explanation": "Use cumulative frequencies to locate both middle scores.\n\\(N = 5 + 4 + 3 + 5 + 1 = 18\\)\nThe middle positions are \\(9\\) and \\(10\\).\nThe first \\(9\\) scores end at \\(16\\); position \\(10\\) has score \\(20\\).\n\\(\\text{Median} = \\frac{16 + 20}{2} = 18\\)\nTrap: \\(16\\) uses only the lower middle score; \\(20\\) uses only the upper middle score; \\(\\frac{164}{9}\\) is the mean.",
+    "check": "import statistics; d = [14]*5 + [16]*4 + [20]*3 + [22]*5 + [24]*1; print(statistics.median(d))",
+    "template": "STAT_08"
+  }
+]

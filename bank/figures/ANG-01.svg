@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+<rect width="100%" height="100%" fill="white"/>
+<g fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
+<line x1="80.0" y1="415.6" x2="820.0" y2="415.6"/>
+<line x1="80.0" y1="184.4" x2="820.0" y2="184.4"/>
+<polyline points="142.0,424.0 154.0,415.6 142.0,407.2" stroke-width="2.2399999999999998"/>
+<polyline points="142.0,192.8 154.0,184.4 142.0,176.0" stroke-width="2.2399999999999998"/>
+<line x1="319.5" y1="519.9" x2="479.6" y2="80.1"/>
+<text x="851.5" y="184.4" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">p</text>
+<text x="851.5" y="415.6" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">q</text>
+<path d="M477.7,184.4 A36,36 0 0 0 454.0,150.5" stroke-width="2.2399999999999998"/>
+<text x="474.7" y="149.3" font-size="30.6" font-style="normal" font-weight="normal" text-anchor="start" dominant-baseline="central" fill="#111" stroke="none">(3<tspan font-style="italic">x</tspan>+10)°</text>
+<path d="M321.5,415.6 A36,36 0 0 1 369.8,381.8" stroke-width="2.2399999999999998"/>
+<text x="250.9" y="346.8" font-size="30.6" font-style="normal" font-weight="normal" text-anchor="start" dominant-baseline="central" fill="#111" stroke="none">(5<tspan font-style="italic">x</tspan>+10)°</text>
+</g></svg>

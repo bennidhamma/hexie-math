@@ -1,0 +1,12 @@
+import sys; sys.path.insert(0, '.')
+from svgfig import *
+f = Fig()
+A, B, C, D = f.pt(0, 0), f.pt(14, 0), f.pt(8, 8), f.pt(0, 8)
+E = (8, 0)
+f.poly([A, B, C, D])
+f.seg(C, E, dashed=True)
+f.right_angle(A, B, D); f.right_angle(D, A, C); f.right_angle(E, B, C)
+f.dimension(A, B, "14", offset=-1.4)
+f.label_seg(D, C, "8", side=1)
+f.label_seg(B, C, "10", side=-1)
+f.save("figures/AREA-05.svg", png="figures/AREA-05.png")

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640">
+<rect width="100%" height="100%" fill="white"/>
+<g fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
+<line x1="80.0" y1="515.0" x2="820.0" y2="515.0"/>
+<line x1="179.3" y1="515.0" x2="530.5" y2="125.0"/>
+<line x1="720.7" y1="515.0" x2="530.5" y2="125.0"/>
+<circle cx="179.3" cy="515.0" r="5.5" fill="#111"/>
+<circle cx="720.7" cy="515.0" r="5.5" fill="#111"/>
+<circle cx="530.5" cy="125.0" r="5.5" fill="#111"/>
+<path d="M235.3,515.0 A56,56 0 0 0 216.7,473.4" stroke-width="2.2399999999999998"/>
+<text x="264.2" y="477.2" font-size="30.6" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">48°</text>
+<path d="M700.6,473.7 A46,46 0 0 0 674.7,515.0" stroke-width="2.2399999999999998"/>
+<text x="654.6" y="473.7" font-size="30.6" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">64°</text>
+<text x="450.0" y="552.6" font-size="34" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">600</text>
+<text x="162.6" y="548.3" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">A</text>
+<text x="737.4" y="548.3" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">B</text>
+<text x="530.5" y="89.4" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">C</text>
+</g></svg>

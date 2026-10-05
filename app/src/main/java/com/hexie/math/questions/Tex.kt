@@ -21,6 +21,8 @@ sealed interface Tex {
     data class Sqrt(val body: Tex, val index: Tex?) : Tex
     /** A pair of delimiters that grows to fit [body]: ( ) [ ] | or "" for none. */
     data class Delim(val left: String, val body: Tex, val right: String) : Tex
+    /** A bar over [body], for a segment name like \overline{AB}. */
+    data class Overline(val body: Tex) : Tex
     /** Horizontal space, in em. */
     data class Space(val em: Float) : Tex
 }
@@ -185,6 +187,7 @@ object TexParser {
             if (name in FUNCTIONS) return Row(listOf(Sym(name), Space(0.12f)))
             return when (name) {
                 "frac", "dfrac", "tfrac" -> Tex.Frac(argument(), argument())
+                "overline" -> Tex.Overline(argument())
                 "sqrt" -> {
                     val index = if (!done() && peek() == '[') {
                         i++

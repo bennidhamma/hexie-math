@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+<rect width="100%" height="100%" fill="white"/>
+<g fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
+<polygon points="334.4,165.7 80.0,434.3 820.0,434.3" fill="none"/>
+<line x1="181.8" y1="326.9" x2="625.8" y2="326.9"/>
+<polyline points="391.8,335.3 403.8,326.9 391.8,318.5" stroke-width="2.2399999999999998"/>
+<polyline points="438.0,442.7 450.0,434.3 438.0,425.9" stroke-width="2.2399999999999998"/>
+<text x="231.1" y="220.7" font-size="34" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">6</text>
+<text x="103.9" y="355.1" font-size="34" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">4</text>
+<text x="499.2" y="211.7" font-size="34" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">9</text>
+<text x="334.4" y="130.1" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">A</text>
+<text x="50.1" y="446.3" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">B</text>
+<text x="849.9" y="446.3" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">C</text>
+<text x="150.5" y="322.2" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">D</text>
+<text x="656.3" y="317.7" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">E</text>
+</g></svg>

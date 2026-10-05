@@ -1,0 +1,212 @@
+[
+ {
+  "id": "COORD-01",
+  "topic": "SLOPE",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "equation of a line through two points"
+ },
+ {
+  "id": "COORD-02",
+  "topic": "SLOPE",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "perpendicular line through a point shown on a graph"
+ },
+ {
+  "id": "COORD-03",
+  "topic": "SLOPE",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "slope of a line in standard form"
+ },
+ {
+  "id": "COORD-04",
+  "topic": "SLOPE",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "midpoint and distance between two points"
+ },
+ {
+  "id": "COORD-05",
+  "topic": "SLOPE",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "read slope and y-intercept from a graphed line"
+ },
+ {
+  "id": "COORD-06",
+  "topic": "SLOPE",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "equation of a circle from center and a point on it"
+ },
+ {
+  "id": "COORD-07",
+  "topic": "SLOPE",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "parallel line through a point"
+ },
+ {
+  "id": "COORD-08",
+  "topic": "SLOPE",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "find the intersection point of two graphed lines"
+ },
+ {
+  "id": "COORD-09",
+  "topic": "SLOPE",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "find k so that two lines are parallel"
+ },
+ {
+  "id": "COORD-10",
+  "topic": "SLOPE",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "center and radius of a circle from an equation (complete the square)"
+ },
+ {
+  "id": "TRIG-01",
+  "topic": "UNIT_CIRCLE",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "exact value of sin or cos at a special angle in radians"
+ },
+ {
+  "id": "TRIG-02",
+  "topic": "UNIT_CIRCLE",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "given sin and the quadrant, find tan"
+ },
+ {
+  "id": "TRIG-03",
+  "topic": "UNIT_CIRCLE",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "right triangle trig: find a side using sin, cos, or tan"
+ },
+ {
+  "id": "TRIG-04",
+  "topic": "UNIT_CIRCLE",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "angle of elevation word problem with a diagram"
+ },
+ {
+  "id": "TRIG-05",
+  "topic": "UNIT_CIRCLE",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "convert degrees to radians"
+ },
+ {
+  "id": "TRIG-06",
+  "topic": "UNIT_CIRCLE",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "trig identity: sin^2 + cos^2 = 1 to find a value"
+ },
+ {
+  "id": "TRIG-07",
+  "topic": "UNIT_CIRCLE",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "unit circle point coordinates for an angle"
+ },
+ {
+  "id": "TRIG-08",
+  "topic": "UNIT_CIRCLE",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "period and amplitude of a sinusoidal function"
+ },
+ {
+  "id": "LAW-01",
+  "topic": "LAW_SINES_COSINES",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "law of cosines: find a side, given two sides and the included angle"
+ },
+ {
+  "id": "LAW-02",
+  "topic": "LAW_SINES_COSINES",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "law of sines: choose the right expression for a side"
+ },
+ {
+  "id": "LAW-03",
+  "topic": "LAW_SINES_COSINES",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "law of cosines: find cos of an angle from three sides"
+ },
+ {
+  "id": "LAW-04",
+  "topic": "LAW_SINES_COSINES",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "law of sines word problem with two observers"
+ },
+ {
+  "id": "STAT-01",
+  "topic": "STATISTICS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "mean after adding or removing a value"
+ },
+ {
+  "id": "STAT-02",
+  "topic": "STATISTICS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "find a missing score to reach a target mean"
+ },
+ {
+  "id": "STAT-03",
+  "topic": "STATISTICS",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "median and range from a dot plot"
+ },
+ {
+  "id": "STAT-04",
+  "topic": "STATISTICS",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "read a scatterplot and its line of best fit; predict"
+ },
+ {
+  "id": "STAT-05",
+  "topic": "STATISTICS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "weighted average of two groups"
+ },
+ {
+  "id": "STAT-06",
+  "topic": "STATISTICS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "effect of adding a constant or multiplying on mean and standard deviation"
+ },
+ {
+  "id": "STAT-07",
+  "topic": "STATISTICS",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "read a histogram to find a count or a percent"
+ },
+ {
+  "id": "STAT-08",
+  "topic": "STATISTICS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "median of a frequency table (table field)"
+ }
+]

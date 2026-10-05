@@ -15,7 +15,22 @@ data class Question(
     val diagram: Diagram? = null,
     /** Drawn inside the explanation, after the student answers. */
     val explanationDiagram: Diagram? = null,
-)
+    /** A data table drawn under the prompt. */
+    val table: DataTable? = null,
+    /** A figure image from the app assets (problem-bank problems only). */
+    val image: Figure? = null,
+    /** Problem-bank id of this version, like "PROB-03#2". Null for generated warm-ups. */
+    val bankId: String? = null,
+    /** "medium" or "hard" for problem-bank problems. */
+    val difficulty: String? = null,
+) {
+    /** The problem family: all number variations of one authored problem share it. */
+    val family: String? get() = bankId?.substringBefore('#')
+}
+
+data class DataTable(val caption: String?, val headers: List<String>, val rows: List<List<String>>)
+
+data class Figure(val asset: String, val alt: String, val notToScale: Boolean)
 
 /**
  * Topics come from the "missed" rows of the March 2026 practice-test score report.
@@ -29,12 +44,17 @@ enum class Topic(val label: String, val baseWeight: Double) {
     EXPONENTS("Exponents & Roots", 3.0),
     REWRITING("Rewriting Equations", 2.0),
     AREA_VOLUME("Perimeter, Area & Volume", 2.0),
-    SLOPE("Slope-Intercept Form", 2.0),
-    ANGLES("Lines & Angles", 2.0),
-    FRACTIONS("Fractions & Operations", 2.0),
+    SLOPE("Lines & Coordinate Geometry", 2.0),
+    ANGLES("Lines, Angles & Triangles", 2.0),
+    FRACTIONS("Numbers & Sequences", 1.0),
     UNIT_CIRCLE("Unit Circle & Trig", 2.0),
     LOGARITHMS("Logarithms", 2.0),
     LAW_SINES_COSINES("Law of Sines & Cosines", 2.0),
+
+    // Not on the miss list, but a large part of the ACT. Only the problem bank covers these.
+    FUNCTIONS("Functions", 1.2),
+    QUADRATICS("Quadratics & Polynomials", 1.2),
+    STATISTICS("Statistics & Data", 1.0),
 }
 
 /** Puts the correct answer and the distractors in random order. Fills gaps if distractors collide. */

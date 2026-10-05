@@ -1,0 +1,170 @@
+[
+ {
+  "id": "EXP-01",
+  "topic": "EXPONENTS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "simplify a product and quotient of monomials with negative exponents"
+ },
+ {
+  "id": "EXP-02",
+  "topic": "EXPONENTS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "solve an exponential equation by matching bases (powers of 2 or 3)"
+ },
+ {
+  "id": "EXP-03",
+  "topic": "EXPONENTS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "evaluate a fractional exponent"
+ },
+ {
+  "id": "EXP-04",
+  "topic": "EXPONENTS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "simplify a sum of radicals that need simplifying first"
+ },
+ {
+  "id": "EXP-05",
+  "topic": "EXPONENTS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "rationalize a denominator"
+ },
+ {
+  "id": "EXP-06",
+  "topic": "EXPONENTS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "exponential growth: doubling time"
+ },
+ {
+  "id": "EXP-07",
+  "topic": "EXPONENTS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "scientific notation product or quotient"
+ },
+ {
+  "id": "EXP-08",
+  "topic": "EXPONENTS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "exponent rules with a variable exponent: 2^(x+3) - 2^x"
+ },
+ {
+  "id": "EXP-09",
+  "topic": "EXPONENTS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "power of a product with a coefficient"
+ },
+ {
+  "id": "EXP-10",
+  "topic": "EXPONENTS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "exponential decay model; find the value after t periods"
+ },
+ {
+  "id": "REW-01",
+  "topic": "REWRITING",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "solve a formula for one variable (several steps)"
+ },
+ {
+  "id": "REW-02",
+  "topic": "REWRITING",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "solve a rational formula for a variable that appears twice"
+ },
+ {
+  "id": "REW-03",
+  "topic": "REWRITING",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "solve a linear equation with fractions"
+ },
+ {
+  "id": "REW-04",
+  "topic": "REWRITING",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "solve an absolute value equation; sum of solutions"
+ },
+ {
+  "id": "REW-05",
+  "topic": "REWRITING",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "solve a literal equation with a squared variable"
+ },
+ {
+  "id": "REW-06",
+  "topic": "REWRITING",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "equivalent expression by factoring out a common binomial"
+ },
+ {
+  "id": "REW-07",
+  "topic": "REWRITING",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "solve a linear inequality with a negative coefficient"
+ },
+ {
+  "id": "REW-08",
+  "topic": "REWRITING",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "solve a radical equation and reject the extraneous root"
+ },
+ {
+  "id": "LOG-01",
+  "topic": "LOGARITHMS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "rewrite a log equation in exponential form"
+ },
+ {
+  "id": "LOG-02",
+  "topic": "LOGARITHMS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "log rules: expand or combine to evaluate"
+ },
+ {
+  "id": "LOG-03",
+  "topic": "LOGARITHMS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "evaluate a log with a fractional or reciprocal argument"
+ },
+ {
+  "id": "LOG-04",
+  "topic": "LOGARITHMS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "solve a log equation; check the domain"
+ },
+ {
+  "id": "LOG-05",
+  "topic": "LOGARITHMS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "change of base or comparing log values"
+ },
+ {
+  "id": "LOG-06",
+  "topic": "LOGARITHMS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "solve an exponential equation with logs"
+ }
+]

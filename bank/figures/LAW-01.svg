@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620">
+<rect width="100%" height="100%" fill="white"/>
+<g fill="none" stroke="#111" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" font-family="Arial, 'Liberation Sans', 'DejaVu Sans', sans-serif">
+<polygon points="90.0,504.9 810.0,504.9 315.0,115.1" fill="none"/>
+<path d="M136.0,504.9 A46,46 0 0 0 113.0,465.0" stroke-width="2.2399999999999998"/>
+<text x="157.5" y="465.9" font-size="30.6" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">60°</text>
+<text x="450.0" y="542.5" font-size="34" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">8</text>
+<text x="172.2" y="292.5" font-size="34" font-style="normal" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">5</text>
+<text x="60.1" y="516.8" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">A</text>
+<text x="839.9" y="516.8" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">B</text>
+<text x="315.0" y="79.5" font-size="34" font-style="italic" font-weight="normal" text-anchor="middle" dominant-baseline="central" fill="#111" stroke="none">C</text>
+</g></svg>

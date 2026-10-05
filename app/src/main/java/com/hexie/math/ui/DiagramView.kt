@@ -159,7 +159,7 @@ private class Pen(val ds: DrawScope, val tm: TextMeasurer) {
             val arcR = if (deg > 100) 16f else 22f
             val dir = arc(v, p, q, arcR, color)
             // Narrow corners need the label farther in, so it fits between the two sides.
-            val gap = (arcR + 2f) + (if (deg < 50) (12.0 / tan(Math.toRadians(deg / 2))).toFloat().coerceAtMost(40f) else 0f)
+            val gap = (arcR + 2f) + (if (deg < 50) (6.0 / tan(Math.toRadians(deg / 2))).toFloat().coerceAtMost(22f) else 0f)
             label(text, v + dir * (gap * u).toDouble(), push = dir, gap = 0f, sp = 14)
         }
         corner(A, B, C, t.angleA, t.labelA, "A")
@@ -248,7 +248,9 @@ private class Pen(val ds: DrawScope, val tm: TextMeasurer) {
     fun plane(p: Diagram.Plane) {
         val pad = 8 * u
         val pw = w - 2 * pad; val ph = h - 2 * pad
-        val xs = p.points.map { it.x } + 0; val ys = p.points.map { it.y } + 0
+        // Frame the points, the origin, and where each line crosses the y-axis, so every line shows.
+        val intercepts = p.lines.map { Math.round(it.b).toInt() }
+        val xs = p.points.map { it.x } + 0; val ys = p.points.map { it.y } + 0 + intercepts
         val rx0 = xs.min() - 1.5; val rx1 = xs.max() + 1.5
         val ry0 = ys.min() - 1.5; val ry1 = ys.max() + 1.5
         // One scale for both axes, so slopes and right angles look true.

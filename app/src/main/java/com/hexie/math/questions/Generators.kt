@@ -28,8 +28,11 @@ object QuestionFactory {
         Topic.LAW_SINES_COSINES to listOf(::lawOfCosinesSide, ::lawOfSinesSide, ::lawOfCosinesAngle),
     )
 
+    /** Topics that have generators. The problem bank covers the rest. */
+    val topics: Set<Topic> get() = generators.keys
+
     fun make(topic: Topic, r: Random = Random.Default): Question =
-        generators.getValue(topic).random(r)(r)
+        (generators[topic] ?: generators.getValue(Topic.PROBABILITY)).random(r)(r)
 
     /** Every generator, used by the unit tests. */
     internal fun allGenerators(): List<Pair<Topic, (Random) -> Question>> =

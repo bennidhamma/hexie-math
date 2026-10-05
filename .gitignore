@@ -7,3 +7,17 @@ local.properties
 
 # Private: practice-test reports with the student's name and scores
 *.pdf
+
+# Screenshots for review
+review/
+
+# Python tools for the bank build
+bank/.venv/
+review-bank/
+
+# Problem-bank build by-products
+bank/logs/
+bank/compare/
+bank/svg-tests/
+bank/astra-problems.html
+__pycache__/

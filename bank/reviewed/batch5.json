@@ -1,0 +1,484 @@
+[
+  {
+    "id": "AREA-01",
+    "topic": "AREA_VOLUME",
+    "difficulty": "medium",
+    "skill": "area of a composite figure: rectangle with a semicircle",
+    "stem": "The figure shows a rectangle joined to a semicircle along one side. All lengths shown are in centimeters. What is the total area, in square centimeters, of the figure? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a horizontal rectangle on the left, wider than it is tall. Attach a semicircle bulging to the right with its diameter exactly the right side of the rectangle. The outer boundary is solid; draw the shared vertical diameter dashed. Label the bottom edge of the rectangle \\(12\\), centered below that edge, and its left vertical edge \\(8\\), centered to the left. There are no point labels, radius lines, tick marks, or angle marks. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A rectangle labeled \\(12\\) by \\(8\\) is joined to a semicircle whose diameter is the right side of the rectangle.",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(48+8\\pi\\)",
+      "\\(96+8\\pi\\)",
+      "\\(96+16\\pi\\)",
+      "\\(96+32\\pi\\)"
+    ],
+    "answer": 1,
+    "explanation": "Add the rectangle area and the semicircle area.\nRectangle: \\(12\\cdot8=96\\).\nThe semicircle has diameter \\(8\\), so its radius is \\(4\\).\nSemicircle: \\(\\frac{1}{2}\\pi(4)^{2}=8\\pi\\).\nTotal: \\(96+8\\pi\\) square centimeters.\nTrap: \\(48+8\\pi\\) also halves the rectangle; \\(96+16\\pi\\) uses a full circle; \\(96+32\\pi\\) uses the diameter as the radius.",
+    "check": "import math; print(12*8 + math.pi*(8/2)**2/2)",
+    "template": null
+  },
+  {
+    "id": "AREA-02",
+    "topic": "AREA_VOLUME",
+    "difficulty": "hard",
+    "skill": "shaded region between a square and an inscribed circle",
+    "stem": "A circle is inscribed in the square shown. The region inside the square but outside the circle is shaded. All lengths shown are in centimeters. What is the total shaded area, in square centimeters? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw an upright square and a centered circle tangent to the midpoint of every side. Add sparse diagonal hatching only in the four regions inside the square and outside the circle; leave the circle interior white. Draw one dashed diagonal from the lower-left corner to the upper-right corner through the circle center. Put the label \\(16\\) beside the midpoint of this diagonal, offset slightly above-left so it does not lie on the line. Do not mark the center or label any side, radius, point, or shaded region. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A circle is inscribed in a square with a dashed diagonal labeled \\(16\\), and the four corner regions outside the circle are shaded.",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(128-32\\pi\\)",
+      "\\(256-64\\pi\\)",
+      "\\(32\\pi\\)",
+      "\\(128\\)"
+    ],
+    "answer": 0,
+    "explanation": "Use the square diagonal to find the square area, then subtract the circle area.\nIf the square side is \\(s\\), then \\(2s^{2}=16^{2}\\), so \\(s^{2}=128\\).\nThe circle diameter is \\(s\\), so \\(r^{2}=\\frac{s^{2}}{4}=32\\).\nShaded area: \\(128-32\\pi\\) square centimeters.\nTrap: \\(256-64\\pi\\) treats the diagonal as a side; \\(32\\pi\\) gives only the circle area; \\(128\\) gives only the square area.",
+    "check": "import math; print(16**2/2 - math.pi*16**2/8)",
+    "template": null
+  },
+  {
+    "id": "AREA-03",
+    "topic": "AREA_VOLUME",
+    "difficulty": "medium",
+    "skill": "volume of a cylinder from a figure",
+    "stem": "The figure shows a right circular cylinder. All lengths shown are in centimeters. What is the volume of the cylinder, in cubic centimeters? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw an upright cylinder in perspective with an elliptical top and two vertical side edges. Draw the front half of the bottom ellipse solid and the back half dashed. On the top ellipse draw a solid horizontal diameter all the way from the left rim through a center dot to the right rim; label this segment \\(10\\), just above its midpoint. Label the right vertical side edge \\(12\\), beside its midpoint. No point letters, radius labels, or angle marks. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A cylinder has a top diameter labeled \\(10\\) and a vertical height labeled \\(12\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(100\\pi\\)",
+      "\\(120\\pi\\)",
+      "\\(300\\pi\\)",
+      "\\(1200\\pi\\)"
+    ],
+    "answer": 2,
+    "explanation": "Cylinder volume is the base area times the height.\nThe top segment is a diameter, so \\(r=\\frac{10}{2}=5\\).\n\\(V=\\pi r^{2}h=\\pi(5)^{2}(12)=300\\pi\\) cubic centimeters.\nTrap: \\(100\\pi\\) uses the cone formula; \\(120\\pi\\) uses base circumference times height; \\(1200\\pi\\) uses the diameter as the radius.",
+    "check": "import math; print(math.pi*(10/2)**2*12)",
+    "template": null
+  },
+  {
+    "id": "AREA-04",
+    "topic": "AREA_VOLUME",
+    "difficulty": "hard",
+    "skill": "scaling: radius and height change; new volume ratio",
+    "stem": "A cylinder's radius is increased by \\(50\\%\\) and its height is decreased by \\(20\\%\\). What is the ratio of the new volume to the original volume?",
+    "choices": [
+      "\\(\\frac{6}{5}\\)",
+      "\\(\\frac{9}{5}\\)",
+      "\\(\\frac{9}{4}\\)",
+      "\\(\\frac{27}{10}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Cylinder volume changes by the square of the radius factor times the height factor.\nRadius factor: \\(1+\\frac{1}{2}=\\frac{3}{2}\\).\nHeight factor: \\(1-\\frac{1}{5}=\\frac{4}{5}\\).\nVolume ratio: \\((\\frac{3}{2})^{2}\\cdot\\frac{4}{5}=\\frac{9}{5}\\).\nTrap: \\(\\frac{6}{5}\\) does not square the radius factor; \\(\\frac{9}{4}\\) ignores the height change; \\(\\frac{27}{10}\\) increases the height instead of decreasing it.",
+    "table": null,
+    "figure": null,
+    "check": "from fractions import Fraction as F; print(F(3,2)**2*F(4,5))",
+    "template": "AREA_04"
+  },
+  {
+    "id": "AREA-05",
+    "topic": "AREA_VOLUME",
+    "difficulty": "medium",
+    "skill": "area of a trapezoid with a missing height found by the Pythagorean theorem",
+    "stem": "All lengths shown in the right trapezoid are in centimeters. What is the area of the trapezoid, in square centimeters? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a right trapezoid with a horizontal bottom base, a shorter horizontal top base, a vertical left side, and a right side slanting down and right. Align the left endpoints of the bases. Label the bottom base \\(14\\), centered below it; the top base \\(8\\), centered above it; and the slanted right side \\(10\\), outside beside its midpoint. Draw a dashed vertical segment from the upper-right corner to the bottom base. Mark right angles at both left corners and where the dashed segment meets the bottom base. Do not label the dashed segment or either portion of the bottom base; no point letters. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A right trapezoid has bases labeled \\(8\\) and \\(14\\), a slanted side labeled \\(10\\), and a dashed perpendicular height.",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(44\\)",
+      "\\(88\\)",
+      "\\(110\\)",
+      "\\(176\\)"
+    ],
+    "answer": 1,
+    "explanation": "Find the perpendicular height with the right triangle on the right.\nThe horizontal leg of that triangle is \\(14-8=6\\).\nHeight: \\(h=\\sqrt{10^{2}-6^{2}}=8\\).\nArea: \\(\\frac{1}{2}(14+8)(8)=88\\) square centimeters.\nTrap: \\(44\\) uses \\(10-6\\) for the height; \\(110\\) uses the slanted side as the height; \\(176\\) omits the factor \\(\\frac{1}{2}\\).",
+    "check": "import math; print((14+8)*math.sqrt(10**2-(14-8)**2)/2)",
+    "template": null
+  },
+  {
+    "id": "AREA-06",
+    "topic": "AREA_VOLUME",
+    "difficulty": "hard",
+    "skill": "surface area of a rectangular box with labeled edges",
+    "stem": "The inside bottom and all four inside walls of the open rectangular box shown are covered with a liner costing $0.25 per square foot. The labeled inside dimensions are in feet. Ignoring overlap and waste, what is the total cost of the liner? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw an open rectangular box in three-quarter perspective, with a wide front face, a narrower right face, and a visible open top rim. Include the four top rim edges, four vertical corner edges, and four bottom edges. Show the two rear bottom edges and the rear-left vertical edge dashed where hidden by the walls; all remaining edges are solid. Leave all faces unfilled, and do not draw a lid or top face covering the opening. Label the long bottom front edge \\(10\\), centered below it; the bottom right edge receding up-right \\(6\\), just outside its midpoint; and the front-left vertical edge \\(4\\), just left of its midpoint. No corner letters or other marks. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "An open rectangular box has inside length \\(10\\), width \\(6\\), and height \\(4\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "$31.00",
+      "$47.00",
+      "$60.00",
+      "$62.00"
+    ],
+    "answer": 1,
+    "explanation": "An open box needs liner for one bottom and two pairs of opposite walls.\nBottom area: \\(10\\cdot6=60\\) square feet.\nWall area: \\(2(10\\cdot4)+2(6\\cdot4)=128\\) square feet.\nTotal area: \\(60+128=188\\) square feet.\nCost: \\(188\\cdot0.25=47\\), or $47.00.\nTrap: $31.00 counts only one wall of each size; $60.00 uses volume instead of area; $62.00 includes a lid.",
+    "check": "print((10*6 + 2*10*4 + 2*6*4)*0.25)",
+    "template": null
+  },
+  {
+    "id": "AREA-07",
+    "topic": "AREA_VOLUME",
+    "difficulty": "medium",
+    "skill": "perimeter given area and a length-width relation",
+    "stem": "A rectangle has an area of \\(84\\) square centimeters. Its length is \\(5\\) centimeters greater than its width. What is its perimeter, in centimeters?",
+    "choices": [
+      "\\(19\\)",
+      "\\(28\\)",
+      "\\(38\\)",
+      "\\(48\\)"
+    ],
+    "answer": 2,
+    "explanation": "Use the area to find the side lengths, then add all four sides.\nLet \\(w\\) be the width: \\(w(w+5)=84\\).\n\\((w-7)(w+12)=0\\), so the positive width is \\(7\\).\nLength: \\(7+5=12\\).\nPerimeter: \\(2(7+12)=38\\) centimeters.\nTrap: \\(19\\) counts only two sides; \\(28\\) uses the width for all four sides; \\(48\\) uses the length for all four sides.",
+    "table": null,
+    "figure": null,
+    "check": "import math; w=(-5+math.sqrt(5**2+4*84))/2; print(2*(w+w+5))",
+    "template": "AREA_07"
+  },
+  {
+    "id": "AREA-08",
+    "topic": "AREA_VOLUME",
+    "difficulty": "hard",
+    "skill": "arc length and sector area in a circle with a central angle",
+    "stem": "The minor arc from \\(A\\) to \\(B\\) has the length shown, in centimeters. Point \\(O\\) is the center of the circle. What is the area of the shaded sector, in square centimeters? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a circle with a dot at its center labeled \\(O\\), slightly below-left of the dot. Put \\(A\\) at the rightmost point of the circle and \\(B\\) on the upper-left part of the circle, at a counterclockwise central angle of \\(120^{\\circ}\\) from \\(A\\). Draw solid radii from \\(O\\) to both points. Add a small angle arc between the two radii and label it \\(120^{\\circ}\\). Lightly hatch only this upper sector. Draw the minor circular arc from \\(A\\) counterclockwise to \\(B\\) slightly heavier and put \\(8\\pi\\) just outside its midpoint on the upper-right part of the circle, clearly following the curved arc rather than a chord. Do not draw a chord or label a radius. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A shaded sector centered at \\(O\\) has central angle \\(120^{\\circ}\\) and minor arc \\(AB\\) labeled \\(8\\pi\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(\\frac{16}{3}\\pi\\)",
+      "\\(48\\pi\\)",
+      "\\(96\\pi\\)",
+      "\\(144\\pi\\)"
+    ],
+    "answer": 1,
+    "explanation": "The arc and the sector use the same fraction of the full circle.\nThe fraction is \\(\\frac{120}{360}=\\frac{1}{3}\\).\nArc length: \\(\\frac{1}{3}(2\\pi r)=8\\pi\\), so \\(r=12\\).\nSector area: \\(\\frac{1}{3}\\pi(12)^{2}=48\\pi\\) square centimeters.\nTrap: \\(\\frac{16}{3}\\pi\\) treats the arc length as the full circumference; \\(96\\pi\\) uses radius times arc length without halving; \\(144\\pi\\) gives the full circle area.",
+    "check": "import math; print((120/360)*math.pi*((8*math.pi)/((120/360)*2*math.pi))**2)",
+    "template": null
+  },
+  {
+    "id": "AREA-09",
+    "topic": "AREA_VOLUME",
+    "difficulty": "medium",
+    "skill": "area of a triangle on a coordinate grid",
+    "stem": "Triangle \\(ABC\\) is shown on the coordinate grid. What is its area, in square units?",
+    "table": null,
+    "figure": {
+      "description": "Draw a square coordinate grid with equal spacing on both axes. The visible horizontal range is \\(-5\\) through \\(5\\), and the visible vertical range is \\(-3\\) through \\(5\\). Draw thin grid lines at each integer and darker axes with arrowheads at the positive ends. Label the horizontal axis \\(x\\) and the vertical axis \\(y\\). Label every integer tick except omit duplicate zero labels and put a single \\(0\\) beside the origin. Plot solid dots at \\(A=(-4,-2)\\), \\(B=(4,-2)\\), and \\(C=(1,4)\\), and connect all three with solid black segments. Put only the letters \\(A\\), \\(B\\), and \\(C\\) beside their dots, below-left, below-right, and above-right respectively; do not print coordinate pairs beside the points. Do not add a height segment, side lengths, or shading. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "On a unit coordinate grid, triangle \\(ABC\\) has vertices \\(A=(-4,-2)\\), \\(B=(4,-2)\\), and \\(C=(1,4)\\).",
+      "notToScale": false
+    },
+    "choices": [
+      "\\(12\\)",
+      "\\(16\\)",
+      "\\(24\\)",
+      "\\(48\\)"
+    ],
+    "answer": 2,
+    "explanation": "Use the horizontal side as the base and the vertical distance to the opposite vertex as the height.\nBase: \\(4-(-4)=8\\).\nHeight: \\(4-(-2)=6\\).\nArea: \\(\\frac{1}{2}(8)(6)=24\\) square units.\nTrap: \\(12\\) counts only the right half of the base; \\(16\\) measures height from the horizontal axis; \\(48\\) omits the factor \\(\\frac{1}{2}\\).",
+    "check": "print(abs((-4)*( -2-4) + 4*(4-(-2)) + 1*((-2)-(-2)))/2)",
+    "template": null
+  },
+  {
+    "id": "AREA-10",
+    "topic": "AREA_VOLUME",
+    "difficulty": "hard",
+    "skill": "volume of a cone vs. a cylinder with the same base",
+    "stem": "A cone and a cylinder have the same base radius. The cone's height is \\(2\\) times the cylinder's height. Their volumes have a sum of \\(300\\pi\\) cubic centimeters. What is the volume of the cone, in cubic centimeters?",
+    "choices": [
+      "\\(100\\pi\\)",
+      "\\(120\\pi\\)",
+      "\\(150\\pi\\)",
+      "\\(200\\pi\\)"
+    ],
+    "answer": 1,
+    "explanation": "With equal base areas, the cone-to-cylinder volume ratio is one third of their height ratio.\nVolume ratio: \\(\\frac{2}{3}\\).\nThe cone accounts for \\(\\frac{2}{5}\\) of the combined volume.\nCone volume: \\(\\frac{2}{5}\\cdot300\\pi=120\\pi\\).\nTrap: \\(100\\pi\\) takes one third of the combined volume; \\(150\\pi\\) splits the volume equally; \\(200\\pi\\) omits the cone formula's factor of \\(\\frac{1}{3}\\).",
+    "table": null,
+    "figure": null,
+    "check": "import math; print(300*math.pi*2/(2+3))",
+    "template": "AREA_10"
+  },
+  {
+    "id": "AREA-11",
+    "topic": "AREA_VOLUME",
+    "difficulty": "medium",
+    "skill": "circle: area from circumference",
+    "stem": "A circle has a circumference of \\(18\\pi\\) inches. What is its area, in square inches?",
+    "choices": [
+      "\\(9\\pi\\)",
+      "\\(18\\pi\\)",
+      "\\(81\\pi\\)",
+      "\\(324\\pi\\)"
+    ],
+    "answer": 2,
+    "explanation": "Find the radius from the circumference before using the area formula.\n\\(2\\pi r=18\\pi\\), so \\(r=9\\).\n\\(A=\\pi(9)^{2}=81\\pi\\) square inches.\nTrap: \\(9\\pi\\) does not square the radius; \\(18\\pi\\) reports the circumference as the area; \\(324\\pi\\) uses the diameter as the radius.",
+    "table": null,
+    "figure": null,
+    "check": "import math; print(math.pi*((18*math.pi)/(2*math.pi))**2)",
+    "template": "AREA_11"
+  },
+  {
+    "id": "AREA-12",
+    "topic": "AREA_VOLUME",
+    "difficulty": "hard",
+    "skill": "rectangle inscribed in a circle; find the circle area",
+    "stem": "A rectangle with perimeter \\(28\\) centimeters is inscribed in the circle shown. The labeled side length is in centimeters. What is the area of the circle, in square centimeters? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a circle and a centered horizontal rectangle with all four vertices on the circle. The rectangle is wider than it is tall. Label only its left vertical side \\(6\\), centered just left of that side with space from the circle outline. Draw a dashed diagonal from the lower-left vertex to the upper-right vertex, passing through a center dot labeled \\(O\\) just below-right of the dot. Mark a small right angle at the lower-right vertex of the rectangle. Do not print any other length or perimeter, and do not label the vertices. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A rectangle inscribed in a circle has a vertical side labeled \\(6\\) and a dashed diagonal through the circle center.",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(25\\pi\\)",
+      "\\(49\\pi\\)",
+      "\\(73\\pi\\)",
+      "\\(100\\pi\\)"
+    ],
+    "answer": 0,
+    "explanation": "The rectangle diagonal is a diameter of the circle.\nThe other side is \\(\\frac{28}{2}-6=8\\).\nDiameter: \\(d=\\sqrt{6^{2}+8^{2}}=10\\).\nRadius: \\(r=\\frac{10}{2}=5\\).\nCircle area: \\(\\pi(5)^{2}=25\\pi\\) square centimeters.\nTrap: \\(49\\pi\\) adds the rectangle sides to get the diagonal; \\(73\\pi\\) uses \\(28-2(6)=16\\) as one side instead of halving it; \\(100\\pi\\) uses the diagonal as the radius.",
+    "check": "import math; print(math.pi*(6**2+(28/2-6)**2)/4)",
+    "template": null
+  },
+  {
+    "id": "ANG-01",
+    "topic": "ANGLES",
+    "difficulty": "medium",
+    "skill": "parallel lines cut by a transversal; find an angle",
+    "stem": "Parallel lines \\(p\\) and \\(q\\) are cut by a transversal as shown. What is the measure of the angle labeled \\((3x+10)^{\\circ}\\)? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw two horizontal parallel lines, \\(p\\) above \\(q\\), with their labels at the far right. Add matching single parallel arrow marks near the left end of each line. Draw one transversal rising from lower left to upper right, crossing both lines and extending beyond each. At the upper intersection, mark and label the acute angle above \\(p\\) and to the right of the transversal \\((3x+10)^{\\circ}\\). At the lower intersection, mark and label the obtuse angle above \\(q\\) and to the left of the transversal \\((5x+10)^{\\circ}\\). Keep both labels in their own angle regions; do not label any other angles or intersections. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "Two parallel horizontal lines have a rising transversal, with the upper-right angle at the upper crossing labeled \\((3x+10)^{\\circ}\\) and the upper-left angle at the lower crossing labeled \\((5x+10)^{\\circ}\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(20^{\\circ}\\)",
+      "\\(60^{\\circ}\\)",
+      "\\(70^{\\circ}\\)",
+      "\\(110^{\\circ}\\)"
+    ],
+    "answer": 2,
+    "explanation": "The two labeled angles are supplementary because the lines are parallel.\n\\((3x+10)+(5x+10)=180\\).\n\\(8x+20=180\\), so \\(x=20\\).\nThe requested angle is \\((3\\cdot20+10)^{\\circ}=70^{\\circ}\\).\nTrap: \\(20^{\\circ}\\) reports the value of \\(x\\); \\(60^{\\circ}\\) omits the added \\(10^{\\circ}\\); \\(110^{\\circ}\\) is the other labeled angle.",
+    "check": "print(3*((180-10-10)/(3+5))+10)",
+    "template": null
+  },
+  {
+    "id": "ANG-02",
+    "topic": "ANGLES",
+    "difficulty": "hard",
+    "skill": "two transversals and parallel lines; angle chase to an unknown",
+    "stem": "Lines \\(p\\) and \\(q\\) are parallel. The two transversals intersect at \\(C\\) on line \\(q\\). What is the value of \\(x\\)? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw horizontal parallel lines \\(p\\) above \\(q\\), labeled at their far right ends, with matching single parallel arrow marks near their far left ends. Put \\(A\\) on the left portion of \\(p\\), \\(B\\) farther right on \\(p\\), and \\(C\\) on \\(q\\) horizontally between them. Draw a full transversal through \\(A\\) and \\(C\\), continuing below \\(C\\) down-right; draw another through \\(B\\) and \\(C\\), continuing below \\(C\\) down-left. The two upper pieces form triangle \\(ABC\\). At \\(A\\), mark the obtuse angle below \\(p\\) between the leftward horizontal ray and the ray toward \\(C\\), and label it \\(124^{\\circ}\\). At \\(C\\), label the small angle between the rightward ray of \\(q\\) and the ray toward \\(B\\) as \\(38^{\\circ}\\). Also at \\(C\\), label the angle below \\(q\\) between the two downward transversal rays as \\(x^{\\circ}\\). Put point labels beside their intersections without overlapping the angle labels. Do not label either upper interior triangle angle or the angle above \\(C\\) inside the triangle. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "Two transversals form a triangle between parallel lines, with an exterior angle of \\(124^{\\circ}\\) at \\(A\\), an angle of \\(38^{\\circ}\\) above the lower line to the right of \\(C\\), and \\(x^{\\circ}\\) between the downward rays at \\(C\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(56\\)",
+      "\\(86\\)",
+      "\\(94\\)",
+      "\\(142\\)"
+    ],
+    "answer": 1,
+    "explanation": "Use the parallel lines to find the triangle angles, then use vertical angles at the lower intersection.\n\\(\\angle BAC=180^{\\circ}-124^{\\circ}=56^{\\circ}\\).\nBy alternate interior angles, \\(\\angle ABC=38^{\\circ}\\).\n\\(\\angle ACB=180^{\\circ}-56^{\\circ}-38^{\\circ}=86^{\\circ}\\).\nThe angle labeled \\(x^{\\circ}\\) is vertical to \\(\\angle ACB\\), so \\(x=86\\).\nTrap: \\(56\\) gives the angle at \\(A\\); \\(94\\) adds the two upper triangle angles; \\(142\\) subtracts only \\(38\\) from \\(180\\).",
+    "check": "print(180-(180-124)-38)",
+    "template": null
+  },
+  {
+    "id": "ANG-03",
+    "topic": "ANGLES",
+    "difficulty": "medium",
+    "skill": "triangle angle sum with an exterior angle",
+    "stem": "In the figure, \\(A\\), \\(B\\), and \\(D\\) lie on a line. What is the measure of \\(\\angle ACB\\)? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw triangle \\(ABC\\) with \\(A\\) at lower left, \\(B\\) at lower right, and \\(C\\) above the base. Extend the horizontal base from \\(B\\) to a labeled point \\(D\\) farther right. Draw small arcs and label the interior angle at \\(A\\) as \\((2x+4)^{\\circ}\\), the interior angle at \\(C\\) as \\((3x)^{\\circ}\\), and the exterior angle at \\(B\\) between rays \\(BC\\) and \\(BD\\) as \\(124^{\\circ}\\). Point labels sit outside the triangle. Do not mark or label the interior angle at \\(B\\). Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A triangle has interior angles \\((2x+4)^{\\circ}\\) at \\(A\\) and \\((3x)^{\\circ}\\) at \\(C\\), with an exterior angle of \\(124^{\\circ}\\) at \\(B\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(24^{\\circ}\\)",
+      "\\(52^{\\circ}\\)",
+      "\\(56^{\\circ}\\)",
+      "\\(72^{\\circ}\\)"
+    ],
+    "answer": 3,
+    "explanation": "A triangle exterior angle equals the sum of the two nonadjacent interior angles.\n\\((2x+4)+3x=124\\).\n\\(5x+4=124\\), so \\(x=24\\).\n\\(\\angle ACB=(3\\cdot24)^{\\circ}=72^{\\circ}\\).\nTrap: \\(24^{\\circ}\\) reports the value of \\(x\\); \\(52^{\\circ}\\) is the angle at \\(A\\); \\(56^{\\circ}\\) is the interior angle at \\(B\\).",
+    "check": "print(3*(124-4)/(2+3))",
+    "template": null
+  },
+  {
+    "id": "ANG-04",
+    "topic": "ANGLES",
+    "difficulty": "hard",
+    "skill": "isosceles triangle with tick marks; find a base angle",
+    "stem": "The tick marks indicate \\(\\overline{AB}=\\overline{AC}\\), and \\(B\\), \\(D\\), and \\(C\\) lie on a line. What is the measure of \\(\\angle ACB\\)? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw an isosceles triangle with \\(A\\) at the top, \\(B\\) at bottom left, and \\(C\\) at bottom right. Put one matching tick mark at the midpoint of each sloping side \\(AB\\) and \\(AC\\). Place \\(D\\) on the horizontal base slightly left of its midpoint, and draw solid segment \\(AD\\). At \\(A\\), label only the small angle between \\(AB\\) and \\(AD\\) as \\(20^{\\circ}\\). At \\(D\\), label only the angle between rays \\(DA\\) and \\(DC\\), on the right side of \\(AD\\), as \\(85^{\\circ}\\). Put the point label \\(D\\) below the base and the remaining point labels outside the triangle. Add no base-angle labels, right-angle marks, or marks implying \\(AD\\) bisects an angle or a side. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "An isosceles triangle with equal sides \\(AB\\) and \\(AC\\) has \\(D\\) on its base, \\(\\angle BAD=20^{\\circ}\\), and \\(\\angle ADC=85^{\\circ}\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(65^{\\circ}\\)",
+      "\\(75^{\\circ}\\)",
+      "\\(80^{\\circ}\\)",
+      "\\(85^{\\circ}\\)"
+    ],
+    "answer": 0,
+    "explanation": "Find one base angle using the smaller triangle, then use the equal sides of the large triangle.\n\\(\\angle ADB=180^{\\circ}-85^{\\circ}=95^{\\circ}\\).\n\\(\\angle ABD=180^{\\circ}-20^{\\circ}-95^{\\circ}=65^{\\circ}\\).\nSince \\(\\overline{AB}=\\overline{AC}\\), the base angles are equal, so \\(\\angle ACB=65^{\\circ}\\).\nTrap: \\(75^{\\circ}\\) uses \\(85^{\\circ}\\) in the left triangle; \\(80^{\\circ}\\) treats \\(20^{\\circ}\\) as the entire vertex angle; \\(85^{\\circ}\\) copies the angle at \\(D\\).",
+    "check": "print(180-20-(180-85))",
+    "template": null
+  },
+  {
+    "id": "ANG-05",
+    "topic": "ANGLES",
+    "difficulty": "medium",
+    "skill": "interior angle of a regular polygon",
+    "stem": "A regular polygon has \\(12\\) sides. What is the measure of each interior angle?",
+    "choices": [
+      "\\(30^{\\circ}\\)",
+      "\\(150^{\\circ}\\)",
+      "\\(165^{\\circ}\\)",
+      "\\(1800^{\\circ}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Divide the sum of the interior angles by the number of equal angles.\nAngle sum: \\((12-2)\\cdot180^{\\circ}=1800^{\\circ}\\).\nEach interior angle: \\(\\frac{1800}{12}^{\\circ}=150^{\\circ}\\).\nTrap: \\(30^{\\circ}\\) is an exterior angle; \\(165^{\\circ}\\) uses \\(12-1\\) triangles instead of \\(12-2\\); \\(1800^{\\circ}\\) is the sum of all interior angles.",
+    "table": null,
+    "figure": null,
+    "check": "print((12-2)*180/12)",
+    "template": "ANG_05"
+  },
+  {
+    "id": "ANG-06",
+    "topic": "ANGLES",
+    "difficulty": "hard",
+    "skill": "similar triangles with a parallel segment inside a triangle; find a length",
+    "stem": "In the figure, \\(\\overline{DE}\\) is parallel to \\(\\overline{BC}\\), and triangle \\(ADE\\) has a perimeter of \\(27\\) centimeters. All labeled lengths are in centimeters. What is the length of \\(\\overline{BC}\\), in centimeters? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a broad triangle with \\(A\\) at the top, \\(B\\) at bottom left, and \\(C\\) at bottom right. Put \\(D\\) on side \\(AB\\) and \\(E\\) on side \\(AC\\), each three fifths of the way from \\(A\\) toward the base, and connect \\(D\\) to \\(E\\) with a horizontal solid segment parallel to \\(BC\\). Add matching single parallel arrow marks at the centers of \\(DE\\) and \\(BC\\). Label the upper left segment \\(AD\\) as \\(6\\), beside its midpoint outside the triangle; label lower left segment \\(DB\\) as \\(4\\) in the same way; label upper right segment \\(AE\\) as \\(9\\), beside its midpoint outside. All five point letters are outside the triangle beside their points. Do not label \\(DE\\), \\(EC\\), \\(BC\\), any perimeter, or a scale factor. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "Triangle \\(ABC\\) contains a segment \\(DE\\) parallel to its base, with \\(AD=6\\), \\(DB=4\\), and \\(AE=9\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(\\frac{36}{5}\\)",
+      "\\(8\\)",
+      "\\(20\\)",
+      "\\(45\\)"
+    ],
+    "answer": 2,
+    "explanation": "Find the small triangle base from its perimeter, then use the scale factor between the similar triangles.\n\\(DE=27-6-9=12\\).\n\\(AB=6+4=10\\), so the large-to-small scale factor is \\(\\frac{10}{6}=\\frac{5}{3}\\).\n\\(BC=12\\cdot\\frac{5}{3}=20\\) centimeters.\nTrap: \\(\\frac{36}{5}\\) reverses the scale factor; \\(8\\) uses \\(DB\\) instead of the whole side \\(AB\\); \\(45\\) scales the small perimeter instead of the small base.",
+    "check": "from fractions import Fraction as F; print((27-6-9)*F(6+4,6))",
+    "template": null
+  },
+  {
+    "id": "ANG-07",
+    "topic": "ANGLES",
+    "difficulty": "medium",
+    "skill": "Pythagorean theorem in a right triangle with one leg unknown",
+    "stem": "All lengths shown in the right triangle are in centimeters. What is the value of \\(x\\)? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a right triangle with a horizontal bottom leg and a vertical left leg, meeting at a square right-angle mark in the lower-left corner. Its hypotenuse runs from the upper-left corner to the lower-right corner. Label the vertical leg \\(5\\), centered to the left; the horizontal leg \\(x\\), centered below; and the hypotenuse \\(13\\), just above-right of its midpoint. No point letters, other angle labels, or tick marks. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A right triangle has a leg labeled \\(5\\), a hypotenuse labeled \\(13\\), and a horizontal leg labeled \\(x\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(8\\)",
+      "\\(12\\)",
+      "\\(\\sqrt{194}\\)",
+      "\\(18\\)"
+    ],
+    "answer": 1,
+    "explanation": "Subtract the known leg squared from the hypotenuse squared to find the unknown leg squared.\n\\(x^{2}+5^{2}=13^{2}\\).\n\\(x^{2}=169-25=144\\), so \\(x=12\\).\nTrap: \\(8\\) subtracts the lengths without squaring; \\(\\sqrt{194}\\) adds the squares; \\(18\\) adds the lengths.",
+    "check": "import math; print(math.sqrt(13**2-5**2))",
+    "template": null
+  },
+  {
+    "id": "ANG-08",
+    "topic": "ANGLES",
+    "difficulty": "hard",
+    "skill": "special right triangle (30-60-90) inside a figure",
+    "stem": "The figure shows rectangle \\(ABCD\\) and its diagonal \\(\\overline{AC}\\). The labeled side length is in centimeters. What is the area of the rectangle, in square centimeters? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a horizontal rectangle labeled \\(A\\) at lower left, \\(B\\) at lower right, \\(C\\) at upper right, and \\(D\\) at upper left. Draw solid diagonal \\(AC\\). At \\(A\\), mark and label the angle between the horizontal side \\(AB\\) and the diagonal \\(AC\\) as \\(30^{\\circ}\\); keep this label below the diagonal and inside the rectangle. Label the right vertical side \\(BC\\) as \\(6\\), centered outside to its right. Put small square right-angle marks at \\(B\\) and \\(D\\). Do not label the diagonal, either horizontal side, or any other angle. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A rectangle has vertical side \\(BC\\) labeled \\(6\\), and diagonal \\(AC\\) makes a \\(30^{\\circ}\\) angle with horizontal side \\(AB\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(18\\sqrt{3}\\)",
+      "\\(36\\)",
+      "\\(36\\sqrt{3}\\)",
+      "\\(72\\)"
+    ],
+    "answer": 2,
+    "explanation": "The diagonal creates a right triangle whose leg opposite the given angle is the short leg.\nIn the \\(30^{\\circ}\\)-\\(60^{\\circ}\\)-\\(90^{\\circ}\\) triangle, \\(BC=6\\), so \\(AB=6\\sqrt{3}\\).\nRectangle area: \\(6\\cdot6\\sqrt{3}=36\\sqrt{3}\\) square centimeters.\nTrap: \\(18\\sqrt{3}\\) gives the area of just one triangle; \\(36\\) treats the rectangle as a square; \\(72\\) uses the hypotenuse as the rectangle width.",
+    "check": "import math; print(6*(6*math.sqrt(3)))",
+    "template": null
+  },
+  {
+    "id": "ANG-09",
+    "topic": "ANGLES",
+    "difficulty": "medium",
+    "skill": "vertical and supplementary angles at two intersecting lines",
+    "stem": "Lines \\(AC\\) and \\(BD\\) intersect at \\(O\\), as shown. What is the measure of \\(\\angle BOC\\)? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a horizontal line through \\(O\\), with labeled point \\(A\\) to the left and labeled point \\(C\\) to the right. Draw a steep diagonal line through \\(O\\), with labeled point \\(B\\) above-right and labeled point \\(D\\) below-left. Extend both lines beyond their named points. Label the obtuse upper-left angle between rays \\(OA\\) and \\(OB\\) as \\((x+80)^{\\circ}\\); label its vertical opposite, the obtuse lower-right angle between rays \\(OC\\) and \\(OD\\), as \\((3x+40)^{\\circ}\\). Use small arcs to tie these labels clearly to their angles. Put the center label \\(O\\) just below-left of the crossing without obscuring either line. Do not mark a right angle or label either acute angle. Style: black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "Two intersecting lines have opposite obtuse angles labeled \\((x+80)^{\\circ}\\) and \\((3x+40)^{\\circ}\\), while the requested angle \\(BOC\\) is adjacent to them.",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(20^{\\circ}\\)",
+      "\\(80^{\\circ}\\)",
+      "\\(85^{\\circ}\\)",
+      "\\(100^{\\circ}\\)"
+    ],
+    "answer": 1,
+    "explanation": "The labeled vertical angles are equal, and the requested angle forms a straight angle with either of them.\n\\(x+80=3x+40\\), so \\(x=20\\).\n\\(\\angle AOB=(20+80)^{\\circ}=100^{\\circ}\\).\n\\(\\angle BOC=180^{\\circ}-100^{\\circ}=80^{\\circ}\\).\nTrap: \\(20^{\\circ}\\) reports the value of \\(x\\); \\(85^{\\circ}\\) comes from treating the labeled vertical angles as supplementary; \\(100^{\\circ}\\) gives one of the labeled angles.",
+    "check": "print(180-((80-40)/(3-1)+80))",
+    "template": null
+  },
+  {
+    "id": "ANG-10",
+    "topic": "ANGLES",
+    "difficulty": "hard",
+    "skill": "number of sides of a regular polygon from an exterior angle condition",
+    "stem": "For a regular polygon, the measure of each interior angle is \\(5\\) times the measure of each exterior angle. How many sides does the polygon have?",
+    "choices": [
+      "\\(6\\)",
+      "\\(10\\)",
+      "\\(12\\)",
+      "\\(30\\)"
+    ],
+    "answer": 2,
+    "explanation": "An interior angle and its adjacent exterior angle add to a straight angle.\nLet \\(e\\) be the exterior angle measure in degrees: \\(5e+e=180\\).\n\\(e=\\frac{180}{6}=30\\).\nNumber of sides: \\(\\frac{360}{30}=12\\).\nTrap: \\(6\\) divides \\(180\\) by the exterior angle instead of \\(360\\); \\(10\\) uses \\(\\frac{180}{5}\\) for the exterior angle, omitting it from the straight-angle sum; \\(30\\) reports the exterior angle measure as the side count.",
+    "table": null,
+    "figure": null,
+    "check": "print(360/(180/(5+1)))",
+    "template": "ANG_10"
+  }
+]

@@ -1,0 +1,568 @@
+[
+  {
+    "id": "PROB-01",
+    "topic": "PROBABILITY",
+    "difficulty": "medium",
+    "skill": "probability of two dependent events (drawing without replacement)",
+    "stem": "A bag contains \\(7\\) red, \\(6\\) blue, and \\(2\\) green marbles. Two marbles are drawn at random without replacement. What is the probability that both are red?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{14}{75}\\)",
+      "\\(\\frac{1}{5}\\)",
+      "\\(\\frac{49}{225}\\)",
+      "\\(\\frac{7}{15}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Without replacement, both the red count and the total count decrease after the first red marble.\nThe bag starts with \\(7+6+2=15\\) marbles.\nMultiply the probabilities: \\(\\frac{7}{15}\\cdot\\frac{6}{14}=\\frac{1}{5}\\).\nTraps: \\(\\frac{49}{225}\\) assumes replacement; \\(\\frac{14}{75}\\) keeps the total unchanged; \\(\\frac{7}{15}\\) counts only the first draw.",
+    "check": "from fractions import Fraction as F; from math import comb; print(F(comb(7, 2), comb(15, 2)))",
+    "template": "PROB_01"
+  },
+  {
+    "id": "PROB-02",
+    "topic": "PROBABILITY",
+    "difficulty": "hard",
+    "skill": "probability of at least one success over several independent trials (complement)",
+    "stem": "A camera turns on if at least one of \\(4\\) sensors detects movement. Each sensor detects a passing vehicle with probability \\(\\frac{3}{4}\\), independently of the other sensors. What is the probability that a passing vehicle turns on the camera?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{1}{256}\\)",
+      "\\(\\frac{3}{64}\\)",
+      "\\(\\frac{81}{256}\\)",
+      "\\(\\frac{255}{256}\\)"
+    ],
+    "answer": 3,
+    "explanation": "Use the complement: the camera stays off only if every sensor misses the vehicle.\nOne sensor misses with probability \\(1-\\frac{3}{4}=\\frac{1}{4}\\).\nAll sensors miss with probability \\(\\left(\\frac{1}{4}\\right)^{4}=\\frac{1}{256}\\).\nThe camera turns on with probability \\(1-\\frac{1}{256}=\\frac{255}{256}\\).\nTraps: \\(\\frac{81}{256}\\) requires every sensor to detect; \\(\\frac{1}{256}\\) is the complement; \\(\\frac{3}{64}\\) counts exactly one detection.",
+    "check": "from fractions import Fraction as F; from itertools import product; print(F(sum(any(x > 1 for x in trial) for trial in product(range(1, 5), repeat=4)), 4**4))",
+    "template": "PROB_02"
+  },
+  {
+    "id": "PROB-03",
+    "topic": "PROBABILITY",
+    "difficulty": "medium",
+    "skill": "conditional probability from a two-way table (table field)",
+    "stem": "The table shows how students in two grades travel to school. One of the sophomores in the table is selected at random. What is the probability that this student takes the bus?",
+    "table": {
+      "caption": "Travel to school",
+      "headers": [
+        "Grade",
+        "Takes bus",
+        "Does not take bus"
+      ],
+      "rows": [
+        [
+          "Sophomores",
+          "\\(24\\)",
+          "\\(22\\)"
+        ],
+        [
+          "Juniors",
+          "\\(20\\)",
+          "\\(16\\)"
+        ]
+      ]
+    },
+    "figure": null,
+    "choices": [
+      "\\(\\frac{12}{41}\\)",
+      "\\(\\frac{11}{23}\\)",
+      "\\(\\frac{12}{23}\\)",
+      "\\(\\frac{6}{11}\\)"
+    ],
+    "answer": 2,
+    "explanation": "Restrict the sample space to the sophomores.\nThere are \\(24+22=46\\) sophomores.\nOf these, \\(24\\) take the bus, so the probability is \\(\\frac{24}{46}=\\frac{12}{23}\\).\nTraps: \\(\\frac{12}{41}\\) uses all students; \\(\\frac{6}{11}\\) conditions on taking the bus; \\(\\frac{11}{23}\\) counts sophomores who do not take the bus.",
+    "check": "from fractions import Fraction as F; print(F(24, 24+22))",
+    "template": "PROB_03"
+  },
+  {
+    "id": "PROB-04",
+    "topic": "PROBABILITY",
+    "difficulty": "hard",
+    "skill": "conditional probability from a two-way table where the condition is a column total (table field)",
+    "stem": "A total of \\(56\\) volunteers each worked exactly one of two shifts. The table shows their club membership and shifts, with one entry missing. If a volunteer is chosen at random from those who worked the afternoon shift, what is the probability that the volunteer is not a club member?",
+    "table": {
+      "caption": "Volunteer shifts",
+      "headers": [
+        "Membership",
+        "Morning",
+        "Afternoon"
+      ],
+      "rows": [
+        [
+          "Club member",
+          "\\(18\\)",
+          "\\(18\\)"
+        ],
+        [
+          "Not a club member",
+          "\\(6\\)",
+          "?"
+        ]
+      ]
+    },
+    "figure": null,
+    "choices": [
+      "\\(\\frac{1}{4}\\)",
+      "\\(\\frac{7}{16}\\)",
+      "\\(\\frac{9}{16}\\)",
+      "\\(\\frac{7}{10}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Find the missing count, then use only the afternoon column.\nThe missing count is \\(56-18-18-6=14\\).\nThere are \\(18+14=32\\) afternoon volunteers.\nThe probability is \\(\\frac{14}{32}=\\frac{7}{16}\\).\nTraps: \\(\\frac{1}{4}\\) uses all volunteers; \\(\\frac{7}{10}\\) uses the nonmember row; \\(\\frac{9}{16}\\) counts afternoon club members.",
+    "check": "from fractions import Fraction as F; print(F(56-18-18-6, 56-18-6))",
+    "template": "PROB_04"
+  },
+  {
+    "id": "PROB-05",
+    "topic": "PROBABILITY",
+    "difficulty": "medium",
+    "skill": "probability with a Venn diagram of two overlapping groups",
+    "stem": "Each number in the diagram gives the number of students in that region. If one of all the students represented is selected at random, what is the probability that the student belongs to exactly one of the two clubs?",
+    "table": null,
+    "figure": {
+      "description": "Draw a wide rectangular frame enclosing two overlapping circles of equal size. The left circle is labeled Art near its upper left interior; the right circle is labeled Music near its upper right interior. Place the number \\(14\\) in the left-only region, \\(10\\) in the central overlap, and \\(18\\) in the right-only region. Place a second \\(18\\) inside the frame near the lower right corner, clearly outside both circles. Leave enough space to distinguish the two instances of \\(18\\). The four counts label regions, not circle areas. Do not shade any region; no tick marks, arrows, or extra lines. Use black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A Venn diagram shows \\(14\\) students in Art only, \\(10\\) in both Art and Music, \\(18\\) in Music only, and \\(18\\) in neither club.",
+      "notToScale": false
+    },
+    "choices": [
+      "\\(\\frac{1}{6}\\)",
+      "\\(\\frac{8}{15}\\)",
+      "\\(\\frac{7}{10}\\)",
+      "\\(\\frac{13}{15}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Exactly one club means the two regions outside the overlap.\nTotal students: \\(14+10+18+18=60\\).\nStudents in exactly one club: \\(14+18=32\\).\nThe probability is \\(\\frac{32}{60}=\\frac{8}{15}\\).\nTraps: \\(\\frac{1}{6}\\) counts only the overlap; \\(\\frac{7}{10}\\) includes the overlap once; \\(\\frac{13}{15}\\) counts the overlap twice.",
+    "check": "from fractions import Fraction as F; print(F(14+18, 14+10+18+18))",
+    "template": null
+  },
+  {
+    "id": "PROB-06",
+    "topic": "PROBABILITY",
+    "difficulty": "hard",
+    "skill": "counting arrangements with a restriction (permutations)",
+    "stem": "A group of \\(6\\) students, including Maya and Leo, will stand in a single row for a photo. How many different arrangements are possible if Maya and Leo must not stand next to each other?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(240\\)",
+      "\\(480\\)",
+      "\\(600\\)",
+      "\\(720\\)"
+    ],
+    "answer": 1,
+    "explanation": "Subtract the arrangements with Maya and Leo together from all arrangements.\nAll arrangements: \\(6!=720\\).\nTreat Maya and Leo as one block, with either student first: \\(2(5!)=240\\).\nAllowed arrangements: \\(720-240=480\\).\nTraps: \\(240\\) counts adjacent arrangements; \\(720\\) ignores the restriction; \\(600\\) subtracts only one order within the pair.",
+    "check": "from itertools import permutations; print(sum(abs(p.index(0)-p.index(1)) != 1 for p in permutations(range(6))))",
+    "template": "PROB_06"
+  },
+  {
+    "id": "PROB-07",
+    "topic": "PROBABILITY",
+    "difficulty": "medium",
+    "skill": "counting combinations (choose a committee)",
+    "stem": "A club with \\(9\\) members will choose a committee of \\(3\\) members. The committee has no assigned offices. How many different committees can be chosen?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(36\\)",
+      "\\(84\\)",
+      "\\(504\\)",
+      "\\(729\\)"
+    ],
+    "answer": 1,
+    "explanation": "A committee is an unordered group, so divide out the orders of its members.\nOrdered selections: \\(9(8)(7)=504\\).\nEach committee appears \\(3!=6\\) times, so there are \\(\\frac{504}{6}=84\\) committees.\nTraps: \\(504\\) counts orders; \\(729\\) also allows repeated members; \\(36\\) chooses only two members.",
+    "check": "from itertools import combinations; print(len(list(combinations(range(9), 3))))",
+    "template": "PROB_07"
+  },
+  {
+    "id": "PROB-08",
+    "topic": "PROBABILITY",
+    "difficulty": "hard",
+    "skill": "probability using combinations (choose 2 of n with a condition)",
+    "stem": "A project team consists of \\(4\\) technicians and \\(7\\) engineers. Two different team members are selected at random, with every pair equally likely. What is the probability that at least one selected member is a technician?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{6}{55}\\)",
+      "\\(\\frac{4}{11}\\)",
+      "\\(\\frac{28}{55}\\)",
+      "\\(\\frac{34}{55}\\)"
+    ],
+    "answer": 3,
+    "explanation": "Count all pairs and subtract pairs containing only engineers.\nTotal pairs: \\(\\frac{11(10)}{2}=55\\).\nEngineer-only pairs: \\(\\frac{7(6)}{2}=21\\).\nThe probability is \\(\\frac{55-21}{55}=\\frac{34}{55}\\).\nTraps: \\(\\frac{28}{55}\\) counts exactly one technician; \\(\\frac{4}{11}\\) uses one selection; \\(\\frac{6}{55}\\) requires two technicians.",
+    "check": "from fractions import Fraction as F; from itertools import combinations; pairs=list(combinations(range(11), 2)); print(F(sum(any(x < 4 for x in pair) for pair in pairs), len(pairs)))",
+    "template": "PROB_08"
+  },
+  {
+    "id": "PROB-09",
+    "topic": "PROBABILITY",
+    "difficulty": "medium",
+    "skill": "expected value of a simple game",
+    "stem": "A game costs $3.00 to play. A player draws one ticket at random from \\(20\\) tickets: one pays $20.00, two pay $2.00 each, and the rest pay nothing. What is the expected net change in the player's money per play, to the nearest cent?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "-$1.90",
+      "-$1.80",
+      "$1.20",
+      "$5.00"
+    ],
+    "answer": 1,
+    "explanation": "Expected net change is the probability-weighted payout minus the cost to play.\nExpected payout: \\(\\frac{20+2(2)}{20}=1.2\\) dollars.\nSubtract the cost: \\(1.2-3=-1.8\\) dollars.\nTraps: $1.20 ignores the cost; -$1.90 counts only one smaller prize; $5.00 averages only the winning tickets.",
+    "check": "from fractions import Fraction as F; print(F(sum([20, 2, 2]+[0]*17), 20)-3)",
+    "template": "PROB_09"
+  },
+  {
+    "id": "PROB-10",
+    "topic": "PROBABILITY",
+    "difficulty": "hard",
+    "skill": "geometric probability: chance a random point in a square lands in a shaded circle",
+    "stem": "In the square shown, \\(O\\) is the center and \\(P\\) is the midpoint of \\(\\overline{OC}\\). The shaded circle is centered at \\(O\\) and passes through \\(P\\). A point is selected uniformly at random from the square's interior. What is the probability that it lies inside the circle? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a square with horizontal top and bottom edges and vertical sides. Label its corners \\(A\\) at upper left, \\(B\\) at upper right, \\(C\\) at lower right, and \\(D\\) at lower left, with each letter just outside the corner. Place the side-length label \\(8\\) cm directly below the middle of the bottom side. Add a small right-angle square inside corner \\(D\\). Draw the full diagonal from \\(A\\) to \\(C\\) as a dashed line. Mark a small solid point at the square's center and label it \\(O\\) just above and to the right. Mark a point halfway from \\(O\\) to \\(C\\) and label it \\(P\\) just below and to the left. Draw a circle centered at \\(O\\) whose boundary passes through \\(P\\); it must stay entirely inside the square with a visible gap to every side. Fill only the circle's interior with light gray, preserving the diagonal, labels, and points on top of the fill. Place one identical solid tick across the middle of each of the dashed segments \\(\\overline{OP}\\) and \\(\\overline{PC}\\) to show they are equal. Do not label the radius, any diagonal length, or any area. No other diagonals, arrows, or tick marks. Use black line art on white, ACT test style, sans-serif labels, with the specified light-gray fill; no other text.",
+      "alt": "An \\(8\\)-centimeter square has center \\(O\\), a dashed diagonal through vertex \\(C\\), equal tick marks on \\(\\overline{OP}\\) and \\(\\overline{PC}\\), and a shaded circle centered at \\(O\\) through \\(P\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(\\frac{\\pi\\sqrt{2}}{32}\\)",
+      "\\(\\frac{\\pi}{16}\\)",
+      "\\(\\frac{\\pi}{8}\\)",
+      "\\(\\frac{\\pi}{4}\\)"
+    ],
+    "answer": 2,
+    "explanation": "Uniform geometric probability is the circle's area divided by the square's area.\nThe center-to-corner distance is \\(OC=\\sqrt{4^{2}+4^{2}}=4\\sqrt{2}\\) cm.\nThe radius is half that distance: \\(OP=2\\sqrt{2}\\) cm.\nThe probability is \\(\\frac{\\pi(2\\sqrt{2})^{2}}{8^{2}}=\\frac{8\\pi}{64}=\\frac{\\pi}{8}\\).\nTraps: \\(\\frac{\\pi\\sqrt{2}}{32}\\) leaves the radius unsquared; \\(\\frac{\\pi}{16}\\) uses a quarter of the side as the radius; \\(\\frac{\\pi}{4}\\) assumes the circle touches the square's sides.",
+    "check": "from math import pi, hypot; print(pi*(hypot(4, 4)/2)**2/8**2)",
+    "template": null
+  },
+  {
+    "id": "PROB-11",
+    "topic": "PROBABILITY",
+    "difficulty": "medium",
+    "skill": "probability of A or B with overlap (inclusion-exclusion)",
+    "stem": "Of \\(46\\) students in a class, \\(18\\) are in band, \\(20\\) are in choir, and \\(4\\) are in both. If one student is selected at random, what is the probability that the student is in band or choir or both?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{2}{23}\\)",
+      "\\(\\frac{15}{23}\\)",
+      "\\(\\frac{17}{23}\\)",
+      "\\(\\frac{19}{23}\\)"
+    ],
+    "answer": 2,
+    "explanation": "Subtract the overlap once when counting students in either group.\nStudents in at least one group: \\(18+20-4=34\\).\nThe probability is \\(\\frac{34}{46}=\\frac{17}{23}\\).\nTraps: \\(\\frac{19}{23}\\) counts the overlap twice; \\(\\frac{15}{23}\\) excludes the overlap; \\(\\frac{2}{23}\\) counts only the overlap.",
+    "check": "from fractions import Fraction as F; print(F(18+20-4, 46))",
+    "template": "PROB_11"
+  },
+  {
+    "id": "PROB-12",
+    "topic": "PROBABILITY",
+    "difficulty": "hard",
+    "skill": "probability that two dice sum to a value or meet a condition",
+    "stem": "Two fair six-sided dice, each numbered \\(1\\) through \\(6\\), are rolled independently. What is the probability that their sum is \\(8\\) or at least one die shows \\(5\\), or both?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{1}{18}\\)",
+      "\\(\\frac{5}{36}\\)",
+      "\\(\\frac{7}{18}\\)",
+      "\\(\\frac{4}{9}\\)"
+    ],
+    "answer": 2,
+    "explanation": "Count ordered outcomes and subtract outcomes shared by the two conditions.\nThere are \\(6(6)=36\\) equally likely outcomes; \\(5\\) have sum \\(8\\).\nAt least one die shows \\(5\\) in \\(6+6-1=11\\) outcomes; \\(2\\) also have sum \\(8\\).\nThe probability is \\(\\frac{5+11-2}{36}=\\frac{7}{18}\\).\nTraps: \\(\\frac{4}{9}\\) counts the overlap twice; \\(\\frac{1}{18}\\) requires both conditions; \\(\\frac{5}{36}\\) counts only the specified sum.",
+    "check": "from fractions import Fraction as F; print(F(sum(a+b == 8 or a == 5 or b == 5 for a in range(1, 7) for b in range(1, 7)), 36))",
+    "template": "PROB_12"
+  },
+  {
+    "id": "PROB-13",
+    "topic": "PROBABILITY",
+    "difficulty": "medium",
+    "skill": "experimental vs. theoretical probability from frequency data (table field)",
+    "stem": "A fair six-sided die numbered \\(1\\) through \\(6\\) was rolled \\(80\\) times, with the results shown in the table. By how much does the experimental probability of rolling an even number exceed the theoretical probability?",
+    "table": {
+      "caption": "Die-roll results",
+      "headers": [
+        "Number rolled",
+        "Frequency"
+      ],
+      "rows": [
+        [
+          "\\(1\\)",
+          "\\(8\\)"
+        ],
+        [
+          "\\(2\\)",
+          "\\(12\\)"
+        ],
+        [
+          "\\(3\\)",
+          "\\(12\\)"
+        ],
+        [
+          "\\(4\\)",
+          "\\(16\\)"
+        ],
+        [
+          "\\(5\\)",
+          "\\(12\\)"
+        ],
+        [
+          "\\(6\\)",
+          "\\(20\\)"
+        ]
+      ]
+    },
+    "figure": null,
+    "choices": [
+      "\\(\\frac{1}{10}\\)",
+      "\\(\\frac{1}{5}\\)",
+      "\\(\\frac{1}{2}\\)",
+      "\\(\\frac{3}{5}\\)"
+    ],
+    "answer": 0,
+    "explanation": "Compare the observed fraction of even rolls with the fair die's probability of an even roll.\nExperimental probability: \\(\\frac{12+16+20}{80}=\\frac{3}{5}\\).\nTheoretical probability: \\(\\frac{3}{6}=\\frac{1}{2}\\).\nThe difference is \\(\\frac{3}{5}-\\frac{1}{2}=\\frac{1}{10}\\).\nTraps: \\(\\frac{3}{5}\\) gives only the experimental probability; \\(\\frac{1}{2}\\) gives only the theoretical probability; \\(\\frac{1}{5}\\) compares even rolls with odd rolls.",
+    "check": "from fractions import Fraction as F; print(F(12+16+20, 8+12+12+16+12+20)-F(3, 6))",
+    "template": "PROB_13"
+  },
+  {
+    "id": "PROB-14",
+    "topic": "PROBABILITY",
+    "difficulty": "hard",
+    "skill": "probability that a randomly chosen integer in a range meets a divisibility condition",
+    "stem": "An integer is selected at random from \\(1\\) through \\(100\\), inclusive, with all integers equally likely. What is the probability that it is divisible by \\(4\\) or \\(10\\), but not by both?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{1}{20}\\)",
+      "\\(\\frac{1}{4}\\)",
+      "\\(\\frac{3}{10}\\)",
+      "\\(\\frac{7}{20}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Remove common multiples from both divisibility counts because the integer must satisfy exactly one condition.\nThere are \\(25\\) multiples of \\(4\\) and \\(10\\) multiples of \\(10\\).\nCommon multiples are multiples of \\(20\\), so there are \\(5\\).\nThe probability is \\(\\frac{25+10-2(5)}{100}=\\frac{1}{4}\\).\nTraps: \\(\\frac{7}{20}\\) counts common multiples twice; \\(\\frac{3}{10}\\) includes them once; \\(\\frac{1}{20}\\) counts only common multiples.",
+    "check": "from fractions import Fraction as F; print(F(sum((n % 4 == 0) != (n % 10 == 0) for n in range(1, 101)), 100))",
+    "template": "PROB_14"
+  },
+  {
+    "id": "PROB-15",
+    "topic": "PROBABILITY",
+    "difficulty": "medium",
+    "skill": "spinner with unequal sector angles; probability from central angles",
+    "stem": "The spinner shown is equally likely to stop in any direction, and stopping on a boundary has probability \\(0\\). What is the probability that it stops in the sector labeled Green? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a circle divided into exactly three sectors by three solid radii from one central point. For placement, put one radius horizontally to the right, one toward the upper left at \\(120^{\\circ}\\) counterclockwise from the rightward radius, and the third toward the lower left at \\(210^{\\circ}\\) counterclockwise from the rightward radius. Label the upper sector Red, the smaller left sector Blue, and the lower-right sector Green, each label centered away from the radii and center. Inside Red, draw a small arc between its radii and label the arc \\(120^{\\circ}\\). Inside Blue, place a square right-angle mark at the center between its two radii. Do not print a numerical angle for Blue. Do not label Green's angle. The placement direction \\(210^{\\circ}\\) must not be printed. The three sector names are words only; do not use colored fills. No pointer, tick marks, axes, or extra spokes. Use black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A spinner has sectors labeled Red, Blue, and Green, with a \\(120^{\\circ}\\) angle marked in Red and a right angle marked in Blue.",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(\\frac{1}{4}\\)",
+      "\\(\\frac{1}{3}\\)",
+      "\\(\\frac{5}{12}\\)",
+      "\\(\\frac{7}{12}\\)"
+    ],
+    "answer": 2,
+    "explanation": "A sector's probability is its central angle divided by a full turn.\nGreen's angle is \\(360^{\\circ}-120^{\\circ}-90^{\\circ}=150^{\\circ}\\).\nThe probability is \\(\\frac{150}{360}=\\frac{5}{12}\\).\nTraps: \\(\\frac{1}{4}\\) uses Blue's angle; \\(\\frac{1}{3}\\) treats all three sectors as equal; \\(\\frac{7}{12}\\) counts Red or Blue.",
+    "check": "from fractions import Fraction as F; print(F(360-120-90, 360))",
+    "template": null
+  },
+  {
+    "id": "PROB-16",
+    "topic": "PROBABILITY",
+    "difficulty": "hard",
+    "skill": "find an unknown count so that a probability equals a given value",
+    "stem": "A bag initially contains \\(14\\) red beads and some blue beads, with no other beads. After \\(3\\) red beads are removed and \\(3\\) blue beads are added, the probability of drawing a blue bead at random is \\(\\frac{2}{3}\\). How many blue beads were initially in the bag?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(19\\)",
+      "\\(22\\)",
+      "\\(25\\)",
+      "\\(28\\)"
+    ],
+    "answer": 0,
+    "explanation": "Write the probability using the updated blue count and updated total.\nLet \\(x\\) be the initial blue count; \\(14-3=11\\) red beads remain.\nThen \\(\\frac{x+3}{x+3+11}=\\frac{2}{3}\\).\nCross-multiplying gives \\(x+3=2(11)=22\\), so \\(x=19\\).\nTraps: \\(25\\) ignores the removed red beads; \\(22\\) gives the final blue count; \\(28\\) adds the new beads only to the denominator.",
+    "check": "from fractions import Fraction as F; print(next(b for b in range(100) if F(b+3, 14-3+b+3) == F(2, 3)))",
+    "template": "PROB_16"
+  },
+  {
+    "id": "PCT-01",
+    "topic": "PERCENT",
+    "difficulty": "medium",
+    "skill": "successive percent increase and decrease",
+    "stem": "A store increases the price of a jacket originally priced at $200.00 by \\(25\\%\\). It then discounts the increased price by \\(10\\%\\). What is the final price before tax?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "$180.00",
+      "$225.00",
+      "$230.00",
+      "$250.00"
+    ],
+    "answer": 1,
+    "explanation": "Apply each percent change to the price at that stage.\nAfter the increase: \\(200(1.25)=250\\) dollars.\nAfter the discount: \\(250(0.9)=225\\) dollars.\nTraps: $230.00 subtracts the percentages; $180.00 skips the increase; $250.00 skips the discount.",
+    "check": "from fractions import Fraction as F; print(200*F(125, 100)*F(90, 100))",
+    "template": "PCT_01"
+  },
+  {
+    "id": "PCT-02",
+    "topic": "PERCENT",
+    "difficulty": "hard",
+    "skill": "find the original price after a discount and a tax",
+    "stem": "A customer buys a backpack at \\(25\\%\\) off its original price, then pays \\(5\\%\\) sales tax on the discounted price. The total paid is $157.50. What was the original price, to the nearest cent?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "$150.00",
+      "$196.88",
+      "$200.00",
+      "$210.00"
+    ],
+    "answer": 2,
+    "explanation": "Undo the tax and discount by dividing by their multipliers.\nPrice before tax: \\(157.5\\div1.05=150\\) dollars.\nOriginal price: \\(150\\div0.75=200\\) dollars.\nTraps: $210.00 leaves the tax in; $150.00 leaves the discount in; $196.88 combines the rates by subtraction.",
+    "check": "from fractions import Fraction as F; print(F('157.50')/F(105, 100)/F(75, 100))",
+    "template": "PCT_02"
+  },
+  {
+    "id": "PCT-03",
+    "topic": "PERCENT",
+    "difficulty": "medium",
+    "skill": "percent change between two values",
+    "stem": "A shop completed \\(120\\) repairs in March and \\(180\\) repairs in April. What was the percent increase in the number of repairs, to the nearest tenth of a percent?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(33.3\\%\\)",
+      "\\(50\\%\\)",
+      "\\(60\\%\\)",
+      "\\(150\\%\\)"
+    ],
+    "answer": 1,
+    "explanation": "Divide the increase by the original number of repairs.\nThe increase is \\(180-120=60\\) repairs.\nThe percent increase is \\(\\frac{60}{120}\\times 100\\%=50\\%\\).\nTraps: \\(33.3\\%\\) uses April as the base; \\(60\\%\\) treats the number of additional repairs as a percent; \\(150\\%\\) gives April's total as a percent of March's.",
+    "check": "from fractions import Fraction as F; print(F(180-120, 120)*100)",
+    "template": "PCT_03"
+  },
+  {
+    "id": "PCT-04",
+    "topic": "PERCENT",
+    "difficulty": "hard",
+    "skill": "percent of a percent: part of a group that is part of a larger group",
+    "stem": "At a school, \\(75\\%\\) of all students are in the music program. Of the students in the music program, \\(25\\%\\) are in the marching band. If the marching band has \\(150\\) students, how many students attend the school?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(150\\)",
+      "\\(200\\)",
+      "\\(600\\)",
+      "\\(800\\)"
+    ],
+    "answer": 3,
+    "explanation": "Work backward through the two nested groups.\nMusic-program enrollment: \\(150\\div0.25=600\\).\nSchool enrollment: \\(600\\div0.75=800\\).\nTraps: \\(600\\) stops at the music program; \\(200\\) ignores the band percentage; \\(150\\) adds the two percentages.",
+    "check": "from fractions import Fraction as F; print(150/F(25, 100)/F(75, 100))",
+    "template": "PCT_04"
+  },
+  {
+    "id": "PCT-05",
+    "topic": "PERCENT",
+    "difficulty": "medium",
+    "skill": "read a bar graph and compute a percent increase between two bars",
+    "stem": "According to the graph, by what percent did the number of bicycles sold increase from April to June, to the nearest tenth of a percent?",
+    "table": null,
+    "figure": {
+      "description": "Draw a vertical bar graph with a horizontal categorical axis labeled Month and a vertical axis labeled Number of bicycles. The vertical axis starts at \\(0\\) and ends at \\(80\\), with labeled ticks at every \\(10\\) and thin horizontal grid lines at those ticks. Put three equally wide, evenly spaced bars from left to right above the labels April, May, and June. The April bar extends from \\(0\\) to exactly \\(40\\); May from \\(0\\) to exactly \\(50\\); June from \\(0\\) to exactly \\(70\\). Use consistent vertical scale and no breaks in the axes. Label the graph Bicycles sold, centered above it. Outline the bars in black and fill them with light gray; keep grid lines behind the bars. Do not print values on the bars, a percent change, a legend, or arrows on the axes. Use black line art on white, ACT test style, sans-serif labels, with the specified light-gray fill; no other text.",
+      "alt": "A bar graph shows \\(40\\) bicycles sold in April, \\(50\\) in May, and \\(70\\) in June.",
+      "notToScale": false
+    },
+    "choices": [
+      "\\(30\\%\\)",
+      "\\(42.9\\%\\)",
+      "\\(75\\%\\)",
+      "\\(175\\%\\)"
+    ],
+    "answer": 2,
+    "explanation": "Use the first month's sales as the base for percent increase.\nThe increase is \\(70-40=30\\) bicycles.\nThe percent increase is \\(\\frac{30}{40}\\times 100\\%=75\\%\\).\nTraps: \\(30\\%\\) treats the increase in bicycles as a percent; \\(42.9\\%\\) uses June as the base; \\(175\\%\\) gives June's total as a percent of April's.",
+    "check": "from fractions import Fraction as F; print(F(70-40, 40)*100)",
+    "template": null
+  },
+  {
+    "id": "PCT-06",
+    "topic": "PERCENT",
+    "difficulty": "hard",
+    "skill": "simple vs. compound interest over a few years",
+    "stem": "Two accounts each start with $3,200.00. One earns \\(10\\%\\) simple interest per year; the other earns \\(10\\%\\) interest compounded annually. No money is deposited or withdrawn. After \\(3\\) years, how much greater is the balance in the compound-interest account?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "$32.00",
+      "$99.20",
+      "$960.00",
+      "$1,059.20"
+    ],
+    "answer": 1,
+    "explanation": "Simple interest uses the original principal each year, while compound interest uses the growing balance.\nSimple-interest balance: \\(3200(1+3(0.1))=4160\\) dollars.\nCompound-interest balance: \\(3200(1.1)^{3}=4259.2\\) dollars.\nDifference: \\(4259.2-4160=99.2\\) dollars.\nTraps: $32.00 is the difference after two years; $960.00 is all the simple interest; $1,059.20 is all the compound interest.",
+    "check": "from fractions import Fraction as F; balance=F(3200); balance*=F(110, 100); balance*=F(110, 100); balance*=F(110, 100); print(balance-(3200+3*320))",
+    "template": "PCT_06"
+  },
+  {
+    "id": "PCT-07",
+    "topic": "PERCENT",
+    "difficulty": "medium",
+    "skill": "percent of a total from a table of categories (table field)",
+    "stem": "Each student in a survey selected exactly one favorite after-school activity category. The results are shown in the table. What percent of the students selected sports, to the nearest tenth of a percent?",
+    "table": {
+      "caption": "Favorite activity",
+      "headers": [
+        "Category",
+        "Number of students"
+      ],
+      "rows": [
+        [
+          "Art",
+          "\\(75\\)"
+        ],
+        [
+          "Sports",
+          "\\(105\\)"
+        ],
+        [
+          "Science",
+          "\\(45\\)"
+        ],
+        [
+          "Other",
+          "\\(75\\)"
+        ]
+      ]
+    },
+    "figure": null,
+    "choices": [
+      "\\(35\\%\\)",
+      "\\(46.7\\%\\)",
+      "\\(53.8\\%\\)",
+      "\\(65\\%\\)"
+    ],
+    "answer": 0,
+    "explanation": "Divide the sports count by the total across all categories.\nTotal students: \\(75+105+45+75=300\\).\nSports percentage: \\(\\frac{105}{300}\\times 100\\%=35\\%\\).\nTraps: \\(53.8\\%\\) divides by the nonsports count; \\(46.7\\%\\) omits Other from the total; \\(65\\%\\) counts students who did not select sports.",
+    "check": "from fractions import Fraction as F; print(F(105, 75+105+45+75)*100)",
+    "template": "PCT_07"
+  },
+  {
+    "id": "PCT-08",
+    "topic": "PERCENT",
+    "difficulty": "hard",
+    "skill": "a quantity is p% more than one value and q% less than another; relate them",
+    "stem": "Tank \\(A\\) contains \\(50\\%\\) more water than tank \\(B\\) and \\(25\\%\\) less water than tank \\(C\\). Tank \\(C\\) contains what percent more water than tank \\(B\\), to the nearest tenth of a percent?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(12.5\\%\\)",
+      "\\(75\\%\\)",
+      "\\(87.5\\%\\)",
+      "\\(100\\%\\)"
+    ],
+    "answer": 3,
+    "explanation": "Translate each comparison into a multiplier with its own reference tank.\nThe volumes satisfy \\(A=1.5B\\) and \\(A=0.75C\\).\nThus \\(\\frac{C}{B}=\\frac{1.5}{0.75}\\).\nThe percent increase is \\(\\left(\\frac{1.5}{0.75}-1\\right)\\times 100\\%=100\\%\\).\nTraps: \\(75\\%\\) adds the rates; \\(87.5\\%\\) tries to undo a decrease with the same percent increase; \\(12.5\\%\\) multiplies by the decrease factor instead of dividing.",
+    "check": "from fractions import Fraction as F; print((F(150, 75)-1)*100)",
+    "template": "PCT_08"
+  }
+]

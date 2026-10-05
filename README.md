@@ -2,6 +2,8 @@
 
 An Android app for daily ACT math practice. Hexie, a small and friendly hag, gives 1 to 5 multiple-choice problems each day. After each answer, the app shows a step-by-step explanation.
 
+Most problems come from a bank of 150 ACT-style medium and hard problems, with about 760 number variations. gpt-6-astra wrote them, and independent Claude solvers checked them. Figures are hand-built SVG. See [bank/README.md](bank/README.md).
+
 ## Install on a phone
 
 1. Build the APK (see below), or get `HexieMath.apk` from the person who built it.
@@ -19,6 +21,10 @@ An Android app for daily ACT math practice. Hexie, a small and friendly hag, giv
 - **Diagrams.** Geometry, trig, graphing, and probability problems show a drawn figure: triangles, parallel lines, polygons, cylinders, coordinate grids, the unit circle, spinners, and marbles. Some explanations add a second figure, such as the reference triangle for a trig problem.
 - **Streaks and newt eyes.** The streak counts days in a row with the goal met. Each correct answer gives one eye of newt.
 - **Bonus problems.** After the goal is met, the student can do more problems.
+- **Warm-up first.** With 3 or more problems a day, the first one is a quick generated warm-up. The rest come from the problem bank.
+- **Spaced review.** A missed bank problem comes back 3 or more days later, with new numbers when it has a template.
+- **Pace timer.** Shows the time on each problem and turns orange after 60 seconds, the ACT pace. Turn it off in Settings.
+- **Feedback.** The student can flag any problem (wrong answer, confusing wording, diagram problem, too easy, too hard) and rate each session. In Settings, enter the parent's email once. "Email feedback" then opens the email app with all new feedback and the topic scores filled in.
 
 ## How the app picks problems
 

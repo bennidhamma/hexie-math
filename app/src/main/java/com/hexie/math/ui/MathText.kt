@@ -115,6 +115,18 @@ private class Typesetter(val tm: TextMeasurer, val ink: Color, val density: Dens
         is Tex.Scripts -> scripts(t, fs)
         is Tex.Sqrt -> sqrt(t, fs)
         is Tex.Delim -> delim(t, fs)
+        is Tex.Overline -> overline(t, fs)
+    }
+
+    private fun overline(o: Tex.Overline, fs: Float): Box {
+        val body = layout(o.body, fs)
+        val gap = fs * 0.08f
+        val stroke = max(fs * 0.05f, 1f)
+        return Box(body.width, body.ascent + gap + stroke, body.descent) { x, b ->
+            body.draw(this, x, b)
+            val y = b - body.ascent - gap
+            drawLine(ink, Offset(x + fs * 0.04f, y), Offset(x + body.width - fs * 0.02f, y), stroke)
+        }
     }
 
     private fun sym(s: Tex.Sym, fs: Float, padLeft: Boolean, unary: Boolean): Box {
@@ -153,7 +165,9 @@ private class Typesetter(val tm: TextMeasurer, val ink: Color, val density: Dens
     private fun isUnaryPosition(items: List<Tex>, i: Int, leadingOp: Boolean): Boolean {
         if (i == 0) return !leadingOp
         val prev = items[i - 1]
-        return (prev is Tex.Sym && (prev.op || prev.text == "(" || prev.text == "[" || prev.text == "|")) || prev is Tex.Space
+        return (prev is Tex.Sym && (prev.op || prev.text in setOf("(", "[", "{", "|", ","))) ||
+            prev is Tex.Space ||
+            (prev is Tex.Row && prev.items.lastOrNull() is Tex.Space)  // after a comma: (−2, −3)
     }
 
     private fun frac(f: Tex.Frac, fs: Float): Box {

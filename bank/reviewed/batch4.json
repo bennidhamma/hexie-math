@@ -1,0 +1,478 @@
+[
+ {
+  "id": "FUN-01",
+  "topic": "FUNCTIONS",
+  "difficulty": "medium",
+  "skill": "evaluate a composite function f(g(x))",
+  "stem": "Let \\(f(x) = 2x^{2} - 5\\) and \\(g(x) = x + 2\\). What is \\(f(g(4))\\)?",
+  "choices": [
+   "\\(29\\)",
+   "\\(31\\)",
+   "\\(67\\)",
+   "\\(162\\)"
+  ],
+  "answer": 2,
+  "explanation": "Evaluate the inner function first, then use its output as the input to the outer function.\n\\(g(4) = 4 + 2 = 6\\)\n\\(f(6) = 2(6)^{2} - 5 = 67\\)\nTrap: \\(29\\) reverses the functions; \\(162\\) multiplies their outputs; \\(31\\) fails to square the whole input.",
+  "table": null,
+  "figure": null,
+  "check": "f = lambda x: 2*x*x-5; g = lambda x: x+2; print(f(g(4)))",
+  "template": "FUN_01"
+ },
+ {
+  "id": "FUN-02",
+  "topic": "FUNCTIONS",
+  "difficulty": "hard",
+  "skill": "find the inverse of a linear or rational function",
+  "stem": "The function \\(f(x) = \\frac{3x + 5}{x + 2}\\) is defined for \\(x \\ne -2\\). Which expression equals \\(f^{-1}(x)\\) for every \\(x\\) in the domain of the inverse?",
+  "choices": [
+   "\\(\\frac{-2x + 5}{x - 3}\\)",
+   "\\(\\frac{-2x + 5}{x + 3}\\)",
+   "\\(\\frac{2x + 5}{x - 3}\\)",
+   "\\(\\frac{2x + 5}{x + 3}\\)"
+  ],
+  "answer": 0,
+  "explanation": "Swap the input and output, then solve for the new output.\n\\(x = \\frac{3y + 5}{y + 2}\\)\n\\(xy + 2x = 3y + 5\\)\n\\(y(x - 3) = 5 - 2x\\)\n\\(f^{-1}(x) = \\frac{-2x + 5}{x - 3}\\)\nTrap: \\(\\frac{2x + 5}{x - 3}\\) misses the sign change on \\(2x\\); \\(\\frac{-2x + 5}{x + 3}\\) misses it on \\(3y\\); \\(\\frac{2x + 5}{x + 3}\\) misses both.",
+  "table": null,
+  "figure": null,
+  "check": "a,b,c = 3,5,2; print(f\"({b} - {c}*x)/(x - {a})\")",
+  "template": "FUN_02"
+ },
+ {
+  "id": "FUN-03",
+  "topic": "FUNCTIONS",
+  "difficulty": "medium",
+  "skill": "read values from the graph of a function",
+  "stem": "The graph of \\(f\\) is shown. What is \\(f(-2) - 2f(2)\\)?",
+  "table": null,
+  "figure": {
+   "description": "Draw a coordinate graph in black line art on white, ACT test style, sans-serif labels. The horizontal axis is labeled \"x\" at its right arrow and the vertical axis \"y\" at its top arrow. Show x from -5 to 5 and y from -4 to 4, with equal unit spacing, a light unit grid, and integer tick labels; label the origin once as \"0\". Draw the function as straight solid segments connecting, in order, (-4,-1), (-2,3), (0,1), (2,-3), and (4,1). Place small filled dots at all five vertices, with no coordinate labels and no arrows on the function. Place the label \"f\" just above the final rising segment, near (3.5,0.5). No other points, curves, dashed lines, or geometric marks. No other text.",
+   "alt": "A connected line graph passes through (-4, -1), (-2, 3), (0, 1), (2, -3), and (4, 1).",
+   "notToScale": false
+  },
+  "choices": [
+   "\\(-3\\)",
+   "\\(6\\)",
+   "\\(9\\)",
+   "\\(12\\)"
+  ],
+  "answer": 2,
+  "explanation": "Read each output as a vertical coordinate, then evaluate the expression.\n\\(f(-2) = 3, f(2) = -3\\)\n\\(3 - 2(-3) = 9\\)\nTrap: \\(-3\\) adds the second term; \\(6\\) omits the factor of \\(2\\); \\(12\\) doubles the whole difference.",
+  "check": "values = {-2:3,2:-3}; print(values[-2]-2*values[2])",
+  "template": null
+ },
+ {
+  "id": "FUN-04",
+  "topic": "FUNCTIONS",
+  "difficulty": "hard",
+  "skill": "graph transformation: which equation matches a shifted graph",
+  "stem": "Let \\(f(x) = x^{2}\\). Which equation describes the function \\(g\\) graphed below?",
+  "table": null,
+  "figure": {
+   "description": "Draw a coordinate graph in black line art on white, ACT test style, sans-serif labels. Label the horizontal axis \"x\" at the right arrow and the vertical axis \"y\" at the top arrow. Show x from -1 to 5 and y from -6 to 4, with equal unit spacing, a light unit grid, and integer tick labels; label the origin once as \"0\". Draw the smooth downward-opening parabola with exact plotting rule y = -2(x-2)^2 + 3, vertex (2,3), and points (0,-5), (1,1), (3,1), and (4,-5). Continue both arms to the lower frame boundary and add arrowheads tangent to the arms. Put small filled dots at the vertex and at (0,-5), (1,1), (3,1), and (4,-5); do not label their coordinates. Put the label \"g\" to the right of the descending arm near (4,-3). Do not print the plotting rule or any equation. No other curves, dashed lines, or geometric marks. No other text.",
+   "alt": "A downward-opening parabola has vertex (2, 3) and passes through (0, -5), (1, 1), (3, 1), and (4, -5).",
+   "notToScale": false
+  },
+  "choices": [
+   "\\(g(x) = -2f(x + 2) + 3\\)",
+   "\\(g(x) = -2f(x - 2) - 3\\)",
+   "\\(g(x) = -2f(x - 2) + 3\\)",
+   "\\(g(x) = -f(x - 2) + 3\\)"
+  ],
+  "answer": 2,
+  "explanation": "Use the vertex for the shifts and another point for the vertical factor.\n\\(g(x) = a(x - 2)^{2} + 3\\)\n\\(g(1) = 1: 1 = a(1 - 2)^{2} + 3, a = -2\\)\n\\(g(x) = -2f(x - 2) + 3\\)\nTrap: \\(x + 2\\) shifts left; an outside \\(-3\\) shifts down; a factor of \\(-1\\) omits the vertical stretch.",
+  "check": "h,k,x,y = 2,3,1,1; a = (y-k)//((x-h)**2); print(f\"g(x) = {a}f(x - {h}) + {k}\")",
+  "template": null
+ },
+ {
+  "id": "FUN-05",
+  "topic": "FUNCTIONS",
+  "difficulty": "medium",
+  "skill": "function notation with an expression input f(x+2)",
+  "stem": "If \\(f(x) = 2x^{2} + 3x + 1\\), which expression equals \\(f(x + 4)\\)?",
+  "choices": [
+   "\\(2x^{2} + 3x + 5\\)",
+   "\\(2x^{2} + 3x + 45\\)",
+   "\\(2x^{2} + 19x + 33\\)",
+   "\\(2x^{2} + 19x + 45\\)"
+  ],
+  "answer": 3,
+  "explanation": "Replace every input with the entire expression, then expand.\n\\(f(x + 4) = 2(x + 4)^{2} + 3(x + 4) + 1\\)\n\\(f(x + 4) = 2x^{2} + 19x + 45\\)\nTrap: \\(2x^{2} + 3x + 45\\) omits the squared binomial's middle term; \\(2x^{2} + 3x + 5\\) adds to the output; \\(2x^{2} + 19x + 33\\) leaves the linear input unchanged.",
+  "table": null,
+  "figure": null,
+  "check": "a,b,c,h = 2,3,1,4; print(f\"{a}x^2 + {2*a*h+b}x + {a*h*h+b*h+c}\")",
+  "template": "FUN_05"
+ },
+ {
+  "id": "FUN-06",
+  "topic": "FUNCTIONS",
+  "difficulty": "hard",
+  "skill": "piecewise function evaluation at a boundary",
+  "stem": "For all real \\(x\\), \\(f(x) = x + 4\\) when \\(x \\le 4\\), and \\(f(x) = 3x - 14\\) when \\(x > 4\\). What is \\(f(f(6))\\)?",
+  "choices": [
+   "\\(-2\\)",
+   "\\(4\\)",
+   "\\(8\\)",
+   "\\(14\\)"
+  ],
+  "answer": 2,
+  "explanation": "Choose a branch using the input at each stage, including the boundary.\n\\(6 > 4, f(6) = 3(6) - 14 = 4\\)\n\\(f(4) = 4 + 4 = 8\\)\nTrap: \\(-2\\) uses the wrong branch at equality; \\(4\\) stops after one evaluation; \\(14\\) uses the first branch twice.",
+  "table": null,
+  "figure": null,
+  "check": "f = lambda x: x+4 if x<=4 else 3*x-14; print(f(f(6)))",
+  "template": "FUN_06"
+ },
+ {
+  "id": "FUN-07",
+  "topic": "FUNCTIONS",
+  "difficulty": "medium",
+  "skill": "domain of a function with a square root or denominator",
+  "stem": "What is the domain of the real-valued function \\(f(x) = \\frac{\\sqrt{3x - 12}}{x - 6}\\)?",
+  "choices": [
+   "\\(x \\le 4\\)",
+   "\\(x \\ge 4\\)",
+   "\\(x \\ge 4 \\text{ and } x \\ne 6\\)",
+   "\\(x > 4 \\text{ and } x \\ne 6\\)"
+  ],
+  "answer": 2,
+  "explanation": "A square root needs a nonnegative radicand, and a denominator cannot be zero.\n\\(3x - 12 \\ge 0, x \\ge 4\\)\n\\(x - 6 \\ne 0, x \\ne 6\\)\nTrap: \\(x \\le 4\\) reverses the root condition; \\(x \\ge 4\\) allows a zero denominator; \\(x > 4 \\text{ and } x \\ne 6\\) unnecessarily excludes a zero radicand.",
+  "table": null,
+  "figure": null,
+  "check": "from fractions import Fraction as F; print(f\"x >= {F(12,3)} and x != {6}\")",
+  "template": "FUN_07"
+ },
+ {
+  "id": "FUN-08",
+  "topic": "FUNCTIONS",
+  "difficulty": "hard",
+  "skill": "read a function graph to count solutions of f(x) = k",
+  "stem": "The entire graph of \\(f\\) is shown, along with the dashed line \\(y = 2\\). How many distinct real solutions does \\(f(x) = 2\\) have?",
+  "table": null,
+  "figure": {
+   "description": "Draw a coordinate graph in black line art on white, ACT test style, sans-serif labels. Label the horizontal axis \"x\" at the right arrow and the vertical axis \"y\" at the top arrow. Show x from -5 to 6 and y from -2 to 5, with equal unit spacing, a light unit grid, and integer tick labels; label the origin once as \"0\". Draw a thin dashed horizontal line at y=2 across the full plot; label it \"y = 2\" just above its right end near (5.1,2.2). Draw the first part of f as solid straight segments through (-4,0), (-3,3), (-1,2), (0,4), and (1,2), in that order. Use a filled dot at (-4,0), small filled dots at (-3,3), (-1,2), and (0,4), and a conspicuous open circle with a white interior at (1,2). The dashed line must not show through that open circle. Draw the second part of f as solid straight segments from a filled dot at (1,-1) to a filled dot at (3,2), then to a filled dot at (5,-1). The two parts are disconnected: do not join (1,2) to (1,-1). Do not add arrows to the function or extend any segment past its stated endpoint. Place the label \"f\" near (-2.7,3.2). Do not label point coordinates or intersections. No other curves or geometric marks. No other text.",
+   "alt": "Two disconnected polylines run through (-4, 0), (-3, 3), (-1, 2), (0, 4), and open endpoint (1, 2), then through closed points (1, -1), (3, 2), and (5, -1), with a dashed line at y = 2.",
+   "notToScale": false
+  },
+  "choices": [
+   "\\(1\\)",
+   "\\(3\\)",
+   "\\(4\\)",
+   "\\(5\\)"
+  ],
+  "answer": 1,
+  "explanation": "Count distinct included points at the requested height, including touches but excluding open circles.\nOne crossing lies between \\(x = -4\\) and \\(x = -3\\).\nThe vertices at \\(x = -1\\) and \\(x = 3\\) each add one solution.\nThe open point at \\(x = 1\\) adds none, so the count is \\(3\\).\nTrap: \\(1\\) ignores both touches; \\(4\\) includes the open point; \\(5\\) counts each touching vertex twice.",
+  "check": "from fractions import Fraction as F; parts = [[(-4,0),(-3,3),(-1,2),(0,4),(1,2)],[(1,-1),(3,2),(5,-1)]]; xs = {F(x1)+F((2-y1)*(x2-x1),y2-y1) for part in parts for (x1,y1),(x2,y2) in zip(part,part[1:]) if min(y1,y2)<=2<=max(y1,y2)}; print(len(xs-{F(1)}))",
+  "template": null
+ },
+ {
+  "id": "FUN-09",
+  "topic": "FUNCTIONS",
+  "difficulty": "medium",
+  "skill": "average rate of change over an interval",
+  "stem": "For \\(f(x) = x^{2} + 3x + 2\\), what is the average rate of change from \\(x = 3\\) to \\(x = 9\\)?",
+  "choices": [
+   "\\(\\frac{15}{2}\\)",
+   "\\(\\frac{110}{9}\\)",
+   "\\(15\\)",
+   "\\(90\\)"
+  ],
+  "answer": 2,
+  "explanation": "Divide the change in output by the change in input.\n\\(f(3) = 20, f(9) = 110\\)\n\\(\\frac{110 - 20}{9 - 3} = 15\\)\nTrap: \\(90\\) omits division; \\(\\frac{15}{2}\\) adds the inputs in the denominator; \\(\\frac{110}{9}\\) measures from the origin.",
+  "table": null,
+  "figure": null,
+  "check": "from fractions import Fraction as F; f = lambda x: x*x+3*x+2; print(F(f(9)-f(3),9-3))",
+  "template": "FUN_09"
+ },
+ {
+  "id": "FUN-10",
+  "topic": "FUNCTIONS",
+  "difficulty": "hard",
+  "skill": "find a constant so that f(a) equals a value",
+  "stem": "Let \\(f(x) = \\frac{x^{2} + kx + 24}{x - 3}\\), where \\(k\\) is a constant. If \\(f(6) = 24\\), what is \\(k\\)?",
+  "choices": [
+   "\\(-6\\)",
+   "\\(2\\)",
+   "\\(10\\)",
+   "\\(12\\)"
+  ],
+  "answer": 1,
+  "explanation": "Substitute the given input, clear the denominator, and isolate the constant.\n\\(\\frac{36 + 6k + 24}{3} = 24\\)\n\\(6k = 72 - 36 - 24 = 12\\)\n\\(k = 2\\)\nTrap: \\(10\\) adds the numerator's constant; \\(-6\\) ignores the denominator; \\(12\\) stops before dividing by \\(6\\).",
+  "table": null,
+  "figure": null,
+  "check": "from fractions import Fraction as F; print(F(24*(6-3)-6**2-24,6))",
+  "template": "FUN_10"
+ },
+ {
+  "id": "QUAD-01",
+  "topic": "QUADRATICS",
+  "difficulty": "medium",
+  "skill": "solve a quadratic by factoring",
+  "stem": "What is the solution set of \\(2x^{2} - 4x = 30\\)?",
+  "choices": [
+   "\\(\\{-5, -3\\}\\)",
+   "\\(\\{-5, 3\\}\\)",
+   "\\(\\{-3, 5\\}\\)",
+   "\\(\\{3, 5\\}\\)"
+  ],
+  "answer": 2,
+  "explanation": "Move all terms to one side, factor, and set each factor equal to zero.\n\\(x^{2} - 2x - 15 = 0\\)\n\\((x - 5)(x + 3) = 0\\)\n\\(x = 5 \\text{ or } x = -3\\)\nTrap: \\(\\{-5, 3\\}\\) keeps both factor signs; \\(\\{3, 5\\}\\) loses the negative root; \\(\\{-5, -3\\}\\) makes both roots negative.",
+  "table": null,
+  "figure": null,
+  "check": "import math; a,b,c = 2,-4,-30; print(sorted([(-b-math.sqrt(b*b-4*a*c))/(2*a),(-b+math.sqrt(b*b-4*a*c))/(2*a)]))",
+  "template": "QUAD_01"
+ },
+ {
+  "id": "QUAD-02",
+  "topic": "QUADRATICS",
+  "difficulty": "hard",
+  "skill": "sum and product of roots from coefficients",
+  "stem": "The roots of \\(2x^{2} - 11x + 5 = 0\\) are \\(r\\) and \\(s\\). What is \\(r^{2} + s^{2}\\)?",
+  "choices": [
+   "\\(\\frac{81}{4}\\)",
+   "\\(\\frac{101}{4}\\)",
+   "\\(\\frac{121}{4}\\)",
+   "\\(\\frac{141}{4}\\)"
+  ],
+  "answer": 1,
+  "explanation": "Use the sum and product of the roots in the square-of-a-sum identity.\n\\(r + s = \\frac{11}{2}, rs = \\frac{5}{2}\\)\n\\(r^{2} + s^{2} = (r + s)^{2} - 2rs\\)\n\\((\\frac{11}{2})^{2} - 2(\\frac{5}{2}) = \\frac{101}{4}\\)\nTrap: \\(\\frac{121}{4}\\) omits \\(2rs\\); \\(\\frac{141}{4}\\) adds it; \\(\\frac{81}{4}\\) fails to divide the product by \\(2\\).",
+  "table": null,
+  "figure": null,
+  "check": "from fractions import Fraction as F; print(F(11,2)**2-2*F(5,2))",
+  "template": "QUAD_02"
+ },
+ {
+  "id": "QUAD-03",
+  "topic": "QUADRATICS",
+  "difficulty": "medium",
+  "skill": "vertex and axis of symmetry from a graphed parabola",
+  "stem": "The graph of the quadratic function \\(f\\) is shown. What are the minimum value of \\(f(x)\\) and the equation of its axis of symmetry, respectively?",
+  "table": null,
+  "figure": {
+   "description": "Draw a coordinate graph in black line art on white, ACT test style, sans-serif labels. Label the horizontal axis \"x\" at its right arrow and the vertical axis \"y\" at its top arrow. Show x from -6 to 2 and y from -5 to 6, with equal unit spacing, a light unit grid, and integer tick labels; label the origin once as \"0\". Draw the smooth upward-opening parabola with exact plotting rule y=(x+2)^2-4, vertex (-2,-4), x-intercepts (-4,0) and (0,0), and points (-5,5) and (1,5). Continue both arms to the top frame boundary with tangent arrowheads. Add small filled dots at the vertex, the two intercepts, and the two points at height 5, without coordinate labels. Put \"f\" beside the left arm near (-5.3,4). Do not draw the axis of symmetry, print the plotting rule, or label any coordinate pair. No other curves, dashed lines, or geometric marks. No other text.",
+   "alt": "A parabola that opens upward, graphed on a coordinate grid.",
+   "notToScale": false
+  },
+  "choices": [
+   "\\(-4 \\text{ and } x = -2\\)",
+   "\\(-4 \\text{ and } x = 2\\)",
+   "\\(-2 \\text{ and } x = -4\\)",
+   "\\(0 \\text{ and } x = -2\\)"
+  ],
+  "answer": 0,
+  "explanation": "An upward-opening parabola has its minimum at the vertex and is symmetric about the vertical line through it.\nThe vertex is \\((-2, -4)\\).\nThe minimum is \\(-4\\), and the axis is \\(x = -2\\).\nTrap: \\(x = 2\\) loses the horizontal sign; \\(-2 \\text{ and } x = -4\\) swaps coordinates; a minimum of \\(0\\) uses an intercept.",
+  "check": "left,right = -4,0; h = (left+right)//2; f = lambda x: (x-left)*(x-right); print(f\"minimum {f(h)}, axis x = {h}\")",
+  "template": null
+ },
+ {
+  "id": "QUAD-04",
+  "topic": "QUADRATICS",
+  "difficulty": "hard",
+  "skill": "complete the square to find the vertex",
+  "stem": "What is the vertex of the parabola \\(y = 2x^{2} - 16x + 29\\)?",
+  "choices": [
+   "\\((-4, -3)\\)",
+   "\\((4, -3)\\)",
+   "\\((4, 13)\\)",
+   "\\((4, 29)\\)"
+  ],
+  "answer": 1,
+  "explanation": "Complete the square after factoring the leading coefficient from the variable terms.\n\\(y = 2(x^{2} - 8x) + 29\\)\n\\(y = 2(x - 4)^{2} - 32 + 29\\)\n\\(y = 2(x - 4)^{2} - 3\\)\nTrap: \\((-4, -3)\\) reverses the horizontal coordinate; \\((4, 29)\\) uses the original constant; \\((4, 13)\\) forgets the outer factor when adjusting the constant.",
+  "table": null,
+  "figure": null,
+  "check": "from fractions import Fraction as F; a,b,c = 2,-16,29; h = F(-b,2*a); print((h,a*h*h+b*h+c))",
+  "template": "QUAD_04"
+ },
+ {
+  "id": "QUAD-05",
+  "topic": "QUADRATICS",
+  "difficulty": "medium",
+  "skill": "use the quadratic formula; simplify the radical",
+  "stem": "What are the solutions of \\(x^{2} - 6x + 4 = 0\\)?",
+  "choices": [
+   "\\(-3 \\pm \\sqrt{5}\\)",
+   "\\(3 \\pm \\sqrt{5}\\)",
+   "\\(3 \\pm 2\\sqrt{5}\\)",
+   "\\(6 \\pm 2\\sqrt{5}\\)"
+  ],
+  "answer": 1,
+  "explanation": "Apply the quadratic formula and simplify the radical before dividing both numerator terms.\n\\(x = \\frac{6 \\pm \\sqrt{36 - 4(4)}}{2}\\)\n\\(x = \\frac{6 \\pm 2\\sqrt{5}}{2} = 3 \\pm \\sqrt{5}\\)\nTrap: \\(-3 \\pm \\sqrt{5}\\) uses the wrong sign for \\(-b\\); \\(3 \\pm 2\\sqrt{5}\\) divides only the first numerator term; \\(6 \\pm 2\\sqrt{5}\\) omits the denominator.",
+  "table": null,
+  "figure": null,
+  "check": "import math; a,b,c = 1,-6,4; print(((-b-math.sqrt(b*b-4*a*c))/(2*a),(-b+math.sqrt(b*b-4*a*c))/(2*a)))",
+  "template": "QUAD_05"
+ },
+ {
+  "id": "QUAD-06",
+  "topic": "QUADRATICS",
+  "difficulty": "hard",
+  "skill": "projectile height graph: time to reach maximum height",
+  "stem": "The graph shows a ball's height \\(h\\), in feet, \\(t\\) seconds after it is thrown. Its height is a quadratic function of \\(t\\). A camera begins recording at \\(t = 1.5\\). How many seconds after recording begins does the ball reach its maximum height?",
+  "table": null,
+  "figure": {
+   "description": "Draw a coordinate graph in black line art on white, ACT test style, sans-serif labels. Use a horizontal time axis labeled \"t (seconds)\" at the right, from 0 to 6, with ticks labeled 0, 1, 2, 3, 4, 5, 6. Use a vertical height axis labeled \"h (feet)\" above it, from 0 to 140, with ticks every 20 feet; label only 0, 40, 80, and 120, and label the shared origin only once. No background grid. Draw the smooth downward-opening parabolic arc with exact plotting rule h=-16t^2+80t+16, starting at (0,16), passing through (1,80) and (4,80), and ending where it meets the time axis at t=(5+sqrt(29))/2, approximately 5.193. Its unmarked vertex is at (2.5,116). Plot to the stated linear axis scales. Put filled dots at (1,80) and (4,80). Draw a thin dashed horizontal segment from (0,80) to (4,80), and thin dashed vertical segments from (1,0) to (1,80) and from (4,0) to (4,80). Do not mark or label the vertex, draw a symmetry line, add a tick at 2.5, mark the camera start time, print the plotting rule, or label any coordinate pair. No other points, curves, or geometric marks. No other text.",
+   "alt": "A downward-opening height-versus-time parabola has marked equal heights of 80 feet at 1 second and 4 seconds.",
+   "notToScale": false
+  },
+  "choices": [
+   "\\(1\\)",
+   "\\(1.5\\)",
+   "\\(2.5\\)",
+   "\\(4\\)"
+  ],
+  "answer": 0,
+  "explanation": "Equal heights occur at times equally far from a parabola's axis of symmetry.\n\\(t_{max} = \\frac{1 + 4}{2} = 2.5\\)\nTime after recording begins: \\(2.5 - 1.5 = 1\\) second.\nTrap: \\(1.5\\) measures from the earlier marked point; \\(2.5\\) measures from the throw; \\(4\\) adds the recording delay.",
+  "check": "from fractions import Fraction as F; print(F(1+4,2)-F(3,2))",
+  "template": null
+ },
+ {
+  "id": "QUAD-07",
+  "topic": "QUADRATICS",
+  "difficulty": "medium",
+  "skill": "multiply and simplify polynomials",
+  "stem": "Which expression is equivalent to \\((3x + 4)(x - 2)\\)?",
+  "choices": [
+   "\\(3x^{2} - 2x - 8\\)",
+   "\\(3x^{2} - 2x + 8\\)",
+   "\\(3x^{2} + 2x - 8\\)",
+   "\\(3x^{2} + 10x - 8\\)"
+  ],
+  "answer": 0,
+  "explanation": "Multiply every term in one factor by every term in the other, then combine like terms.\n\\(3x^{2} - 6x + 4x - 8\\)\n\\(3x^{2} - 2x - 8\\)\nTrap: \\(3x^{2} + 2x - 8\\) drops \\(3\\) from a cross product; \\(3x^{2} + 10x - 8\\) changes that product's sign; \\(3x^{2} - 2x + 8\\) gives the constant the wrong sign.",
+  "table": null,
+  "figure": null,
+  "check": "a,b,c = 3,4,2; print(f\"{a}x^2 {b-a*c:+}x {-b*c:+}\")",
+  "template": "QUAD_07"
+ },
+ {
+  "id": "QUAD-08",
+  "topic": "QUADRATICS",
+  "difficulty": "hard",
+  "skill": "discriminant: values of k for two real solutions",
+  "stem": "For which real values of \\(k\\) does \\(kx^{2} + 6x + 4 = 0\\) have exactly two distinct real solutions for \\(x\\)?",
+  "choices": [
+   "\\(k < \\frac{9}{4}\\)",
+   "\\(k < \\frac{9}{4} \\text{ and } k \\ne 0\\)",
+   "\\(k \\le \\frac{9}{4} \\text{ and } k \\ne 0\\)",
+   "\\(k > \\frac{9}{4}\\)"
+  ],
+  "answer": 1,
+  "explanation": "Two distinct real roots require a genuine quadratic and a positive discriminant.\n\\(k \\ne 0, 6^{2} - 4(k)(4) > 0\\)\n\\(36 - 16k > 0, k < \\frac{9}{4}\\)\nTrap: \\(k < \\frac{9}{4}\\) includes a linear equation; \\(k \\le \\frac{9}{4} \\text{ and } k \\ne 0\\) allows a repeated root; \\(k > \\frac{9}{4}\\) reverses the discriminant inequality.",
+  "table": null,
+  "figure": null,
+  "check": "from fractions import Fraction as F; b,c = 6,4; print(f\"k < {F(b*b,4*c)} and k != 0\")",
+  "template": "QUAD_08"
+ },
+ {
+  "id": "QUAD-09",
+  "topic": "QUADRATICS",
+  "difficulty": "medium",
+  "skill": "factor a difference of squares",
+  "stem": "Which expression is equivalent to \\(\\frac{9x^{2} - 16}{3x + 4}\\) for \\(x \\ne -\\frac{4}{3}\\)?",
+  "choices": [
+   "\\(3x - 16\\)",
+   "\\(3x - 4\\)",
+   "\\(3x + 4\\)",
+   "\\(9x - 16\\)"
+  ],
+  "answer": 1,
+  "explanation": "Factor the difference of squares, then cancel the common nonzero factor.\n\\(9x^{2} - 16 = (3x - 4)(3x + 4)\\)\n\\(\\frac{9x^{2} - 16}{3x + 4} = 3x - 4\\)\nTrap: \\(3x + 4\\) keeps the canceled factor; \\(9x - 16\\) leaves both coefficients squared; \\(3x - 16\\) leaves only the constant squared.",
+  "table": null,
+  "figure": null,
+  "check": "from math import isqrt; print(f\"{isqrt(9)}x - {isqrt(16)}\")",
+  "template": "QUAD_09"
+ },
+ {
+  "id": "QUAD-10",
+  "topic": "QUADRATICS",
+  "difficulty": "hard",
+  "skill": "polynomial remainder or a factor test",
+  "stem": "If \\(x - 2\\) is a factor of \\(x^{3} + 3x^{2} + kx - 10\\), what is the value of \\(k\\)?",
+  "choices": [
+   "\\(-10\\)",
+   "\\(-5\\)",
+   "\\(-4\\)",
+   "\\(-3\\)"
+  ],
+  "answer": 1,
+  "explanation": "A factor makes the polynomial equal zero at the factor's root.\n\\(8 + 12 + 2k - 10 = 0\\)\n\\(2k = -10\\)\n\\(k = -5\\)\nTrap: \\(-10\\) stops before division; \\(-3\\) substitutes \\(-2\\); \\(-4\\) sets the remainder equal to \\(2\\) instead of zero.",
+  "table": null,
+  "figure": null,
+  "check": "from fractions import Fraction as F; d,a,c = 2,3,-10; print(F(-d**3-a*d*d-c,d))",
+  "template": "QUAD_10"
+ },
+ {
+  "id": "NUM-01",
+  "topic": "FRACTIONS",
+  "difficulty": "medium",
+  "skill": "arithmetic sequence: find the nth term",
+  "stem": "An arithmetic sequence has terms \\(a_{3} = 14\\) and \\(a_{8} = 39\\). What is \\(a_{15}\\)?",
+  "choices": [
+   "\\(74\\)",
+   "\\(79\\)",
+   "\\(109\\)",
+   "\\(214\\)"
+  ],
+  "answer": 0,
+  "explanation": "Find the change per term, then count the steps from a known term.\n\\(d = \\frac{39 - 14}{8 - 3} = 5\\)\n\\(a_{15} = 39 + (15 - 8)(5) = 74\\)\nTrap: \\(109\\) treats \\(a_{8}\\) as the first term; \\(214\\) uses the entire known change as one step; \\(79\\) takes one extra step.",
+  "table": null,
+  "figure": null,
+  "check": "from fractions import Fraction as F; d = F(39-14,8-3); print(39+(15-8)*d)",
+  "template": "NUM_01"
+ },
+ {
+  "id": "NUM-02",
+  "topic": "FRACTIONS",
+  "difficulty": "hard",
+  "skill": "geometric sequence: find a term or a ratio",
+  "stem": "A geometric sequence has positive terms, with \\(a_{2} = 32\\) and \\(a_{5} = 4\\). What is \\(a_{7}\\)?",
+  "choices": [
+   "\\(\\frac{1}{2}\\)",
+   "\\(1\\)",
+   "\\(2\\)",
+   "\\(16\\)"
+  ],
+  "answer": 1,
+  "explanation": "The exponent on the common ratio equals the gap between term numbers.\n\\(r^{3} = \\frac{4}{32} = \\frac{1}{8}, r = \\frac{1}{2}\\)\n\\(a_{7} = 4(\\frac{1}{2})^{2} = 1\\)\nTrap: \\(\\frac{1}{2}\\) treats the second-to-fifth gap as two steps; \\(16\\) reverses the ratio; \\(2\\) advances only one step from the fifth term.",
+  "table": null,
+  "figure": null,
+  "check": "from fractions import Fraction as F; r = F(1,2); assert r**3 == F(4,32); print(4*r**2)",
+  "template": "NUM_02"
+ },
+ {
+  "id": "NUM-03",
+  "topic": "FRACTIONS",
+  "difficulty": "medium",
+  "skill": "complex numbers: multiply and simplify i^2",
+  "stem": "For the imaginary unit \\(i\\), where \\(i^{2} = -1\\), what is \\((3 + 4i)(2 - 5i)\\)?",
+  "choices": [
+   "\\(-14 - 7i\\)",
+   "\\(6 - 7i\\)",
+   "\\(26 - 7i\\)",
+   "\\(26 + 23i\\)"
+  ],
+  "answer": 2,
+  "explanation": "Distribute, then replace the square of the imaginary unit with negative one.\n\\(6 - 15i + 8i - 20i^{2}\\)\n\\(6 + 20 - 7i = 26 - 7i\\)\nTrap: \\(-14 - 7i\\) uses \\(i^{2} = 1\\); \\(26 + 23i\\) adds both imaginary cross products; \\(6 - 7i\\) drops the product of the imaginary terms.",
+  "table": null,
+  "figure": null,
+  "check": "print((3+4j)*(2-5j))",
+  "template": "NUM_03"
+ },
+ {
+  "id": "NUM-04",
+  "topic": "FRACTIONS",
+  "difficulty": "hard",
+  "skill": "complex fraction simplification with variables",
+  "stem": "For all \\(x\\) and \\(y\\) for which the original expression is defined, which expression is equivalent to \\(\\frac{\\frac{3}{x} - \\frac{4}{y}}{\\frac{2}{x} + \\frac{5}{y}}\\)?",
+  "choices": [
+   "\\(-\\frac{1}{7}\\)",
+   "\\(\\frac{3x - 4y}{2x + 5y}\\)",
+   "\\(\\frac{3y - 4x}{2y - 5x}\\)",
+   "\\(\\frac{3y - 4x}{2y + 5x}\\)"
+  ],
+  "answer": 3,
+  "explanation": "Multiply the entire numerator and denominator by the common denominator.\n\\(xy(\\frac{3}{x} - \\frac{4}{y}) = 3y - 4x\\)\n\\(xy(\\frac{2}{x} + \\frac{5}{y}) = 2y + 5x\\)\n\\(\\frac{3y - 4x}{2y + 5x}\\)\nTrap: \\(-\\frac{1}{7}\\) cancels across sums; \\(\\frac{3x - 4y}{2x + 5y}\\) pairs each coefficient with the wrong variable; \\(\\frac{3y - 4x}{2y - 5x}\\) changes the denominator's addition to subtraction.",
+  "table": null,
+  "figure": null,
+  "check": "a,b,c,d = 3,4,2,5; print(f\"({a}y - {b}x)/({c}y + {d}x)\")",
+  "template": "NUM_04"
+ }
+]

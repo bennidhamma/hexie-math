@@ -1,0 +1,26 @@
+RAT-01: OK
+RAT-02: OK
+RAT-03: OK
+RAT-04: OK
+RAT-05: OK
+RAT-06: OK
+RAT-07: OK
+RAT-08: OK
+RAT-09: OK
+RAT-10: OK
+RAT-11: OK
+RAT-12: OK
+RAT-13: OK
+RAT-14: FIXED - template RAT_14 speed pairs (45, 60) and (30, 50) gave non-clean answers \(\frac{360}{7}\) and \(\frac{75}{2}\) mph, harder than the authored whole-number version; replaced them with (60, 90) -> 72 and (20, 30) -> 24. Authored problem is correct.
+WORD-01: OK
+WORD-02: OK
+WORD-03: OK
+WORD-04: OK
+WORD-05: OK
+WORD-06: OK
+WORD-07: OK
+WORD-08: OK
+WORD-09: OK
+WORD-10: OK
+WORD-11: OK
+WORD-12: OK

@@ -1,0 +1,512 @@
+[
+  {
+    "id": "RAT-01",
+    "topic": "RATIOS",
+    "difficulty": "medium",
+    "skill": "split a total in a 3-part ratio",
+    "stem": "A school distributes \\(192\\) notebooks among the sixth, seventh, and eighth grades in the ratio \\(1:3:4\\), respectively. How many notebooks does the seventh grade receive?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(24\\)",
+      "\\(72\\)",
+      "\\(96\\)",
+      "\\(144\\)"
+    ],
+    "answer": 1,
+    "explanation": "Divide the total by the sum of the ratio parts, then use the seventh grade's share.\n\\(1+3+4=8\\) parts, so each part is \\(\\frac{192}{8}=24\\) notebooks.\nThe seventh grade receives \\(3\\cdot24=72\\) notebooks.\nTrap: \\(24\\) is just one part; \\(96\\) is the eighth grade's share; \\(144\\) leaves the eighth grade out of the ratio total.",
+    "check": "print(192*3//(1+3+4))",
+    "template": "RAT_01"
+  },
+  {
+    "id": "RAT-02",
+    "topic": "RATIOS",
+    "difficulty": "hard",
+    "skill": "ratio changes after some items are added; find the original count",
+    "stem": "A bin contains only red and blue tiles in the ratio \\(4:5\\). After \\(5\\) red tiles are added, the ratio of red to blue tiles is \\(5:6\\). How many tiles were in the bin originally?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(45\\)",
+      "\\(120\\)",
+      "\\(270\\)",
+      "\\(275\\)"
+    ],
+    "answer": 2,
+    "explanation": "Use one multiplier for the original ratio, and keep the blue count unchanged.\nLet the original red and blue counts be \\(4k\\) and \\(5k\\).\n\\(\\frac{4k+5}{5k}=\\frac{5}{6}\\), so \\(6(4k+5)=25k\\) and \\(k=30\\).\nThe original total is \\((4+5)\\cdot30=270\\).\nTrap: \\(120\\) counts only the original red tiles; \\(275\\) is the new total; \\(45\\) subtracts ratio terms without matching their blue parts.",
+    "check": "from fractions import Fraction as F; print((4+5)*F(5*6,5*5-4*6))",
+    "template": "RAT_02"
+  },
+  {
+    "id": "RAT-03",
+    "topic": "RATIOS",
+    "difficulty": "medium",
+    "skill": "unit rate and cost comparison",
+    "stem": "Store A sells markers in packs of \\(8\\) for $6.00 per pack. Store B sells the same markers in packs of \\(12\\) for $7.20 per pack. With no tax or discounts, how much less does it cost to buy exactly \\(72\\) markers at Store B than at Store A?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "$0.15",
+      "$1.20",
+      "$10.80",
+      "$43.20"
+    ],
+    "answer": 2,
+    "explanation": "Compare the costs for the same number of markers.\nStore A: \\(\\frac{72}{8}=9\\) packs cost $54.00.\nStore B: \\(\\frac{72}{12}=6\\) packs cost $43.20.\nSubtract the two costs to get $10.80.\nTrap: $1.20 compares single-pack prices; $0.15 is the savings on one marker; $43.20 is Store B's total cost.",
+    "check": "from fractions import Fraction as F; print(72*F(600,800)-72*F(720,1200))",
+    "template": "RAT_03"
+  },
+  {
+    "id": "RAT-04",
+    "topic": "RATIOS",
+    "difficulty": "hard",
+    "skill": "inverse proportion: workers and time",
+    "stem": "A crew of \\(12\\) workers could finish a job in \\(14\\) days. After all \\(12\\) workers work for \\(5\\) days, \\(3\\) leave. Each worker works at the same constant rate. How many days from the start will the remaining crew need to finish the job?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{47}{4}\\)",
+      "\\(12\\)",
+      "\\(17\\)",
+      "\\(\\frac{56}{3}\\)"
+    ],
+    "answer": 2,
+    "explanation": "Measure the unfinished work in worker-days before dividing by the smaller crew.\nAfter \\(5\\) days, \\(12(14-5)=108\\) worker-days remain.\nThe remaining \\(9\\) workers need \\(\\frac{108}{9}=12\\) more days.\nTotal time: \\(5+12=17\\) days.\nTrap: \\(12\\) omits the days already worked; \\(\\frac{56}{3}\\) uses the smaller crew for the entire job; \\(\\frac{47}{4}\\) makes time decrease when workers leave.",
+    "check": "from fractions import Fraction as F; print(5+F(12*(14-5),12-3))",
+    "template": "RAT_04"
+  },
+  {
+    "id": "RAT-05",
+    "topic": "RATIOS",
+    "difficulty": "medium",
+    "skill": "combined work rates (two pipes fill a tank)",
+    "stem": "Pipe A can fill an empty tank in \\(10\\) hours, and Pipe B can fill it in \\(15\\) hours. Both pipes work at constant rates. How many hours will it take to fill the empty tank with both pipes open?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{1}{6}\\)",
+      "\\(6\\)",
+      "\\(\\frac{25}{2}\\)",
+      "\\(25\\)"
+    ],
+    "answer": 1,
+    "explanation": "Add the filling rates, then take the reciprocal to find the time.\nTogether the pipes fill \\(\\frac{1}{10}+\\frac{1}{15}=\\frac{1}{6}\\) of the tank per hour.\nFilling time: \\(1\\div\\frac{1}{6}=6\\) hours.\nTrap: \\(\\frac{1}{6}\\) is the rate, not the time; \\(\\frac{25}{2}\\) averages the filling times; \\(25\\) adds the filling times.",
+    "check": "from fractions import Fraction as F; print(1/(F(1,10)+F(1,15)))",
+    "template": "RAT_05"
+  },
+  {
+    "id": "RAT-06",
+    "topic": "RATIOS",
+    "difficulty": "hard",
+    "skill": "chained ratios a:b and b:c to a:c, then a quantity",
+    "stem": "In a collection of beads, the ratio of red to blue beads is \\(2:3\\), and the ratio of blue to green beads is \\(4:5\\). There are \\(21\\) more green beads than red beads. How many blue beads are in the collection?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(21\\)",
+      "\\(24\\)",
+      "\\(36\\)",
+      "\\(84\\)"
+    ],
+    "answer": 2,
+    "explanation": "Match the blue parts before combining the two ratios.\nRed, blue, and green are in the ratio \\(8:12:15\\).\nThe green-minus-red difference is \\(15-8=7\\) parts, so one part is \\(\\frac{21}{7}=3\\).\nBlue beads: \\(12\\cdot3=36\\).\nTrap: \\(24\\) counts red beads; \\(84\\) treats the given difference as green minus blue; \\(21\\) combines the ratios without matching the blue parts.",
+    "check": "from fractions import Fraction as F; print(F(21, F(5,4)-F(2,3)))",
+    "template": "RAT_06"
+  },
+  {
+    "id": "RAT-07",
+    "topic": "RATIOS",
+    "difficulty": "medium",
+    "skill": "map scale with a drawn rectangle; actual area (scale squared)",
+    "stem": "The rectangular park shown on a map has a scale of \\(1\\) centimeter to \\(4\\) kilometers. What is the actual area of the park, in square kilometers? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw one horizontal rectangle, wider than it is tall, with a small right-angle square inside each corner. Center the literal label \"5 cm\" just above the top side and the literal label \"3 cm\" just to the right of the midpoint of the right side. The bottom and left sides have no length labels. There are no point labels, diagonals, tick marks, arrows, grid, or shading. Do not add actual lengths, area, or a scale legend. Use black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A map shows a rectangular park with a horizontal side labeled \\(5\\) cm and a vertical side labeled \\(3\\) cm.",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(15\\)",
+      "\\(60\\)",
+      "\\(64\\)",
+      "\\(240\\)"
+    ],
+    "answer": 3,
+    "explanation": "Convert both side lengths before multiplying to find area.\nThe actual length is \\(5\\cdot4=20\\) kilometers.\nThe actual width is \\(3\\cdot4=12\\) kilometers.\nThe area is \\(20\\cdot12=240\\) square kilometers.\nTrap: \\(15\\) is the map area; \\(60\\) applies the scale factor only once; \\(64\\) is the actual perimeter, not the area.",
+    "check": "print((5*4)*(3*4))",
+    "template": null
+  },
+  {
+    "id": "RAT-08",
+    "topic": "RATIOS",
+    "difficulty": "hard",
+    "skill": "similar triangles in a shadow or ladder setup; find a length",
+    "stem": "The figure shows a lamp on a vertical pole and a person standing on level ground. The dashed ray passes through the top of the person's head to the tip of the shadow. What is the length \\(x\\), in feet, of the person's shadow? Note: Figure not drawn to scale.",
+    "table": null,
+    "figure": {
+      "description": "Draw a horizontal ground line. Place a tall vertical pole on the left, with a small open circle at its top representing a lamp. Place a shorter upright person to its right; use a simple narrow outline with the feet on the ground and the top of the head well below the lamp. Put the tip of the shadow farther to the right on the ground. Draw a single straight dashed ray from the lamp through the top of the person's head to that tip, and do not continue it past the tip. The vertical pole and the vertical line from the person's head to their feet are parallel. Draw a thin vertical height guide beside the person, extending from ground level to head level, and small right-angle squares where the pole and the height guide meet the ground. Center the literal label \"18 ft\" just left of the pole and \"6 ft\" just right of the person's height guide. Below the ground, use two adjacent horizontal dimension brackets: one from the pole's base to the person's feet, centered label \"12 ft\"; the other from the person's feet to the shadow tip, centered label \"x\". Make the shadow portion of the ground slightly heavier. Do not label the entire base or give a numerical shadow length. No coordinate axes or equality tick marks. Use black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A lamp \\(18\\) feet high casts a shadow from a person \\(6\\) feet tall standing \\(12\\) feet from the pole, with the shadow length labeled \\(x\\).",
+      "notToScale": true
+    },
+    "choices": [
+      "\\(4\\)",
+      "\\(6\\)",
+      "\\(12\\)",
+      "\\(18\\)"
+    ],
+    "answer": 1,
+    "explanation": "The pole and person form similar right triangles that share the shadow tip.\nThe large triangle has base \\(12+x\\), so \\(\\frac{18}{12+x}=\\frac{6}{x}\\).\n\\(18x=6(12+x)\\), so \\(12x=72\\) and \\(x=6\\) feet.\nTrap: \\(4\\) uses only the gap between the pole and person as the large base; \\(12\\) subtracts the heights; \\(18\\) is the entire large base.",
+    "check": "from fractions import Fraction as F; print(F(12*6,18-6))",
+    "template": null
+  },
+  {
+    "id": "RAT-09",
+    "topic": "RATIOS",
+    "difficulty": "medium",
+    "skill": "unit conversion across two rates (feet per second to miles per hour)",
+    "stem": "A car traveling at a constant speed covers \\(1650\\) feet in \\(15\\) seconds. What is its speed in miles per hour? There are \\(5280\\) feet in a mile and \\(3600\\) seconds in an hour.",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{5}{4}\\)",
+      "\\(75\\)",
+      "\\(110\\)",
+      "\\(1125\\)"
+    ],
+    "answer": 1,
+    "explanation": "Find feet per second, then convert both distance and time units.\nThe speed is \\(\\frac{1650}{15}=110\\) feet per second.\nIn miles per hour: \\(110\\cdot\\frac{3600}{5280}=75\\).\nTrap: \\(110\\) keeps feet per second; \\(\\frac{5}{4}\\) converts to miles per minute; \\(1125\\) never divides the distance by the travel time.",
+    "check": "from fractions import Fraction as F; print(F(1650,15)*F(3600,5280))",
+    "template": "RAT_09"
+  },
+  {
+    "id": "RAT-10",
+    "topic": "RATIOS",
+    "difficulty": "hard",
+    "skill": "mixture problem with two concentrations",
+    "stem": "A technician has \\(30\\) liters of a solution that is \\(15\\%\\) alcohol by volume. How many liters of a \\(40\\%\\) alcohol solution must be added to obtain a \\(25\\%\\) alcohol solution? Assume the volumes add.",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{15}{2}\\)",
+      "\\(12\\)",
+      "\\(20\\)",
+      "\\(50\\)"
+    ],
+    "answer": 2,
+    "explanation": "The amount of alcohol in the two starting solutions must equal the amount in the final mixture.\nLet \\(x\\) be the liters added: \\(\\frac{3}{20}\\cdot30+\\frac{2}{5}x=\\frac{1}{4}(30+x)\\).\nMultiplying by \\(100\\) and collecting terms gives \\(15x=300\\), so \\(x=20\\) liters.\nTrap: \\(\\frac{15}{2}\\) keeps the final volume at \\(30\\) liters; \\(12\\) treats \\(30\\) as the final rather than initial volume; \\(50\\) is the total mixture volume.",
+    "check": "from fractions import Fraction as F; print(F(30*(25-15),40-25))",
+    "template": "RAT_10"
+  },
+  {
+    "id": "RAT-11",
+    "topic": "RATIOS",
+    "difficulty": "medium",
+    "skill": "direct variation: y varies directly with x",
+    "stem": "The variable \\(y\\) varies directly with \\(x\\). When \\(x=6\\), \\(y=30\\). What is the value of \\(x\\) when \\(y=40\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{9}{2}\\)",
+      "\\(8\\)",
+      "\\(16\\)",
+      "\\(200\\)"
+    ],
+    "answer": 1,
+    "explanation": "Direct variation means the ratio of \\(y\\) to \\(x\\) stays constant.\n\\(y=kx\\) and \\(k=\\frac{30}{6}=5\\).\n\\(40=5x\\), so \\(x=\\frac{40}{5}=8\\).\nTrap: \\(200\\) multiplies by the constant instead of dividing; \\(16\\) adds the change in \\(y\\) to \\(x\\); \\(\\frac{9}{2}\\) uses inverse variation.",
+    "check": "from fractions import Fraction as F; print(F(40*6,30))",
+    "template": "RAT_11"
+  },
+  {
+    "id": "RAT-12",
+    "topic": "RATIOS",
+    "difficulty": "hard",
+    "skill": "y varies inversely with the square of x",
+    "stem": "The variable \\(y\\) varies inversely with the square of \\(x\\). Initially, \\(x=4\\) and \\(y=36\\). If \\(x\\) increases by \\(50\\%\\), what is the new value of \\(y\\)?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(16\\)",
+      "\\(24\\)",
+      "\\(81\\)",
+      "\\(144\\)"
+    ],
+    "answer": 0,
+    "explanation": "An inverse-square relationship divides \\(y\\) by the square of the factor multiplying \\(x\\).\nThe new \\(x\\) is \\(\\frac{3}{2}\\cdot4=6\\).\nThe new \\(y\\) is \\(\\frac{36}{(\\frac{3}{2})^{2}}=16\\).\nTrap: \\(24\\) uses inverse variation without the square; \\(81\\) uses direct-square variation; \\(144\\) uses only the increase in \\(x\\) as its new value.",
+    "check": "from fractions import Fraction as F; print(F(36,1)/F(3,2)**2)",
+    "template": "RAT_12"
+  },
+  {
+    "id": "RAT-13",
+    "topic": "RATIOS",
+    "difficulty": "medium",
+    "skill": "recipe scaling with fractions",
+    "stem": "A recipe uses \\(\\frac{5}{4}\\) cups of flour to make \\(12\\) muffins. How many cups of flour are needed to make \\(18\\) muffins using the same recipe?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(\\frac{5}{6}\\)",
+      "\\(\\frac{15}{8}\\)",
+      "\\(\\frac{11}{4}\\)",
+      "\\(\\frac{15}{2}\\)"
+    ],
+    "answer": 1,
+    "explanation": "Multiply the flour amount by the ratio of the new batch size to the original batch size.\nThe scale factor is \\(\\frac{18}{12}=\\frac{3}{2}\\).\nFlour needed: \\(\\frac{5}{4}\\cdot\\frac{3}{2}=\\frac{15}{8}\\) cups.\nTrap: \\(\\frac{5}{6}\\) reverses the scale factor; \\(\\frac{11}{4}\\) adds the scale factor; \\(\\frac{15}{2}\\) drops the flour fraction's denominator.",
+    "check": "from fractions import Fraction as F; print(F(5,4)*F(18,12))",
+    "template": "RAT_13"
+  },
+  {
+    "id": "RAT-14",
+    "topic": "RATIOS",
+    "difficulty": "hard",
+    "skill": "average speed for a round trip at two different speeds",
+    "stem": "A driver travels \\(120\\) miles from home to a town at \\(40\\) miles per hour and returns along the same route at \\(60\\) miles per hour. With no stops, what is the driver's average speed, in miles per hour, for the entire trip?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(24\\)",
+      "\\(48\\)",
+      "\\(50\\)",
+      "\\(52\\)"
+    ],
+    "answer": 1,
+    "explanation": "Average speed is total distance divided by total time.\nTravel time: \\(\\frac{120}{40}+\\frac{120}{60}=5\\) hours.\nAverage speed: \\(\\frac{240}{5}=48\\) miles per hour.\nTrap: \\(50\\) averages the speeds as though the times were equal; \\(24\\) uses only the one-way distance; \\(52\\) pairs each speed with the other leg's travel time.",
+    "check": "from fractions import Fraction as F; print(F(240,1)/(F(120,40)+F(120,60)))",
+    "template": "RAT_14"
+  },
+  {
+    "id": "WORD-01",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "medium",
+    "skill": "translate a cost situation into a linear equation and solve",
+    "stem": "A bicycle rental costs a fixed fee of $18.00 plus $6.00 per hour. A coupon reduces the total bill by $6.00. If Jordan pays $48.00 after using the coupon, with no other charges, for how many hours did Jordan rent the bicycle?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(5\\)",
+      "\\(6\\)",
+      "\\(9\\)",
+      "\\(12\\)"
+    ],
+    "answer": 1,
+    "explanation": "The bill is the fixed fee plus the hourly charge, minus the coupon.\nLet \\(h\\) be the number of hours: \\(18+6h-6=48\\).\n\\(6h=48+6-18=36\\), so \\(h=6\\).\nTrap: \\(5\\) ignores the coupon; \\(9\\) ignores the fixed fee; \\(12\\) adds the fee when undoing the bill.",
+    "check": "from fractions import Fraction as F; print(F(48+6-18,6))",
+    "template": "WORD_01"
+  },
+  {
+    "id": "WORD-02",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "hard",
+    "skill": "system of two equations from a ticket or coin situation",
+    "stem": "Tickets to a play cost $12.00 for adults and $8.00 for students. A total of \\(36\\) tickets were sold for $372.00. How many adult tickets were sold?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(7\\)",
+      "\\(15\\)",
+      "\\(21\\)",
+      "\\(31\\)"
+    ],
+    "answer": 2,
+    "explanation": "Use both the total ticket count and the total sales amount.\nIf \\(a\\) adult tickets were sold, then \\(36-a\\) student tickets were sold.\n\\(12a+8(36-a)=372\\).\n\\(4a=84\\), so \\(a=21\\).\nTrap: \\(15\\) counts student tickets; \\(31\\) treats every ticket as an adult ticket; \\(7\\) divides the extra revenue by the adult price instead of the price difference.",
+    "check": "from fractions import Fraction as F; print(F(372-8*36,12-8))",
+    "template": "WORD_02"
+  },
+  {
+    "id": "WORD-03",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "medium",
+    "skill": "read a line graph of distance vs. time; find a rate",
+    "stem": "The graph shows the total distance a hiker has walked over time. What was the hiker's average speed, in miles per hour, from time \\(6\\) hours to time \\(10\\) hours?",
+    "table": null,
+    "figure": {
+      "description": "Draw a coordinate graph with horizontal axis labeled \"Time (hr)\" and vertical axis labeled \"Total distance (mi)\". The visible horizontal range is \\(0\\) through \\(12\\), and the vertical range is \\(0\\) through \\(16\\). Label ticks on both axes at every even integer, including the origin, with light square grid lines at these ticks. Put filled dots at exactly \\((0,0)\\), \\((2,6)\\), \\((6,6)\\), \\((10,14)\\), and \\((12,14)\\). Connect consecutive dots from left to right with straight solid segments. End the plotted path at the last dot; only the axes have arrowheads. Do not label coordinate pairs, slopes, or speeds beside the dots or segments. Use black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "A total-distance graph joins \\((0,0)\\), \\((2,6)\\), \\((6,6)\\), \\((10,14)\\), and \\((12,14)\\), with time in hours and distance in miles.",
+      "notToScale": false
+    },
+    "choices": [
+      "\\(\\frac{7}{5}\\)",
+      "\\(2\\)",
+      "\\(\\frac{7}{2}\\)",
+      "\\(8\\)"
+    ],
+    "answer": 1,
+    "explanation": "Average speed over an interval is the change in total distance divided by elapsed time.\nDistance walked: \\(14-6=8\\) miles.\nElapsed time: \\(10-6=4\\) hours.\nAverage speed: \\(\\frac{8}{4}=2\\) miles per hour.\nTrap: \\(\\frac{7}{5}\\) uses the entire trip through hour \\(10\\); \\(\\frac{7}{2}\\) divides the final distance by only the interval time; \\(8\\) gives the distance change without dividing by time.",
+    "check": "from fractions import Fraction as F; print(F(14-6,10-6))",
+    "template": null
+  },
+  {
+    "id": "WORD-04",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "hard",
+    "skill": "linear model from two data points; predict a value",
+    "stem": "A shop charges a fixed setup fee plus a constant price per badge. An order of \\(30\\) badges costs $120.00, and an order of \\(120\\) badges costs $300.00. What would an order of \\(150\\) badges cost under the same pricing model?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "$300.00",
+      "$360.00",
+      "$480.00",
+      "$600.00"
+    ],
+    "answer": 1,
+    "explanation": "Find the price per additional badge from the change in cost, then find the setup fee.\nPrice per badge: \\(\\frac{300-120}{120-30}=2\\) dollars.\nSetup fee: \\(120-2\\cdot30=60\\) dollars.\nThe new order costs \\(60+2\\cdot150=360\\) dollars.\nTrap: $600.00 scales the setup fee along with the order; $300.00 omits the setup fee; $480.00 repeats the earlier cost increase even though the quantity increase is different.",
+    "check": "from fractions import Fraction as F; print(300+F(300-120,120-30)*(150-120))",
+    "template": "WORD_04"
+  },
+  {
+    "id": "WORD-05",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "medium",
+    "skill": "consecutive integers with a sum condition",
+    "stem": "The sum of three consecutive integers is \\(51\\). What is the greatest of these integers?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(16\\)",
+      "\\(17\\)",
+      "\\(18\\)",
+      "\\(19\\)"
+    ],
+    "answer": 2,
+    "explanation": "For three consecutive integers, the middle integer equals one-third of the sum.\nThe middle integer is \\(\\frac{51}{3}=17\\).\nThe greatest integer is \\(17+1=18\\).\nTrap: \\(16\\) is the smallest integer; \\(17\\) is the middle integer; \\(19\\) treats the average as the first integer and adds two.",
+    "check": "print(51//3+1)",
+    "template": "WORD_05"
+  },
+  {
+    "id": "WORD-06",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "hard",
+    "skill": "age problem with a future condition",
+    "stem": "Nora is currently \\(5\\) times as old as Eli. In \\(30\\) years, Nora will be twice as old as Eli. How old is Eli now, in years?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(10\\)",
+      "\\(20\\)",
+      "\\(40\\)",
+      "\\(50\\)"
+    ],
+    "answer": 0,
+    "explanation": "Add the same number of years to both current ages before using the future relationship.\nIf Eli is \\(x\\) years old now, then Nora is \\(5x\\).\n\\(5x+30=2(x+30)\\), so \\(3x=30\\) and \\(x=10\\).\nTrap: \\(20\\) increases only Eli's age in the future equation; \\(40\\) is Eli's future age; \\(50\\) is Nora's current age.",
+    "check": "from fractions import Fraction as F; print(F(30,5-2))",
+    "template": "WORD_06"
+  },
+  {
+    "id": "WORD-07",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "medium",
+    "skill": "inequality from a budget constraint; maximum whole number of items",
+    "stem": "A print shop charges a setup fee of $13.50 plus $4.50 per poster. A club can spend at most $51.75, with no other charges. What is the greatest number of posters the club can order?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(8\\)",
+      "\\(9\\)",
+      "\\(11\\)",
+      "\\(14\\)"
+    ],
+    "answer": 0,
+    "explanation": "Subtract the fixed fee, divide by the price per poster, and round down to a whole number.\nFor \\(n\\) posters, \\(13.5+4.5n\\le51.75\\).\nThus \\(n\\le\\frac{38.25}{4.5}=\\frac{17}{2}\\).\nThe greatest whole number allowed is \\(8\\).\nTrap: \\(9\\) rounds up past the budget; \\(11\\) ignores the setup fee; \\(14\\) adds the setup fee to the available budget.",
+    "check": "print((5175-1350)//450)",
+    "template": "WORD_07"
+  },
+  {
+    "id": "WORD-08",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "hard",
+    "skill": "read a table-like graph of two phone plans; find where costs are equal",
+    "stem": "The graph shows the monthly costs of two phone plans for up to \\(4\\) gigabytes of data. Each cost continues to follow the same linear pattern beyond the range shown. For how many gigabytes of data are the monthly costs equal?",
+    "table": null,
+    "figure": {
+      "description": "Draw a coordinate graph with horizontal axis labeled \"Data (GB)\" and vertical axis labeled \"Monthly cost ($)\". Show horizontal values from \\(0\\) through \\(4\\), with grid lines and labeled ticks every \\(1\\) GB. Show vertical values from \\(0\\) through \\(32\\), with light horizontal grid lines and labeled ticks every \\(2\\) dollars. Draw a solid segment through exactly \\((0,18)\\), \\((2,24)\\), and \\((4,30)\\), with a filled circular marker at each point. Place the literal label \"Plan A\" immediately to the right of its final point, outside the grid. Draw a dashed segment through exactly \\((0,6)\\), \\((2,16)\\), and \\((4,26)\\), with a small open square marker at each point. Place the literal label \"Plan B\" immediately to the right of its final point, outside the grid. Use adequate right margin to keep both labels separate and readable. Stop both cost segments at the right edge of the grid; do not extend the graph to their intersection. Only the coordinate axes have arrowheads. Do not show equations, coordinate-pair labels, or any intersection label. Use black line art on white, ACT test style, sans-serif labels; no other text.",
+      "alt": "Plan A passes through \\((0,18)\\), \\((2,24)\\), and \\((4,30)\\), while Plan B passes through \\((0,6)\\), \\((2,16)\\), and \\((4,26)\\), with data in gigabytes and monthly cost in dollars.",
+      "notToScale": false
+    },
+    "choices": [
+      "\\(\\frac{3}{2}\\)",
+      "\\(\\frac{12}{5}\\)",
+      "\\(4\\)",
+      "\\(6\\)"
+    ],
+    "answer": 3,
+    "explanation": "Read each fixed fee and rate from the graph, then set the costs equal.\nPlan A starts at $18 and increases by \\(\\frac{30-18}{4}=3\\) dollars per gigabyte.\nPlan B starts at $6 and increases by \\(\\frac{26-6}{4}=5\\) dollars per gigabyte.\nFor \\(x\\) gigabytes, \\(18+3x=6+5x\\), so \\(12=2x\\) and \\(x=6\\).\nTrap: \\(\\frac{3}{2}\\) divides the fee difference by the sum of the rates; \\(\\frac{12}{5}\\) uses only Plan B's rate; \\(4\\) uses only Plan A's rate.",
+    "check": "from fractions import Fraction as F; print(F(18-6, F(26-6,4)-F(30-18,4)))",
+    "template": null
+  },
+  {
+    "id": "WORD-09",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "medium",
+    "skill": "perimeter word problem leading to a linear equation",
+    "stem": "The length of a rectangular garden is \\(12\\) meters more than \\(3\\) times its width. The perimeter is \\(72\\) meters. What is the width, in meters?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(6\\)",
+      "\\(9\\)",
+      "\\(12\\)",
+      "\\(15\\)"
+    ],
+    "answer": 0,
+    "explanation": "The perimeter contains two lengths and two widths.\nLet the width be \\(w\\); the length is \\(3w+12\\).\n\\(2(w+3w+12)=72\\), so \\(4w+12=36\\).\n\\(w=\\frac{36-12}{4}=6\\) meters.\nTrap: \\(15\\) uses only one length and one width; \\(12\\) adds instead of subtracting the extra length; \\(9\\) ignores the extra length.",
+    "check": "from fractions import Fraction as F; print((F(72,2)-12)/(3+1))",
+    "template": "WORD_09"
+  },
+  {
+    "id": "WORD-10",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "hard",
+    "skill": "work backward through several percent and fraction steps",
+    "stem": "Lena spends \\(20\\%\\) of her savings on a jacket, then spends \\(\\frac{1}{2}\\) of the remaining money on shoes. She then adds a gift of $18.00 to her savings and has $48.00. How much did she have before buying the jacket?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "$75.00",
+      "$100.00",
+      "$102.00",
+      "$120.00"
+    ],
+    "answer": 0,
+    "explanation": "Undo the gift first, then divide by the fractions left after each purchase.\nBefore the gift, Lena had \\(48-18=30\\) dollars.\nThe purchases left \\((\\frac{4}{5})(\\frac{1}{2})=\\frac{2}{5}\\) of the original savings.\nOriginal savings: \\(30\\div\\frac{2}{5}=75\\) dollars.\nTrap: $100.00 subtracts both spending fractions from the original whole; $120.00 ignores the gift; $102.00 subtracts the gift after reversing the purchases.",
+    "check": "from fractions import Fraction as F; print(F(48-18,1)/((1-F(20,100))*(1-F(1,2))))",
+    "template": "WORD_10"
+  },
+  {
+    "id": "WORD-11",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "medium",
+    "skill": "interpret slope and intercept of a linear model in context",
+    "stem": "As a tank fills, the amount of water is modeled by \\(W=30+5t\\), where \\(W\\) is measured in gallons and \\(t\\) is the number of minutes since filling began. Which statement gives the initial amount of water and the amount added during the first \\(4\\) minutes?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "Initially \\(5\\) gallons; \\(20\\) gallons added.",
+      "Initially \\(5\\) gallons; \\(120\\) gallons added.",
+      "Initially \\(30\\) gallons; \\(20\\) gallons added.",
+      "Initially \\(30\\) gallons; \\(50\\) gallons added."
+    ],
+    "answer": 2,
+    "explanation": "The constant term is the initial amount, and the coefficient of time is the filling rate.\nAt \\(t=0\\), \\(W=30\\) gallons.\nThe amount added is \\(5\\cdot4=20\\) gallons.\nTrap: \\(50\\) is the total water after filling; using \\(5\\) as the initial amount confuses the slope with the intercept; pairing that with \\(120\\) gallons added swaps both meanings.",
+    "check": "print((30,5*4))",
+    "template": "WORD_11"
+  },
+  {
+    "id": "WORD-12",
+    "topic": "WORD_PROBLEMS",
+    "difficulty": "hard",
+    "skill": "break-even point from revenue and cost functions",
+    "stem": "For \\(x\\) mugs produced and sold, a company has revenue \\(R(x)=40x\\) dollars and total cost \\(C(x)=409+15x\\) dollars. What is the least whole number of mugs the company must sell for revenue to be at least total cost?",
+    "table": null,
+    "figure": null,
+    "choices": [
+      "\\(8\\)",
+      "\\(11\\)",
+      "\\(16\\)",
+      "\\(17\\)"
+    ],
+    "answer": 3,
+    "explanation": "Revenue must cover both the fixed cost and the cost of each mug.\n\\(40x\\ge409+15x\\), so \\(25x\\ge409\\).\n\\(x\\ge\\frac{409}{25}\\), so at least \\(17\\) mugs must be sold.\nTrap: \\(16\\) rounds down and leaves a loss; \\(11\\) ignores the per-mug cost; \\(8\\) adds that cost to the revenue per mug instead of subtracting it.",
+    "check": "from fractions import Fraction as F; import math; print(math.ceil(F(409,40-15)))",
+    "template": "WORD_12"
+  }
+]

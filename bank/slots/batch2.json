@@ -1,0 +1,184 @@
+[
+ {
+  "id": "RAT-01",
+  "topic": "RATIOS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "split a total in a 3-part ratio"
+ },
+ {
+  "id": "RAT-02",
+  "topic": "RATIOS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "ratio changes after some items are added; find the original count"
+ },
+ {
+  "id": "RAT-03",
+  "topic": "RATIOS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "unit rate and cost comparison"
+ },
+ {
+  "id": "RAT-04",
+  "topic": "RATIOS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "inverse proportion: workers and time"
+ },
+ {
+  "id": "RAT-05",
+  "topic": "RATIOS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "combined work rates (two pipes fill a tank)"
+ },
+ {
+  "id": "RAT-06",
+  "topic": "RATIOS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "chained ratios a:b and b:c to a:c, then a quantity"
+ },
+ {
+  "id": "RAT-07",
+  "topic": "RATIOS",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "map scale with a drawn rectangle; actual area (scale squared)"
+ },
+ {
+  "id": "RAT-08",
+  "topic": "RATIOS",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "similar triangles in a shadow or ladder setup; find a length"
+ },
+ {
+  "id": "RAT-09",
+  "topic": "RATIOS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "unit conversion across two rates (feet per second to miles per hour)"
+ },
+ {
+  "id": "RAT-10",
+  "topic": "RATIOS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "mixture problem with two concentrations"
+ },
+ {
+  "id": "RAT-11",
+  "topic": "RATIOS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "direct variation: y varies directly with x"
+ },
+ {
+  "id": "RAT-12",
+  "topic": "RATIOS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "y varies inversely with the square of x"
+ },
+ {
+  "id": "RAT-13",
+  "topic": "RATIOS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "recipe scaling with fractions"
+ },
+ {
+  "id": "RAT-14",
+  "topic": "RATIOS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "average speed for a round trip at two different speeds"
+ },
+ {
+  "id": "WORD-01",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "translate a cost situation into a linear equation and solve"
+ },
+ {
+  "id": "WORD-02",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "system of two equations from a ticket or coin situation"
+ },
+ {
+  "id": "WORD-03",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "medium",
+  "figure": true,
+  "skill": "read a line graph of distance vs. time; find a rate"
+ },
+ {
+  "id": "WORD-04",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "linear model from two data points; predict a value"
+ },
+ {
+  "id": "WORD-05",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "consecutive integers with a sum condition"
+ },
+ {
+  "id": "WORD-06",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "age problem with a future condition"
+ },
+ {
+  "id": "WORD-07",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "inequality from a budget constraint; maximum whole number of items"
+ },
+ {
+  "id": "WORD-08",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "hard",
+  "figure": true,
+  "skill": "read a table-like graph of two phone plans; find where costs are equal"
+ },
+ {
+  "id": "WORD-09",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "perimeter word problem leading to a linear equation"
+ },
+ {
+  "id": "WORD-10",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "work backward through several percent and fraction steps"
+ },
+ {
+  "id": "WORD-11",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "medium",
+  "figure": false,
+  "skill": "interpret slope and intercept of a linear model in context"
+ },
+ {
+  "id": "WORD-12",
+  "topic": "WORD_PROBLEMS",
+  "difficulty": "hard",
+  "figure": false,
+  "skill": "break-even point from revenue and cost functions"
+ }
+]
