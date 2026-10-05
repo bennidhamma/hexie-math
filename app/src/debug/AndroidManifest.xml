@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- Debug builds only: shows every diagram for visual checks. -->
+        <activity android:name=".DiagramGalleryActivity" android:exported="true" />
+    </application>
+</manifest>
