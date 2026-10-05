@@ -31,6 +31,18 @@ class Progress(context: Context) {
         get() = prefs.getInt("minute", 30)
         set(v) = prefs.edit().putInt("minute", v).apply()
 
+    var challengeMode: ChallengeMode
+        get() = runCatching { ChallengeMode.valueOf(prefs.getString("challenge", "")!!) }.getOrDefault(ChallengeMode.BALANCED)
+        set(v) = prefs.edit().putString("challenge", v.name).apply()
+
+    /** The last 12 answers, oldest first. Drives the adaptive easy/medium/hard mix. */
+    fun recentResults(): List<Boolean> = (prefs.getString("recent", "") ?: "").map { it == '1' }
+
+    private fun pushRecent(correct: Boolean) {
+        val s = ((prefs.getString("recent", "") ?: "") + if (correct) "1" else "0").takeLast(12)
+        prefs.edit().putString("recent", s).apply()
+    }
+
     var showPaceTimer: Boolean
         get() = prefs.getBoolean("paceTimer", true)
         set(v) = prefs.edit().putBoolean("paceTimer", v).apply()
@@ -64,6 +76,7 @@ class Progress(context: Context) {
     /** Records one answer. Returns true if this answer completed today's goal. */
     fun record(question: Question, correct: Boolean, today: LocalDate = LocalDate.now()): Boolean {
         question.family?.let { recordFamily(it, correct, today) }
+        pushRecent(correct)
         return record(question.topic, correct, today)
     }
 
@@ -146,8 +159,11 @@ class Progress(context: Context) {
      * 3. the family seen longest ago.
      * Then picks a random number variation, so a review is not the exact same problem.
      */
-    fun pickBankQuestion(bank: Bank, topic: Topic, random: kotlin.random.Random, today: LocalDate = LocalDate.now()): Question? {
-        val families = bank.byTopic[topic] ?: return null
+    fun pickBankQuestion(bank: Bank, topic: Topic, random: kotlin.random.Random, level: Level? = null, today: LocalDate = LocalDate.now()): Question? {
+        val all = bank.byTopic[topic] ?: return null
+        // Keep to the wanted level when the topic has problems at that level.
+        val wanted = level?.name?.lowercase()
+        val families = all.filterValues { it.first().difficulty == wanted }.ifEmpty { all }
         val seen = families()
         fun lastDay(f: String) = seen.optString(f, "").split(",").getOrNull(2)?.toLongOrNull()
         val review = families.keys.filter {

@@ -60,7 +60,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.hexie.math.data.ChallengeMode
+import com.hexie.math.data.Level
 import com.hexie.math.data.Progress
+import com.hexie.math.data.adjustedMix
+import com.hexie.math.data.planSession
 import com.hexie.math.notify.Reminders
 import com.hexie.math.questions.Bank
 import com.hexie.math.questions.Diagram
@@ -306,7 +310,10 @@ private fun QuizScreen(progress: Progress, bank: Bank, onFinish: (solved: Int, r
     var right by remember { mutableIntStateOf(0) }
     var lastTopic by remember { mutableStateOf<Topic?>(null) }
     // With 3 or more problems a day, the first one is a quick generated warm-up.
-    var question by remember { mutableStateOf(newQuestion(progress, bank, null, warmUp = total >= 3 && !bonus)) }
+    // Plan the easy/medium/hard shape of this session. After a miss, the next problem is one level easier.
+    val plan = remember { planSession(total, adjustedMix(progress.challengeMode, progress.recentResults())) }
+    var cap by remember { mutableStateOf<Level?>(null) }
+    var question by remember { mutableStateOf(newQuestion(progress, bank, null, plan[0])) }
     var flagging by remember { mutableStateOf(false) }
     var picked by remember { mutableStateOf<Int?>(null) }
     var reaction by remember { mutableStateOf("") }
@@ -354,7 +361,7 @@ private fun QuizScreen(progress: Progress, bank: Bank, onFinish: (solved: Int, r
         QuestionBody(question, picked, onPick = { i ->
             picked = i
             val correct = i == question.correctIndex
-            if (correct) right++
+            if (correct) right++ else cap = levelOf(question).easier()
             reaction = if (correct) RIGHT.random() else WRONG.random()
             val metNow = progress.record(question, correct)
             if (metNow) {
@@ -377,7 +384,10 @@ private fun QuizScreen(progress: Progress, bank: Bank, onFinish: (solved: Int, r
                         } else {
                             index++
                             lastTopic = question.topic
-                            question = newQuestion(progress, bank, lastTopic, warmUp = false)
+                            val planned = plan.getOrElse(index) { Level.MEDIUM }
+                            val level = cap?.let { if (it.ordinal < planned.ordinal) it else planned } ?: planned
+                            cap = null
+                            question = newQuestion(progress, bank, lastTopic, level)
                             picked = null
                         }
                     },
@@ -399,7 +409,7 @@ private fun QuizScreen(progress: Progress, bank: Bank, onFinish: (solved: Int, r
 internal fun QuestionBody(question: Question, picked: Int?, onPick: (Int) -> Unit) {
     Column {
         Spacer(Modifier.height(12.dp))
-        val tag = when (question.difficulty) { null -> "  ·  WARM-UP"; "hard" -> "  ·  HARD"; else -> "  ·  MEDIUM" }
+        val tag = when (question.difficulty) { null -> "  ·  EASY"; "hard" -> "  ·  HARD"; else -> "  ·  MEDIUM" }
         Text(
             question.topic.label.uppercase() + tag,
             style = MaterialTheme.typography.labelLarge,
@@ -494,16 +504,19 @@ private fun DiagramCard(d: Diagram) {
     }
 }
 
+private fun levelOf(q: Question): Level = when (q.difficulty) { null -> Level.EASY; "hard" -> Level.HARD; else -> Level.MEDIUM }
+
 /**
- * A warm-up comes from the generators. Everything else comes from the problem bank when it has
- * that topic, and from the generators when it does not (or when the app has no bank).
+ * Easy problems come from the generators. Medium and hard come from the problem bank,
+ * from a topic that has problems at that level (or from the generators when the app has no bank).
  */
-private fun newQuestion(progress: Progress, bank: Bank, avoid: Topic?, warmUp: Boolean): Question {
-    if (warmUp || bank.topics.isEmpty()) {
+private fun newQuestion(progress: Progress, bank: Bank, avoid: Topic?, level: Level): Question {
+    val topics = if (level == Level.EASY) emptySet() else bank.topicsAt(level.name.lowercase())
+    if (topics.isEmpty()) {
         return QuestionFactory.make(progress.pickTopic(Random.Default, avoid, QuestionFactory.topics))
     }
-    val topic = progress.pickTopic(Random.Default, avoid, bank.topics + QuestionFactory.topics)
-    return progress.pickBankQuestion(bank, topic, Random.Default) ?: QuestionFactory.make(topic)
+    val topic = progress.pickTopic(Random.Default, avoid, topics)
+    return progress.pickBankQuestion(bank, topic, Random.Default, level) ?: QuestionFactory.make(topic)
 }
 
 private enum class ChoiceState { OPEN, RIGHT, WRONG, DIM }
@@ -630,6 +643,21 @@ private fun SettingsScreen(progress: Progress, onBack: () -> Unit) {
         )
         Text(
             "A small number every day works better than a big pile once a week.",
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+
+        Spacer(Modifier.height(16.dp))
+        Text("Challenge level", style = MaterialTheme.typography.titleMedium)
+        var mode by remember { mutableStateOf(progress.challengeMode) }
+        Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            ChallengeMode.entries.forEach { c ->
+                FilterChip(selected = mode == c, onClick = { mode = c; progress.challengeMode = c }, label = { Text(c.label) })
+            }
+        }
+        Text(
+            "${mode.easy}% easy, ${mode.medium}% medium, ${mode.hard}% hard. Hexie also eases off after a rough stretch, " +
+                "gives an easier problem after a miss, and ends each day on one that is not hard.",
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
         )

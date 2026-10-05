@@ -16,6 +16,10 @@ class Bank(val problems: List<Question>) {
 
     val topics: Set<Topic> get() = byTopic.keys
 
+    /** Topics that have at least one problem at this difficulty ("medium" or "hard"). */
+    fun topicsAt(difficulty: String): Set<Topic> =
+        byTopic.filterValues { fams -> fams.values.any { it.first().difficulty == difficulty } }.keys
+
     companion object {
         val EMPTY = Bank(emptyList())
 

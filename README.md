@@ -21,7 +21,8 @@ Most problems come from a bank of 150 ACT-style medium and hard problems, with a
 - **Diagrams.** Geometry, trig, graphing, and probability problems show a drawn figure: triangles, parallel lines, polygons, cylinders, coordinate grids, the unit circle, spinners, and marbles. Some explanations add a second figure, such as the reference triangle for a trig problem.
 - **Streaks and newt eyes.** The streak counts days in a row with the goal met. Each correct answer gives one eye of newt.
 - **Bonus problems.** After the goal is met, the student can do more problems.
-- **Warm-up first.** With 3 or more problems a day, the first one is a quick generated warm-up. The rest come from the problem bank.
+- **A mix of easy, medium, and hard.** Easy problems are quick one-step problems from the generators. Medium and hard come from the problem bank. Each session starts easy, puts hard problems in the middle, and does not end on a hard one.
+- **Challenge level.** In Settings: Gentle (50% easy, 40% medium, 10% hard), Balanced (30/45/25, the default), or Challenge (15/45/40). The mix moves toward easy after a rough stretch (under 50% right in the last 12 answers) and toward hard after a strong one (over 85%). After a miss, the next problem is one level easier.
 - **Spaced review.** A missed bank problem comes back 3 or more days later, with new numbers when it has a template.
 - **Pace timer.** Shows the time on each problem and turns orange after 60 seconds, the ACT pace. Turn it off in Settings.
 - **Feedback.** The student can flag any problem (wrong answer, confusing wording, diagram problem, too easy, too hard) and rate each session. In Settings, enter the parent's email once. "Email feedback" then opens the email app with all new feedback and the topic scores filled in.
